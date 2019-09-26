@@ -5,11 +5,11 @@ _Se trata de un juego de plataformas multijugador en el que los personajes son d
 ## Desarrolladores: 
 Alejandra Casado Ceballos, email: a.casadoce.2017@alumnos.urjc.es, GitHub: AlejandraCasadoCeballos (https://github.com/AlejandraCasadoCeballos)
 
-Patricia Ruiz, email: a.casadoce.2017@alumnos.urjc.es
+Patricia Ruiz Bermejo, email: p.ruizb.2018@alumnos.urjc.es
 
-Juan Sanchez, email:j.sanchezro.2017@alumnos.urjc.es, 
+Juan Sanchez Romero, email:j.sanchezro.2017@alumnos.urjc.es, 
 
-Blanca de la Fuente, email: b.delafuente.2017@alumnos.urjc.es
+Blanca de la Fuente Alonso, email: b.delafuente.2017@alumnos.urjc.es
 
 Daniel Brenlla Gómez, email: d.brenlla.2017@alumnos.urjc.es, GitHub: Brenlli (https://github.com/brenlli)
 

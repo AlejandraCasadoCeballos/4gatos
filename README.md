@@ -5,7 +5,7 @@ _Se trata de un juego de plataformas multijugador en el que los personajes son d
 ## Desarrolladores: 
 Alejandra Casado Ceballos, email: a.casadoce.2017@alumnos.urjc.es, GitHub: AlejandraCasadoCeballos (https://github.com/AlejandraCasadoCeballos)
 
-Patricia Ruiz Bermejo, email: p.ruizb.2018@alumnos.urjc.es
+Patricia Ruiz Bermejo, email: p.ruizb.2018@alumnos.urjc.es, GitHub: potii (https://github.com/potii)
 
 Juan Sanchez Romero, email:j.sanchezro.2017@alumnos.urjc.es, 
 

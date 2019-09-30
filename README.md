@@ -7,9 +7,9 @@ Alejandra Casado Ceballos, email: a.casadoce.2017@alumnos.urjc.es, GitHub: Aleja
 
 Patricia Ruiz Bermejo, email: p.ruizb.2018@alumnos.urjc.es, GitHub: potii (https://github.com/potii)
 
-Juan Sanchez Romero, email:j.sanchezro.2017@alumnos.urjc.es, 
+Juan Sanchez Romero, email:j.sanchezro.2017@alumnos.urjc.es, Github:  JuanSancjezRo (https://github.com/JuanSanchezRo)
 
-Blanca de la Fuente Alonso, email: b.delafuente.2017@alumnos.urjc.es
+Blanca de la Fuente Alonso, email: b.delafuente.2017@alumnos.urjc.es, Github: Blancadlf13 (https://github.com/Blancadlf13)
 
 Daniel Brenlla Gómez, email: d.brenlla.2017@alumnos.urjc.es, GitHub: Brenlli (https://github.com/brenlli)
 

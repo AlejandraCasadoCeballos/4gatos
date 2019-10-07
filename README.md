@@ -1,4 +1,4 @@
-# Just 4 cats
+# JUST 4 CATS
 ## CONCEPTO Y GÉNERO
 
 Se trata de un juego de plataformas multijugador.

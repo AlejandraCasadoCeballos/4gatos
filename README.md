@@ -91,11 +91,17 @@ La música y los sonidos serán agradables y alegres como la paleta de colores. 
 También pondremos efectos de sonido en los siguientes momentos:
 
 •	Al pulsar cualquier botón del menú de inicio
+
 •	Cuando un personaje es aplastado
+
 •	Cuando uno de los gatos vomita una bola de pelo
+
 •	Al coger el objeto
+
 •	Al hacer el salto rebote
+
 •	Al coger el power up
+
 •	Al andar
 
 ## INFLUENCIA

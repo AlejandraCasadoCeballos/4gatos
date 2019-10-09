@@ -74,7 +74,7 @@ A continuación, presentamos algunos concepts para los diseños del gato, aunque
 
 Este es un boceto a papel del escenario, nos gustaría que tuviese una estética más oscura para encontrar el contraste con los colores pastel que tendrán los personajes.
 
-
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Im%C3%A1genes/bocetoNivel.jpg)
 
 Por último, estos son los bocetos de los posibles power ups y objetos, aún no sabemos cuáles serán los definitivos.
 

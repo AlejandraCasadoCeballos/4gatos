@@ -50,10 +50,10 @@ En las cuatro pantallas aparecerá en la parte superior izquierda un botón para
 
 El juego tiene cuatro personajes que son gatos de distintos colores. Sus nombres son los siguientes:
 
-•	Bombalurina: tiene el pelo rojizo. Pertenecía a una familia adinerada de París, pero un día se perdió entre las calles de Nueva York durante un viaje con sus dueños y tuvo que aprender a sobrevivir.
-•	Mungojerri: tiene el pelo verde. Es el más chungo de todos. Es hijo de una gata callejera y creció en la calle.
-•	Muffin: tiene el pelo azul. Vivía en una familia corriente. Un día tuvieron un hijo que resultó ser alérgico a los gatos y le echaron.
-•	Grizabella: tiene el pelo amarillo. Se escapó voluntariamente de su casa porque uno de los miembros de la familia le maltrataba. Desde entonces no tiene miedo a nada.
+      •	Bombalurina: tiene el pelo rojizo. Pertenecía a una familia adinerada de París, pero un día se perdió entre las calles de Nueva York durante un viaje con sus dueños y tuvo que aprender a sobrevivir.
+      •	Mungojerri: tiene el pelo verde. Es el más chungo de todos. Es hijo de una gata callejera y creció en la calle.
+      •	Muffin: tiene el pelo azul. Vivía en una familia corriente. Un día tuvieron un hijo que resultó ser alérgico a los gatos y le echaron.
+      •	Grizabella: tiene el pelo amarillo. Se escapó voluntariamente de su casa porque uno de los miembros de la familia le maltrataba. Desde entonces no tiene miedo a nada.
 
 Los jugadores se pelearán por conseguir el objeto principal y mantenerlo hasta el final de la partida.
 

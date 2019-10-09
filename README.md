@@ -1,4 +1,7 @@
 # JUST 4 CATS
+
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Im%C3%A1genes/Ilustracio%CC%81n_sin_ti%CC%81tulo.png)
+
 ## CONCEPTO Y GÉNERO
 
 Se trata de un juego de plataformas multijugador.
@@ -42,6 +45,7 @@ En la pantalla de juego se encontrará el tiempo restante de este arriba a la de
 
 En las cuatro pantallas aparecerá en la parte superior izquierda un botón para silenciar el juego.
 
+
 ## OBJETOS Y PERSONAJES
 
 El juego tiene cuatro personajes que son gatos de distintos colores. Sus nombres son los siguientes:
@@ -65,9 +69,17 @@ La estética será pixelArt. Utilizaremos una paleta de colores pastel.
 Hemos utilizado esta paleta porque creemos que es más agradable visualmente.
 A continuación, presentamos algunos concepts para los diseños del gato, aunque los colores serán diferentes y aún no hemos elegido cuál será el modelo definitivo.
 
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Im%C3%A1genes/Gatos1.jfif)
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Im%C3%A1genes/Gatos2.jfif)
+
 Este es un boceto a papel del escenario, nos gustaría que tuviese una estética más oscura para encontrar el contraste con los colores pastel que tendrán los personajes.
 
+
+
 Por último, estos son los bocetos de los posibles power ups y objetos, aún no sabemos cuáles serán los definitivos.
+
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Im%C3%A1genes/Objetos1.jfif)
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Im%C3%A1genes/Objetos2.png)
   
 ## MÚSICA Y SONIDOS
 
@@ -86,10 +98,12 @@ También pondremos efectos de sonido en los siguientes momentos:
 ## INFLUENCIA
 
 Nos hemos inspirado en el juego “move or die” y el juego tradicional pilla-pilla.
+
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Im%C3%A1genes/Moveordie.jpg)
+
 Respecto a los nombres de los gatos, nos hemos inspirado en el musical CATS.
 
- 
-
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Im%C3%A1genes/MusicalCats.jpg)
 
 ## Desarrolladores: 
 Alejandra Casado Ceballos, email: a.casadoce.2017@alumnos.urjc.es, GitHub: AlejandraCasadoCeballos (https://github.com/AlejandraCasadoCeballos)

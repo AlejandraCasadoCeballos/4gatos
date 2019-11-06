@@ -131,8 +131,6 @@
         //Generamos el objeto en el centro de la pantalla
         objeto.create(320,240, objetoAleatorio);
         
-        console.log(generarPowerUp1);
-        console.log(generarPowerUp2);
 
         this.physics.add.collider(objeto, platforms,player,player2);
         this.physics.add.overlap(player, objeto, collectObject, null, this);
@@ -239,14 +237,12 @@
         if(colisionPowerUp && cuentaAtrasPowerUp===true)
         {
             tiempoPowerUp--;
-            console.log(tiempoPowerUp);
             if(tiempoPowerUp===0)
             {
                 tiempoPowerUp=1000;
                 cuentaAtrasPowerUp=false;
-                console.log(cuentaAtrasPowerUp);
             }
-
+            //jugador 1
             if (cursors.left.isDown)
             {
                 player.setVelocityX(-500);
@@ -262,9 +258,27 @@
                 player.setVelocityX(0);
                 player.anims.play('turn');
             }
+            //jugador 2
+            if(player2.right.isDown){
+
+                player2.setVelocityX(500);
+                player2.anims.play('right', true);
+
+            }else if(player2.left.isDown){
+
+                player2.setVelocityX(-500);
+                player2.anims.play('left', true);
+
+            }else{
+                
+                player2.setVelocityX(0);
+                player2.anims.play('turn');
+            }
         }
+        
         else if(!colisionPowerUp || cuentaAtrasPowerUp===false)
         {
+            //jugador 1
             if (cursors.left.isDown)
             {
                 player.setVelocityX(-180);
@@ -274,11 +288,25 @@
             {
                 player.setVelocityX(180);
                 player.anims.play('right', true);
+                
             }
             else
             {
                 player.setVelocityX(0);
                 player.anims.play('turn');
+            }
+            //jugador 2
+            if(player2.right.isDown){
+                player2.setVelocityX(180);
+                player2.anims.play('right', true);
+
+            }else if(player2.left.isDown){
+                player2.setVelocityX(-180);
+                player2.anims.play('left', true);
+
+            }else{
+                player2.setVelocityX(0);
+                player2.anims.play('turn');
             }
         }
 
@@ -290,18 +318,6 @@
         {
             player.setVelocityY(-800);
         }    
-        
-        if(player2.right.isDown){
-           
-            player2.setVelocityX(180);
-            player2.anims.play('right', true);
-        }else if(player2.left.isDown){
-            player2.setVelocityX(-180);
-            player2.anims.play('left', true);
-        }else{
-            player2.setVelocityX(0);
-            player2.anims.play('turn');
-        }
         
         if(player2.up.isDown && player2.body.touching.down){player2.setVelocityY(-800);}
         

@@ -1,4 +1,4 @@
-<!doctype html> 
+﻿<!doctype html> 
 <html lang="en"> 
 <head> 
     <meta charset="UTF-8" />
@@ -38,8 +38,12 @@
     var player2;
     var platforms;
     var cursors;
+    /******TEMPORIZADOR
+   /* var score = 0;
+    var scoreText;*/
     var timer;
-var total = 0;
+    var info;
+ 
    
     function preload () //precargar recursos
     {
@@ -58,7 +62,8 @@ var total = 0;
 
     function create ()
     { 
-        
+      
+
         
         this.add.image(400, 300, 'sky');
 
@@ -122,13 +127,20 @@ var total = 0;
       player2.right=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
       player2.left=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
       player2.up=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
-      this.physics.add.collider(player, player2, hitBomb, null, this);     
-      this.physics.add.collider(player2, player, hitBomb2, null, this);     
-        
-
+      this.physics.add.collider(player, player2, hitPlayer, null, this);    
+      
+            //******************TEMPORIZADOR
+           info = this.add.text(10, 10, '', { font: '48px Arial', fill: '#000000' });
+      timer = this.time.addEvent({ delay: 120000, callback: gameOver, callbackScope: this });
+     
     }
+  function gameOver ()
+{
+    this.input.off('gameobjectup');
+}
+
 // coleccionar
-    function collectStar (player,/*player2,*/ star)
+    function collectStar (player, star)
     {
         star.disableBody(true, true);// cuando toca la estrella
 
@@ -145,24 +157,25 @@ var total = 0;
            
         }
     }
-    function hitBomb (player, player2)
+    function hitPlayer (player, player2)
     {
-        player.setVelocityX(0);
+        if(player.y<player2.y){
+            player.setVelocityX(0);
         player.setTint(0xff000);
         player.anims.play('turn');
         gameOver = true;
+        }
+        else if(player2.y<player.y){
+        player.setVelocityX(0);
+        player.setTint(0xff000);
+        player.anims.play('turn');
+        gameOver = true;}
     }
-    function hitBomb2 (player2, player)
-    {
-        this.physics.pause();
-        player2.setTint(0xff0000);
-        player2.anims.play('turn');
-        gameOver = true;
-       
-    }
+  
     function update (time, delta)
     {
-
+       info.setText( 'Time: ' + Math.round(Math.floor(120000 - timer.getElapsed())/1000));
+         
         if (cursors.left.isDown)
         {
             player.setVelocityX(-180);

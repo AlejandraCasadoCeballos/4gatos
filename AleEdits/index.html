@@ -89,8 +89,7 @@
         this.physics.add.collider(player, platforms);
         player2 = this.physics.add.sprite(16, 450, 'dude2'); //creación de un sprite con físicas
         this.physics.add.collider(player2, platforms);
-        this.physics.add.collider(player2, player);
-        this.physics.add.collider(player, player2);
+        this.physics.add.collider(player2, player, touchPlayer);
         player.setBounce(0.0);
         player.setCollideWorldBounds(true);
         player.body.setGravityY(1000)
@@ -170,7 +169,6 @@
         objeto.create(320,240, objetoAleatorio);
 
         //colision con los objetos
-        this.physics.add.collider(objeto, platforms,player,player2);
         this.physics.add.overlap(player, objeto, collectObject, null, this);
         this.physics.add.overlap(player2, objeto, collectObject2, null, this);
 
@@ -184,11 +182,10 @@
         player2.right=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
         player2.left=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
         player2.up=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
-        this.physics.add.collider(player, player2, hitPlayer, null, this);
-        this.physics.add.collider(player2, player, hitPlayer2, null, this);
+        
         this.physics.add.overlap(player, player2, hitPlayer, null, this);
         this.physics.add.overlap(player2, player, hitPlayer2, null, this);
-        
+
         info = this.add.text(10, 10, '', { font: '48px Arial', fill: '#000000' });
         timer = this.time.addEvent({ delay: 120000, callback: gameOver, callbackScope: this });
 
@@ -269,22 +266,26 @@
         function hitPlayer(player, player2) {
             auxiliar = 1;
             auxiliar2 = 0;
+        }
+
+        function hitPlayer2(player2, player) {
+            auxiliar2 = 1;
+            auxiliar = 0;
+        }
+
+        function touchPlayer(player, player2) { 
+
             if(objetoCogido)
             {
                 objetoCogido=false;
                 objetoCogido2=true;
             }
-            console.log("hola");
-        }
-        function hitPlayer2(player2, player1) {
-            auxiliar2 = 1;
-            auxiliar = 0;
-            if(objetoCogido2)
+            else if (objetoCogido2)
             {
                 objetoCogido2=false;
                 objetoCogido=true;
             }
-            console.log("hola2");
+            console.log("tocando");
         }
 
     function update(time, delta) {

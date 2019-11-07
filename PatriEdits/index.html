@@ -333,8 +333,10 @@
 
                 //jugador 1
                 if (cursors.left.isDown) {
+
+                    player.setVelocityX(-180);
+
                     if (auxiliar2 == 0 && objetoCogido===false) {
-                        player.setVelocityX(-180);
                         player.anims.play('left', true);
                     }
                     else if (auxiliar2 == 1 && auxiliar == 1) {// si colisionan 
@@ -348,8 +350,8 @@
                 }
                 else if (cursors.right.isDown) {
 
+                    player.setVelocityX(180);
                     if (auxiliar == 0 && objetoCogido===false) {
-                        player.setVelocityX(180);
                         player.anims.play('right', true);
                     }
                     else if (auxiliar2 == 1 && auxiliar == 1) {// si colisionan
@@ -385,8 +387,10 @@
                 //jugador 2
                 if (player2.right.isDown) {
 
+                    player2.setVelocityX(180);
+
                     if (auxiliar2 == 0 && objetoCogido===false) {
-                        player2.setVelocityX(180);
+                        
                         player2.anims.play('right', true);
                     }
                     else if (auxiliar == 1) {
@@ -398,8 +402,9 @@
 
                 } else if (player2.left.isDown) {
 
+                    player2.setVelocityX(-180);
+
                     if (auxiliar2 == 0 && objetoCogido===false) {
-                        player2.setVelocityX(-180);
                         player2.anims.play('left', true);
                     }
                     else if (auxiliar == 1) {

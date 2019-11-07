@@ -331,9 +331,9 @@
                 }
                 console.log(auxiliar);
 
-
+                //jugador 1
                 if (cursors.left.isDown) {
-                    if (auxiliar == 0) {
+                    if (auxiliar2 == 0 && objetoCogido===false) {
                         player.setVelocityX(-180);
                         player.anims.play('left', true);
                     }
@@ -342,9 +342,13 @@
                         player.anims.play('VO', true);
                         auxiliar = 0;
                     }
+                    else if(objetoCogido)
+                        player.anims.play('leftWO', true);
+
                 }
                 else if (cursors.right.isDown) {
-                    if (auxiliar == 0) {
+
+                    if (auxiliar == 0 && objetoCogido===false) {
                         player.setVelocityX(180);
                         player.anims.play('right', true);
                     }
@@ -352,16 +356,24 @@
                         player.anims.play('VO', true);
                         auxiliar = 0;
                     }
+                    else if(objetoCogido)
+                        player.anims.play('rightWO', true);
 
                 }
                 else {
 
                     player.setVelocityX(0);
-                    player.anims.play('turn');
+
+                    if(objetoCogido)
+                        player.anims.play('turnWO');
+                    else 
+                        player.anims.play('turn');
+
                     auxiliar = 0;
                 }
 
                 if (cursors.up.isDown && player.body.touching.down) {
+                    
                     if (auxiliar == 0) { player.setVelocityY(-800); }
                     else if (auxiliar2 == 1 && auxiliar == 1) {
                         player.setVelocityY(-8);
@@ -370,9 +382,10 @@
                     }
 
                 }
+                //jugador 2
                 if (player2.right.isDown) {
 
-                    if (auxiliar2 == 0) {
+                    if (auxiliar2 == 0 && objetoCogido===false) {
                         player2.setVelocityX(180);
                         player2.anims.play('right', true);
                     }
@@ -380,8 +393,12 @@
 
                         player2.anims.play('VO', true);
                     }
+                    else if(objetoCogido)
+                        player2.anims.play('rightWO', true);
+
                 } else if (player2.left.isDown) {
-                    if (auxiliar2 == 0) {
+
+                    if (auxiliar2 == 0 && objetoCogido===false) {
                         player2.setVelocityX(-180);
                         player2.anims.play('left', true);
                     }
@@ -389,10 +406,15 @@
 
                         player2.anims.play('VO', true);
                     }
+                    else if(objetoCogido)
+                        player.anims.play('leftWO', true);
 
                 } else {
                     player2.setVelocityX(0);
-                    player2.anims.play('turn');
+                    if(objetoCogido)
+                        player2.anims.play('turnWO');
+                    else 
+                        player2.anims.play('turn');
                     
                 } 
 

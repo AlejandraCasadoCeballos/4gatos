@@ -285,7 +285,6 @@
                 objetoCogido2=false;
                 objetoCogido=true;
             }
-            console.log("tocando");
         }
 
     function update(time, delta) {
@@ -324,6 +323,11 @@
 
                     if (objetoCogido)
                         player.anims.play('leftWO', true);
+                    else if (auxiliar2 == 1 && auxiliar == 1) {// si colisionan 
+
+                        player.anims.play('VO', true);
+                        auxiliar = 0;
+                        }
                     else
                         player.anims.play('left', true);
                 }
@@ -331,6 +335,11 @@
                     player.setVelocityX(500);
                     if (objetoCogido)
                         player.anims.play('rightWO', true);
+                    else if (auxiliar2 == 1 && auxiliar == 1) {// si colisionan 
+
+                        player.anims.play('VO', true);
+                        auxiliar = 0;
+                        }
                     else
                         player.anims.play('right', true);
                 }
@@ -339,6 +348,11 @@
 
                     if (objetoCogido)
                         player.anims.play('turnWO');
+                    else if (auxiliar2 == 1 && auxiliar == 1) {// si colisionan 
+
+                        player.anims.play('VO', true);
+                        auxiliar = 0;
+                        }
                     else
                         player.anims.play('turn');
                 }
@@ -358,6 +372,11 @@
 
                     if (objetoCogido2)
                         player2.anims.play('rightWO', true);
+                    else if (auxiliar2 == 1 && auxiliar == 1) {// si colisionan 
+
+                        player2.anims.play('VO', true);
+                        auxiliar = 0;
+                    }
                     else
                         player2.anims.play('right', true);
 
@@ -367,6 +386,11 @@
                            
                     if (objetoCogido2)
                         player2.anims.play('leftWO', true);
+                    else if (auxiliar2 == 1 && auxiliar == 1) {// si colisionan 
+
+                        player2.anims.play('VO', true);
+                        auxiliar = 0;
+                    }
 
                     else
                         player2.anims.play('left', true);
@@ -377,6 +401,11 @@
 
                     if (objetoCogido2)
                         player2.anims.play('turnWO');
+                    else if (auxiliar2 == 1 && auxiliar == 1) {// si colisionan 
+
+                        player2.anims.play('VO', true);
+                        auxiliar = 0;
+                        }
                     else
                         player2.anims.play('turn');
                 }
@@ -403,6 +432,11 @@
 
                     if (objetoCogido)
                         player.anims.play('leftWO', true);
+                    else if (auxiliar2 == 1 && auxiliar == 1) {// si colisionan 
+
+                        player.anims.play('VO', true);
+                        auxiliar = 0;
+                    }
                     else
                         player.anims.play('left', true);
                 }
@@ -410,6 +444,10 @@
                     player.setVelocityX(180);
                     if (objetoCogido)
                         player.anims.play('rightWO', true);
+                    else if (auxiliar2 == 1 && auxiliar == 1) {// si colisionan 
+                        player.anims.play('VO', true);
+                        auxiliar = 0;
+                    }    
                     else
                         player.anims.play('right', true);
                 }
@@ -418,6 +456,11 @@
 
                     if (objetoCogido)
                         player.anims.play('turnWO');
+                    else if (auxiliar2 == 1 && auxiliar == 1) {// si colisionan 
+
+                        player.anims.play('VO', true);
+                        auxiliar = 0;
+                    }
                     else
                         player.anims.play('turn');
                 }
@@ -437,6 +480,11 @@
 
                     if (objetoCogido2)
                         player2.anims.play('rightWO', true);
+                    else if (auxiliar2 == 1 && auxiliar == 1) {// si colisionan 
+
+                        player2.anims.play('VO', true);
+                        auxiliar = 0;
+                    }
                     else
                         player2.anims.play('right', true);
 
@@ -446,6 +494,11 @@
 
                     if (objetoCogido2)
                         player2.anims.play('leftWO', true);
+                    else if (auxiliar2 == 1 && auxiliar == 1) {// si colisionan 
+
+                        player2.anims.play('VO', true);
+                        auxiliar = 0;
+                    }
                     else
                         player2.anims.play('left', true);
 
@@ -455,6 +508,10 @@
 
                     if (objetoCogido2)
                         player2.anims.play('turnWO');
+                    else if (auxiliar2 == 1 && auxiliar == 1) {// si colisionan 
+                        player2.anims.play('VO', true);
+                        auxiliar = 0;
+                    }
                     else
                         player2.anims.play('turn');
                 }
@@ -538,9 +595,10 @@
                         
                         player2.anims.play('right', true);
                     }
-                    else if (auxiliar == 1) {
+                    else if (auxiliar2 == 1 && auxiliar == 1) {// si colisionan 
 
                         player2.anims.play('VO', true);
+                        auxiliar = 0;
                     }
                     else if(objetoCogido2)
                         player2.anims.play('rightWO', true);
@@ -552,9 +610,10 @@
                     if (auxiliar2 == 0 && !objetoCogido2) {
                         player2.anims.play('left', true);
                     }
-                    else if (auxiliar == 1) {
+                    else if (auxiliar2 == 1 && auxiliar == 1) {// si colisionan 
 
                         player2.anims.play('VO', true);
+                        auxiliar = 0;
                     }
                     else if(objetoCogido2)
                         player2.anims.play('leftWO', true);
@@ -564,6 +623,11 @@
                     player2.setVelocityX(0);
                     if(objetoCogido2)
                         player2.anims.play('turnWO');
+                    else if (auxiliar2 == 1 && auxiliar == 1) {// si colisionan 
+
+                        player2.anims.play('VO', true);
+                        auxiliar = 0;
+                    }
                     else 
                         player2.anims.play('turn');
                     

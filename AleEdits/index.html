@@ -49,6 +49,7 @@
     var colisionPowerUp=false;
     var cuentaAtrasPowerUp=false;
     var tiempoPowerUp=1000;
+    var objetoCogido=false;
    
     function preload () //precargar recursos
     {
@@ -93,7 +94,9 @@
         player2.setBounce(0.0);
         player2.setCollideWorldBounds(true);
         player2.body.setGravityY(1000)
-             this.anims.create({
+
+        //animaciones sin objeto
+        this.anims.create({
             key: 'left', //nombre de la animación
             frames: this.anims.generateFrameNumbers('dude', { start: 0, end: 3 }),
             frames: this.anims.generateFrameNumbers('dude2', { start: 0, end: 3 }),
@@ -116,6 +119,30 @@
             repeat: -1
         });
 
+        //animaciones con objeto
+        this.anims.create({
+            key: 'leftWO', //nombre de la animación
+            frames: this.anims.generateFrameNumbers('dude', { start: 0, end: 3 }),
+            frames: this.anims.generateFrameNumbers('dude2', { start: 0, end: 3 }),
+            frameRate: 20,
+            repeat: -1 //volver a empezar cuando termine
+        });
+
+        this.anims.create({
+            key: 'turnWO',
+            frames: [ { key: 'dude', frame: 4 } ],
+            frames: [ { key: 'dude2', frame: 4 } ],
+            frameRate: 1
+        });
+
+        this.anims.create({
+            key: 'rightWO',
+            frames: this.anims.generateFrameNumbers('dude', { start: 5, end: 8 }),
+            frames: this.anims.generateFrameNumbers('dude2', { start: 5, end: 8 }),
+            frameRate: 20,
+            repeat: -1
+        });
+
         //creamos una estrella que sera uno de los objetos.
         objeto= this.physics.add.staticGroup();
         objetoPowerUp= this.physics.add.staticGroup();
@@ -130,8 +157,8 @@
 
         //Generamos el objeto en el centro de la pantalla
         objeto.create(320,240, objetoAleatorio);
-        
 
+        //colision con los objetos
         this.physics.add.collider(objeto, platforms,player,player2);
         this.physics.add.overlap(player, objeto, collectObject, null, this);
         this.physics.add.overlap(player2, objeto, collectObject, null, this);
@@ -159,9 +186,11 @@
     // coleccionar
     function collectObject (player, objetoAleatorio)
     {
+        
         objetoAleatorio.disableBody(true, true);// cuando toca el objeto
+        objetoCogido=true;
 
-        if (objeto.countActive(true) ===0)
+        if (objeto.countActive(true)=== 0)
         {
             objeto.children.iterate(function (child) {
             });
@@ -175,7 +204,7 @@
     
     function colectPowerUp (player, lata)
     {
-        lata.disableBody(true, true);// cuando toca el objeto
+        lata.disableBody(true, true); // cuando toca el objeto
         colisionPowerUp=true;
         cuentaAtrasPowerUp=true;
 
@@ -212,7 +241,7 @@
     {
         tiempo=Math.round(Math.floor(120000 - timer.getElapsed())/1000);
 
-        //Cuando el tiempo que queda es igual al random en el
+        //Cuando el tiempo que queda es igual al random en el que aparecen los power ups
         if(tiempo===generarPowerUp1)
         {
             generarPowerUp1=130;
@@ -234,6 +263,7 @@
         //para mostrar el temporizador
         info.setText( 'Time: ' + tiempo);
         
+        //Si coge el power up y aun no se ha acabado el tiempo de duracion de este, el jugador se mueve más rápido
         if(colisionPowerUp && cuentaAtrasPowerUp===true)
         {
             tiempoPowerUp--;
@@ -246,67 +276,114 @@
             if (cursors.left.isDown)
             {
                 player.setVelocityX(-500);
-                player.anims.play('left', true);
+
+                if(objetoCogido)
+                    player.anims.play('leftWO', true);
+                else 
+                    player.anims.play('left', true);
             }
             else if (cursors.right.isDown)
             {
                 player.setVelocityX(500);
-                player.anims.play('right', true);
+                if(objetoCogido)
+                    player.anims.play('rightWO', true);
+                else 
+                    player.anims.play('right', true);
             }
             else
             {
                 player.setVelocityX(0);
-                player.anims.play('turn');
+                
+                if(objetoCogido)
+                    player.anims.play('turnWO');
+                else 
+                    player.anims.play('turn');
             }
             //jugador 2
             if(player2.right.isDown){
 
                 player2.setVelocityX(500);
-                player2.anims.play('right', true);
+                
+                if(objetoCogido)
+                    player2.anims.play('rightWO', true);
+                else 
+                    player2.anims.play('right', true);
 
             }else if(player2.left.isDown){
 
                 player2.setVelocityX(-500);
-                player2.anims.play('left', true);
+
+                if(objetoCogido)
+                    player2.anims.play('leftWO', true);
+                else 
+                    player2.anims.play('left', true);
 
             }else{
                 
                 player2.setVelocityX(0);
-                player2.anims.play('turn');
+
+                if(objetoCogido)
+                    player2.anims.play('turnWO');
+                else 
+                    player2.anims.play('turn');
             }
         }
-        
+        //Si no ha cogido el Powerup o ya se ha acabado su efecto, el jugador se mueve a velocidad "normal"
         else if(!colisionPowerUp || cuentaAtrasPowerUp===false)
         {
             //jugador 1
             if (cursors.left.isDown)
             {
                 player.setVelocityX(-180);
-                player.anims.play('left', true);
+
+                if(objetoCogido)
+                    player.anims.play('leftWO', true);
+                else 
+                    player.anims.play('left', true);
             }
             else if (cursors.right.isDown)
             {
                 player.setVelocityX(180);
-                player.anims.play('right', true);
+
+                if(objetoCogido)
+                    player.anims.play('rightWO', true);
+                else 
+                    player.anims.play('right', true);
                 
             }
             else
             {
                 player.setVelocityX(0);
-                player.anims.play('turn');
+                
+                if(objetoCogido)
+                    player.anims.play('turnWO');
+                else 
+                    player.anims.play('turn');
             }
             //jugador 2
             if(player2.right.isDown){
                 player2.setVelocityX(180);
-                player2.anims.play('right', true);
+                
+                if(objetoCogido)
+                    player2.anims.play('rightWO', true);
+                else 
+                    player2.anims.play('right', true);
 
             }else if(player2.left.isDown){
                 player2.setVelocityX(-180);
-                player2.anims.play('left', true);
+
+                if(objetoCogido)
+                    player.anims.play('leftWO', true);
+                else 
+                    player.anims.play('left', true);
 
             }else{
                 player2.setVelocityX(0);
-                player2.anims.play('turn');
+                
+                if(objetoCogido)
+                    player2.anims.play('turnWO');
+                else 
+                    player2.anims.play('turn');
             }
         }
 

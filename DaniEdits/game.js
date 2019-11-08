@@ -1,7 +1,9 @@
 var config = {
     type: Phaser.AUTO, //Intenta inicializar WebGl y si no puede inicializa canvas
+    
     width: 800,
-    height: 600,
+    height: 600,    
+    
     physics:{
         default: 'arcade',
         arcade:{
@@ -10,6 +12,7 @@ var config = {
         }
     },
     scene: [Scene2,Scene1,Scene3,Scene4]
+ 
     
 };
 

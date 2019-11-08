@@ -13,16 +13,38 @@
         
     
 </head>
-<body>
+<body >
 
         <script>
-        var platforms;
+
         var player;
+        var player2;
+        var platforms;
         var cursors;
-        var stars;
-        var score = 0;
-        var scoreText;
-        var paused = false;
+        var timer;
+        var tiempo;
+        var info;
+        var objetoAleatorio;
+        var objeto;
+        var objetoPowerUp;
+        var total = 0;
+        var aleatorio;
+        var generarPowerUp1=Phaser.Math.Between(40, 25);
+        var generarPowerUp2=Phaser.Math.Between(20, 5);
+        var colisionPowerUp=false;
+        var colisionPowerUp2=false;
+        var cuentaAtrasPowerUp=false;
+        var tiempoPowerUp=250;
+        var tiempoPowerUp2=250;
+        var objetoCogido=false;
+        var objetoCogido2=false;
+        var cuentaAtrasParadoP1 = false;
+        var cuentaAtrasParadoP2 = false;
+        var P1P2 = false;
+        var P2P1 = false;
+        var tiempoParadoP1 = 150;
+        var tiempoParadoP2 = 150;
+
         </script>
 
 </body>

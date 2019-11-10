@@ -23,10 +23,10 @@ class Scene3 extends Phaser.Scene{
         this.load.image('lata', 'assets/lata.png');
 
         this.load.spritesheet('dude', 'assets/dude.png',
-        { frameWidth: 32, frameHeight: 48 } //carga especial para una hoja de sprites
+        { frameWidth: 64, frameHeight: 58 } //carga especial para una hoja de sprites
         );
         this.load.spritesheet('dude2', 'assets/dude2.png',
-        { frameWidth: 32, frameHeight: 48 } //carga especial para una hoja de sprites
+        { frameWidth: 64, frameHeight: 58 } //carga especial para una hoja de sprites
         );
     }
 
@@ -38,10 +38,10 @@ class Scene3 extends Phaser.Scene{
         this.add.image(400, 300, 'fondo');
 
         platforms = this.physics.add.staticGroup(); //crea un nuevo grupo de elementos estáticos y lo asigna a la variable platforms
-        platforms.create(400, 568, 'ground').setScale(2).refreshBody(); //cargarmos la imagen multiplicando por 2 su tamaño
-        platforms.create(600, 400, 'ground');
-        platforms.create(50, 250, 'ground');
-        platforms.create(750, 220, 'ground');
+        platforms.create(400, 600, 'ground').setScale(2,0.90).refreshBody(); //cargarmos la imagen multiplicando por 2 su tamaño
+        //platforms.create(600, 400, 'ground');
+        //platforms.create(50, 250, 'ground');
+        //platforms.create(750, 220, 'ground');
 
         //Creación del personaje
         player = this.physics.add.sprite(100, 450, 'dude'); //creación de un sprite con físicas
@@ -59,8 +59,8 @@ class Scene3 extends Phaser.Scene{
         //animaciones sin objeto
         this.anims.create({
             key: 'left', //nombre de la animación
-            frames: this.anims.generateFrameNumbers('dude', { start: 0, end: 3 }),
-            frames: this.anims.generateFrameNumbers('dude2', { start: 0, end: 3 }),
+            frames: this.anims.generateFrameNumbers('dude', { start: 0, end: 7 }),
+            frames: this.anims.generateFrameNumbers('dude2', { start: 0, end: 7 }),
             frameRate: 20,
             repeat: -1 //volver a empezar cuando termine
         });
@@ -74,40 +74,80 @@ class Scene3 extends Phaser.Scene{
 
         this.anims.create({
             key: 'right',
-            frames: this.anims.generateFrameNumbers('dude', { start: 5, end: 8 }),
-            frames: this.anims.generateFrameNumbers('dude2', { start: 5, end: 8 }),
+            frames: this.anims.generateFrameNumbers('dude', { start: 0, end: 7 }),
+            frames: this.anims.generateFrameNumbers('dude2', { start: 0, end: 7 }),
             frameRate: 20,
             repeat: -1
         });
 
-        //animaciones con objeto
+        //animaciones con ovillo
         this.anims.create({
-            key: 'leftWO', //nombre de la animación
-            frames: this.anims.generateFrameNumbers('dude', { start: 5, end: 8 }),
-            frames: this.anims.generateFrameNumbers('dude2', { start: 5, end: 8 }),
+            key: 'ovilloleft', //nombre de la animación
+            frames: this.anims.generateFrameNumbers('dude', { start: 8, end: 15 }),
+            frames: this.anims.generateFrameNumbers('dude2', { start: 8, end: 15 }),
             frameRate: 20,
             repeat: -1 //volver a empezar cuando termine
         });
-
         this.anims.create({
-            key: 'turnWO',
-            frames: [ { key: 'dude', frame: 4 } ],
-            frames: [ { key: 'dude2', frame: 4 } ],
+            key: 'ovilloright', //nombre de la animación
+            frames: this.anims.generateFrameNumbers('dude', { start: 8, end: 15 }),
+            frames: this.anims.generateFrameNumbers('dude2', { start: 8, end: 15 }),
+            frameRate: 20,
+            repeat: -1 //volver a empezar cuando termine
+        });
+        this.anims.create({
+            key: 'ovilloturn', //nombre de la animación
+            frames: [ { key: 'dude', frame: 8 } ],
+            frames: [ { key: 'dude2', frame: 8 } ],
             frameRate: 1
         });
-
+        //animaciones con pescado
         this.anims.create({
-            key: 'rightWO',
-            frames: this.anims.generateFrameNumbers('dude', { start: 1, end: 3 }),
-            frames: this.anims.generateFrameNumbers('dude2', { start: 1, end: 3 }),
+            key: 'pescadoleft', //nombre de la animación
+            frames: this.anims.generateFrameNumbers('dude', { start: 16, end: 23 }),
+            frames: this.anims.generateFrameNumbers('dude2', { start: 16, end: 23 }),
             frameRate: 20,
-            repeat: -1
+            repeat: -1 //volver a empezar cuando termine
+        });
+        this.anims.create({
+            key: 'pescadoright', //nombre de la animación
+            frames: this.anims.generateFrameNumbers('dude', { start: 16, end:23 }),
+            frames: this.anims.generateFrameNumbers('dude2', { start: 16, end: 23 }),
+            frameRate: 20,
+            repeat: -1 //volver a empezar cuando termine
+        });
+        this.anims.create({
+            key: 'pescadoturn', //nombre de la animación
+            frames: [ { key: 'dude', frame: 16 } ],
+            frames: [ { key: 'dude2', frame: 16 } ],
+            frameRate: 1
+        });
+        //animaciones con rata
+        this.anims.create({
+            key: 'rataleft', //nombre de la animación
+            frames: this.anims.generateFrameNumbers('dude', { start: 24, end: 31 }),
+            frames: this.anims.generateFrameNumbers('dude2', { start: 24, end: 31 }),
+            frameRate: 20,
+            repeat: -1 //volver a empezar cuando termine
+        });
+        this.anims.create({
+            key: 'rataright', //nombre de la animación
+            frames: this.anims.generateFrameNumbers('dude', { start: 24, end: 31 }),
+            frames: this.anims.generateFrameNumbers('dude2', { start: 24, end: 31 }),
+            frameRate: 20,
+            repeat: -1 //volver a empezar cuando termine
+        });
+        this.anims.create({
+            key: 'rataturn', //nombre de la animación
+            frames: [ { key: 'dude', frame: 24 } ],
+            frames: [ { key: 'dude2', frame: 24 } ],
+            frameRate: 1
         });
         // vomito animacion 
         this.anims.create({
             key: 'VO', //nombre de la animación
-            frames: this.anims.generateFrameNumbers('dude', { start: 0, end: 3 }),
-            frames: this.anims.generateFrameNumbers('dude2', { start: 0, end: 3 }),
+            frames: this.anims.generateFrameNumbers('dude', { start: 32, end: 55 }),
+            frames: this.anims.generateFrameNumbers('dude2', { start: 32, end: 55 }),
             frameRate: 20,
             repeat: -1 //volver a empezar cuando termine
         });
@@ -288,29 +328,15 @@ class Scene3 extends Phaser.Scene{
                 //jugador 1
                 if (cursors.left.isDown && P1P2 == false) {
                     player.setVelocityX(-500);
-
-                    if (objetoCogido)
-                        player.anims.play('leftWO', true);
-                    
-                    else
-                        player.anims.play('left', true);
+                    this.animacion(player,'left',objetoCogido);
                 }
                 else if (cursors.right.isDown && P1P2 == false) {
                     player.setVelocityX(500);
-                    if (objetoCogido)
-                        player.anims.play('rightWO', true);
-                    
-                    else
-                        player.anims.play('right', true);
+                    this.animacion(player,'right',objetoCogido);
                 }
                 else {
                     player.setVelocityX(0);
-
-                    if (objetoCogido)
-                        player.anims.play('turnWO');
-                    
-                    else
-                        player.anims.play('turn');
+                    this.animacion(player,'turn',objetoCogido);
                 }
                 if (cursors.up.isDown && player.body.touching.down && P1P2 == false) {
                     
@@ -342,33 +368,17 @@ class Scene3 extends Phaser.Scene{
                 if (player2.right.isDown && P2P1 == false) {
 
                     player2.setVelocityX(180);
-
-                    if (objetoCogido2)
-                        player2.anims.play('rightWO', true);
-                    
-                    else
-                        player2.anims.play('right', true);
+                    this.animacion(player2,'right',objetoCogido2);
 
                 } else if (player2.left.isDown && P2P1 == false) {
 
                     player2.setVelocityX(-180);
-                           
-                    if (objetoCogido2)
-                        player2.anims.play('leftWO', true);
-                    
-
-                    else
-                        player2.anims.play('left', true);
+                    this.animacion(player2,'left',objetoCogido2);
 
                 } else {
 
                     player2.setVelocityX(0);
-
-                    if (objetoCogido2)
-                        player2.anims.play('turnWO');
-                    
-                    else
-                        player2.anims.play('turn');
+                    this.animacion(player2,'turn',objetoCogido2);
                 }
                 if (player2.up.isDown && player2.body.touching.down && P2P1 == false) {
                     
@@ -406,29 +416,15 @@ class Scene3 extends Phaser.Scene{
                 //jugador 1
                 if (cursors.left.isDown && P1P2 == false) {
                     player.setVelocityX(-180);
-
-                    if (objetoCogido)
-                        player.anims.play('leftWO', true);
-                   
-                    else
-                        player.anims.play('left', true);
+                    this.animacion(player,'left',objetoCogido);
                 }
                 else if (cursors.right.isDown && P1P2 == false) {
                     player.setVelocityX(180);
-                    if (objetoCogido)
-                        player.anims.play('rightWO', true);
-                        
-                    else
-                        player.anims.play('right', true);
+                    this.animacion(player,'right',objetoCogido);
                 }
                 else {
                     player.setVelocityX(0);
-
-                    if (objetoCogido)
-                        player.anims.play('turnWO');
-                    
-                    else
-                        player.anims.play('turn');
+                    this.animacion(player,'turn',objetoCogido);
                 }
                 if (cursors.up.isDown && player.body.touching.down && P1P2 == false) {
                     
@@ -459,32 +455,17 @@ class Scene3 extends Phaser.Scene{
                 if (player2.right.isDown && P2P1 == false) {
 
                     player2.setVelocityX(500);
-
-                    if (objetoCogido2)
-                        player2.anims.play('rightWO', true);
-                    
-                    else
-                        player2.anims.play('right', true);
+                    this.animacion(player2,'right',objetoCogido2);
 
                 } else if (player2.left.isDown && P2P1 == false) {
 
                     player2.setVelocityX(-500);
-
-                    if (objetoCogido2)
-                        player2.anims.play('leftWO', true);
-                    
-                    else
-                        player2.anims.play('left', true);
+                    this.animacion(player2,'left',objetoCogido2);
 
                 } else {
 
                     player2.setVelocityX(0);
-
-                    if (objetoCogido2)
-                        player2.anims.play('turnWO');
-                    
-                    else
-                        player2.anims.play('turn');
+                    this.animacion(player2,'turn',objetoCogido2);
                 }
                 if (player2.up.isDown && player2.body.touching.down && P2P1 == false) {
                     
@@ -521,34 +502,19 @@ class Scene3 extends Phaser.Scene{
                 if (cursors.left.isDown && P1P2 == false) {
 
                     player.setVelocityX(-180);
-
-                    if ( objetoCogido===false) {
-                        player.anims.play('left', true);
-                    }
-                    
-                    else if(objetoCogido)
-                        player.anims.play('leftWO', true);
+                    this.animacion(player,'left',objetoCogido);
 
                 }
                 else if (cursors.right.isDown && P1P2 == false) {
 
                     player.setVelocityX(180);
-                    if ( objetoCogido===false) {
-                        player.anims.play('right', true);
-                    }
-                    
-                    else if(objetoCogido)
-                        player.anims.play('rightWO', true);
+                    this.animacion(player,'right',objetoCogido);
 
                 }
                 else {
 
                     player.setVelocityX(0);
-
-                    if(objetoCogido)
-                        player.anims.play('turnWO');
-                    else 
-                        player.anims.play('turn');
+                    this.animacion(player,'turn',objetoCogido);
 
                     
                 }
@@ -582,32 +548,17 @@ class Scene3 extends Phaser.Scene{
                 if (player2.right.isDown && P2P1 == false) {
 
                     player2.setVelocityX(180);
-
-                    if ( !objetoCogido2) {
-                        
-                        player2.anims.play('right', true);
-                    }
-                    
-                    else if(objetoCogido2)
-                        player2.anims.play('rightWO', true);
+                    this.animacion(player2,'right',objetoCogido2);
 
                 } else if (player2.left.isDown && P2P1 == false) {
 
                     player2.setVelocityX(-180);
-
-                    if ( !objetoCogido2) {
-                        player2.anims.play('left', true);
-                    }
-                    else if(objetoCogido2)
-                        player2.anims.play('leftWO', true);
+                    this.animacion(player2,'left',objetoCogido2);
                     
 
                 } else {
                     player2.setVelocityX(0);
-                    if(objetoCogido2)
-                        player2.anims.play('turnWO');
-                    else 
-                        player2.anims.play('turn');
+                    this.animacion(player2,'turn',objetoCogido2);
                     
                 } 
                 if (player2.up.isDown && player2.body.touching.down && P2P1 == false) {
@@ -639,7 +590,18 @@ class Scene3 extends Phaser.Scene{
             }
         }
     
-    
+    animacion(jugador, direccion, objetocog){
+ 
+        anim=objetoAleatorio+direccion;
+        if (objetocog){
+            
+            jugador.anims.play(anim, true);
+        }
+        else
+            jugador.anims.play(direccion, true);
+
+    }
+
     render() {
 
         game.debug.text('Time until event: ' + timer.duration.toFixed(0), 32, 32);

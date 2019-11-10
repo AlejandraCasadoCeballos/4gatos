@@ -11,8 +11,13 @@ var config = {
             debug:false
         }
     },
-    scene: [Scene2,Scene1,Scene3,Scene4]
- 
+    scene: [Scene2,Scene1,Scene3,Scene4],
+    scale: {
+        mode: Phaser.Scale.FIT,// para qeu al rescalar la pantalla se siga manteninedo igual
+        autoCenter: Phaser.Scale.LEFT,// centrar
+        width: 800,
+        height: 600
+    },
     
 };
 

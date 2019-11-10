@@ -7,7 +7,7 @@ class Scene1 extends Phaser.Scene{
         
     }
     create(){
-        const botonback = this.add.text(config.width/8, 7*config.height/8,"Back",{font:"80px Courier", fill:"Red"}).setOrigin(0.5,0.5);
+        const botonback = this.add.text(config.width/8, 7*config.height/8,"Back",{font:"80px Courier", fill:"white"}).setOrigin(0.5,0.5);
         
         var dani = this.add.text(config.width/2,config.height/7,"Daniel Brenlla Gómez",{font:"40px Courier", fill:"white"}).setOrigin(0.5,0.5);
         var ale= this.add.text(config.width/2,2*config.height/7,"Alejandra Casado Ceballos",{font:"40px Courier", fill:"white"}).setOrigin(0.5,0.5);
@@ -25,16 +25,14 @@ class Scene1 extends Phaser.Scene{
         //BOTON PLAY
         botonback.on('pointerdown', () => { this.scene.start("Menu"); });
         botonback.on('pointerover', () => { this.toYellow(botonback) });
-        botonback.on('pointerout', () => { this.toRed(botonback); });
+        botonback.on('pointerout', () => { this.toWhite(botonback); });
     }
 
     toYellow(boton){
         boton.setStyle({ fill: 'Yellow'});
     }
 
-    toRed(boton){
-        boton.setStyle({ fill: 'Red'});
+    toWhite(boton){
+        boton.setStyle({ fill: 'white'});
     }
-
-
 }

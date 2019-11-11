@@ -114,19 +114,19 @@ Respecto a los nombres de los gatos, nos hemos inspirado en el musical CATS.
 
 ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Im%C3%A1genes/MusicalCats.jpg)
 
-## Just 4 Cats V1.0
+# Just 4 Cats V1.0
 
 En esta primera entrega hemos implementado muchas de las funcionalidades que planteamos en el GDD inicial.
-- Dificultades encontradas en el desarrollo
+## Dificultades encontradas en el desarrollo
 (Resumen de cosillas que hemos implementado)
-- Mecánicas
-- Interfaces
+## Mecánicas
+## Interfaces
 
 ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/DaniEdits/assets/menu.jpg)
 
 Menú principal
 
-- Arte: Todo lo visual ha sido realizado por nosotros. Para los personajes, realizamos concepts de las animaciones, en los que nos apoyamos para construir los sprites finales. El fondo y las diferentes pantallas han sido creados en Photoshop. 
+## Arte: Todo lo visual ha sido realizado por nosotros. Para los personajes, realizamos concepts de las animaciones, en los que nos apoyamos para construir los sprites finales. El fondo y las diferentes pantallas han sido creados en Photoshop. 
 
 ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/DaniEdits/assets/fondo.jpg)
 
@@ -137,7 +137,22 @@ Fondo
 
 Sprites de los personajes
 
-- Música y sonido -> buscar referencias de dónde es la música
+## Música y sonido -> buscar referencias de dónde es la música
+## Webgrafía
+Fuentes de los grafitis:
+https://www.dafont.com/es/kenny-izatt.d1179
+https://www.dafont.com/es/wassimo-wassimo-style.d2798
+https://www.dafont.com/es/joris-oostinga.d5745
+Música:
+https://freesound.org/people/bone666138/sounds/466998/
+https://freesound.org/people/Sirkoto51/sounds/349179/
+Código:
+https://phaser.io/tutorials/making-your-first-phaser-3-game-spanish
+https://www.youtube.com/watch?list=PLL_H5w4KA8dP9pPayzYxHCD4IQ80nkfY9&v=4RaN4g9KzDo
+Animación:
+https://www.pinterest.es/pin/13299761377376292/
+
+
 
 ## Desarrolladores: 
 Alejandra Casado Ceballos, email: a.casadoce.2017@alumnos.urjc.es, GitHub: AlejandraCasadoCeballos (https://github.com/AlejandraCasadoCeballos)

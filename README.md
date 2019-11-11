@@ -1,6 +1,6 @@
 # JUST 4 CATS
 
-![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Im%C3%A1genes/Ilustracio%CC%81n_sin_ti%CC%81tulo.png)
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Imagenes_fase_1/Ilustracio%CC%81n_sin_ti%CC%81tulo.png)
 
 ## CONCEPTO Y GÉNERO
 
@@ -72,7 +72,7 @@ La estética será pixelArt. Utilizaremos una paleta de colores pastel.
 Hemos utilizado esta paleta porque creemos que es más agradable visualmente.
 A continuación, presentamos algunos concepts para los diseños del gato, aunque los colores serán diferentes y aún no hemos elegido cuál será el modelo definitivo.
 
-![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Im%C3%A1genes/Gatos1.jfif)
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Imagenes_fase_1/Gatos1.jfif)
 ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Im%C3%A1genes/Gatos2.jfif)
 
 Este es un boceto a papel del escenario, nos gustaría que tuviese una estética más oscura para encontrar el contraste con los colores pastel que tendrán los personajes.

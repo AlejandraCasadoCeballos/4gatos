@@ -13,7 +13,7 @@ class Scene3 extends Phaser.Scene{
         this.load.image('pescado', 'assets/pescado.png');
         this.load.image('ovillo', 'assets/ovillo.png');
         this.load.image('rata', 'assets/rata.png');
-        this.load.image('lata', 'assets/lata.png');
+        pU=this.load.image('lata', 'assets/lata.png');
         this.load.audio('juego',['assets/juego.mp3', 'assets/juego.ogg']);
 
         this.load.spritesheet('dude', 'assets/dude.png',
@@ -45,18 +45,20 @@ class Scene3 extends Phaser.Scene{
 
         platforms.create(339, 367, 'ground').setScale(0.33, 0.3).refreshBody().setAlpha(0.2);//ventana centro
         platforms.create(512, 347, 'ground').setScale(0.23, 0.3).refreshBody().setAlpha(0.2);//ventilador bajo
-        platforms.create(640, 445, 'ground').setScale(0.43, 0.3).refreshBody().setAlpha(0.2);//basura
-        platforms.create(90, 470, 'ground').setScale(0.3, 0.3).refreshBody().setAlpha(0.2);//coche
-        platforms.create(180, 510, 'ground').setScale(0.2, 0.3).refreshBody().setAlpha(0.2);//coche
+        platforms.create(640, 480, 'ground').setScale(0.5, 0.3).refreshBody().setAlpha(0.2);//basura
+        platforms.create(90, 480, 'ground').setScale(0.3, 0.3).refreshBody().setAlpha(0.2);//coche
+        platforms.create(180, 520, 'ground').setScale(0.2, 0.3).refreshBody().setAlpha(0.2);//coche
         platforms.create(1, 1, 'ground').setScale(0.15, 200).refreshBody().setAlpha(0.2); //cargarmos la imagen multiplicando por 2 su tamaño
         platforms.create(800, 800, 'ground').setScale(0.15, 200).refreshBody().setAlpha(0.2);
         
 
         //Creación del personaje
-        player = this.physics.add.sprite(100, 450, 'dude'); //creación de un sprite con físicas
+        player = this.physics.add.sprite(734, 560, 'dude'); //creación de un sprite con físicas
         this.physics.add.collider(player, platforms);
-        player2 = this.physics.add.sprite(16, 450, 'dude2'); //creación de un sprite con físicas
+        //player.body.checkCollision.up=false;
+        player2 = this.physics.add.sprite(60, 560, 'dude2'); //creación de un sprite con físicas
         this.physics.add.collider(player2, platforms);
+        //player2.body.checkCollision.up=false;
         this.physics.add.collider(player2, player, this.touchPlayer);
         player.setBounce(0.0);
         player.setCollideWorldBounds(true);
@@ -76,7 +78,7 @@ class Scene3 extends Phaser.Scene{
 
         this.anims.create({
             key: 'turnplayer',
-            frames: [ { key: 'dude', frame: 4 } ],
+            frames: [ { key: 'dude', frame: 32 } ],
             frameRate: 1
         });
 
@@ -159,7 +161,7 @@ class Scene3 extends Phaser.Scene{
 
         this.anims.create({
             key: 'turnplayer2',
-            frames: [ { key: 'dude2', frame: 4 } ],
+            frames: [ { key: 'dude2', frame: 32 } ],
             frameRate: 1
         });
 
@@ -246,7 +248,7 @@ class Scene3 extends Phaser.Scene{
             objetoAleatorio="rata";
 
         //Generamos el objeto en el centro de la pantalla
-        objeto.create(320,240, objetoAleatorio);
+        objeto.create(340, 175, objetoAleatorio);
 
         //colision con los objetos
         this.physics.add.overlap(player, objeto, this.collectObject, null, this);
@@ -262,9 +264,11 @@ class Scene3 extends Phaser.Scene{
         
         this.physics.add.overlap(player, player2, this.hitPlayer, null, this);
         this.physics.add.overlap(player2, player, this.hitPlayer, null, this);
+        
 
         info = this.add.text(550, 10, '', {font:"40px Courier", fill:"white"});
         timer = this.time.addEvent({ delay: 45000, callback: this.gameOver, callbackScope: this });
+
 
     }
 
@@ -275,12 +279,12 @@ class Scene3 extends Phaser.Scene{
             this.scene.start("Ganador1");
         else if(objetoCogido2)
             this.scene.start("Ganador2");
-        else 
+        else if(!objetoCogido && !objetoCogido2)
             this.scene.start("Menu");
 
         objetoCogido=false;
         objetoCogido2=false;
-        generarPowerUp1 = Phaser.Math.Between(50, 30);
+        generarPowerUp1 = Phaser.Math.Between(40, 30);
         generarPowerUp2 = Phaser.Math.Between(20, 5);
         pU.x+=50;
     }
@@ -358,12 +362,11 @@ class Scene3 extends Phaser.Scene{
             cuentaAtrasParadoP1 = true;
             P2P1 = true;
             cuentaAtrasParadoP2 = false;
-
+            
             P1P2 = false;
 
         } else if(player2.body.touching.up ){
             cuentaAtrasParadoP2 = true;
-
             P1P2 = true;
             cuentaAtrasParadoP1 = false;
            P2P1 = false;
@@ -400,7 +403,7 @@ class Scene3 extends Phaser.Scene{
             //Cuando el tiempo que queda es igual al random en el que aparecen los power ups
             if (tiempo< generarPowerUp1 && tiempo> (generarPowerUp1-2)) {
                 generarPowerUp1=130;
-                pU=objetoPowerUp.create(Phaser.Math.Between(50, 100), Phaser.Math.Between(50, 100), "lata");
+                pU=objetoPowerUp.create(640,170, "lata");
                 this.physics.add.overlap(player, objetoPowerUp, this.colectPowerUp1, null, this);
                 this.physics.add.overlap(player2, objetoPowerUp, this.colectPowerUp2, null, this);
             }
@@ -410,7 +413,7 @@ class Scene3 extends Phaser.Scene{
             if (tiempo === generarPowerUp2) {
                 generarPowerUp2 = 130;
                 //objetoPowerUp.disableBody(true, true);
-                objetoPowerUp.create(Phaser.Math.Between(50, 100), Phaser.Math.Between(50, 100), "lata");
+                objetoPowerUp.create(339, 350, "lata");
                 this.physics.add.overlap(player, objetoPowerUp, this.colectPowerUp1, null, this);
                 this.physics.add.overlap(player2, objetoPowerUp, this.colectPowerUp2, null, this);
             }
@@ -422,16 +425,15 @@ class Scene3 extends Phaser.Scene{
             if (colisionPowerUp && cuentaAtrasPowerUp) {
                 tiempoPowerUp--;
                 if (tiempoPowerUp === 0) {
-                    tiempoPowerUp = 250;
                     cuentaAtrasPowerUp = false;
                 }
                 //jugador 1
                 if (cursors.left.isDown && P1P2 == false) {
-                    player.setVelocityX(-500);
+                    player.setVelocityX(-300);
                     this.animacion(player,'player','left',objetoCogido);
                 }
                 else if (cursors.right.isDown && P1P2 == false) {
-                    player.setVelocityX(500);
+                    player.setVelocityX(300);
                     this.animacion(player,'player','right',objetoCogido);
                 }
                 else if(!P1P2) {
@@ -440,12 +442,13 @@ class Scene3 extends Phaser.Scene{
                 }
                 if (cursors.up.isDown && player.body.touching.down && P1P2 == false) {
                     
-                   player.setVelocityY(-800); 
+                   player.setVelocityY(-600); 
                 }
                 if (P1P2 == true) {
                     tiempoParadoP1--;
                     if (tiempoParadoP1 > 0) {
                         this.animacion(player,'player','VO',objetoCogido2);
+                        
                     } else {
                         tiempoParadoP1 = 50;
                         P1P2 = false;
@@ -473,7 +476,7 @@ class Scene3 extends Phaser.Scene{
                 }
                 if (player2.up.isDown && player2.body.touching.down && P2P1 == false) {
                     
-                    player2.setVelocityY(-800); 
+                    player2.setVelocityY(-600); 
                      
                  }
                  if (P2P1 == true) {
@@ -492,7 +495,6 @@ class Scene3 extends Phaser.Scene{
             if (colisionPowerUp2 && cuentaAtrasPowerUp) {
                 tiempoPowerUp2--;
                 if (tiempoPowerUp2 === 0) {
-                    tiempoPowerUp2 = 250;
                     cuentaAtrasPowerUp = false;
                 }
                 //jugador 1
@@ -510,7 +512,7 @@ class Scene3 extends Phaser.Scene{
                 }
                 if (cursors.up.isDown && player.body.touching.down && P1P2 == false) {
                     
-                    player.setVelocityY(-800); 
+                    player.setVelocityY(-600); 
                 }
                 if (P1P2 == true) {
                     tiempoParadoP1--;
@@ -527,12 +529,12 @@ class Scene3 extends Phaser.Scene{
                 //jugador 2
                 if (player2.right.isDown && P2P1 == false) {
 
-                    player2.setVelocityX(500);
+                    player2.setVelocityX(300);
                     this.animacion(player2,'player2','right',objetoCogido2);
 
                 } else if (player2.left.isDown && P2P1 == false) {
 
-                    player2.setVelocityX(-500);
+                    player2.setVelocityX(-300);
                     this.animacion(player2,'player2','left',objetoCogido2);
 
                 } else if(!P2P1) {
@@ -542,7 +544,7 @@ class Scene3 extends Phaser.Scene{
                 }
                 if (player2.up.isDown && player2.body.touching.down && P2P1 == false) {
                     
-                    player2.setVelocityY(-800); 
+                    player2.setVelocityY(-600); 
                 }
                 if (P2P1 == true) {
                     tiempoParadoP2--;
@@ -585,7 +587,7 @@ class Scene3 extends Phaser.Scene{
                 }
                 if (cursors.up.isDown && player.body.touching.down && P1P2 == false) {
                     
-                    player.setVelocityY(-800); 
+                    player.setVelocityY(-600); 
                      
                 }
                 if (P1P2 == true) {
@@ -618,7 +620,7 @@ class Scene3 extends Phaser.Scene{
                 } 
                 if (player2.up.isDown && player2.body.touching.down && P2P1 == false) {
                     
-                    player2.setVelocityY(-800); 
+                    player2.setVelocityY(-600); 
                      
                  }
                  if (P2P1 == true) {

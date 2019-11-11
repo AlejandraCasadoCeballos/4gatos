@@ -117,17 +117,43 @@ Respecto a los nombres de los gatos, nos hemos inspirado en el musical CATS.
 # JUST 4 CATS V1.0
 
 En esta primera entrega hemos implementado muchas de las funcionalidades que planteamos en el GDD inicial.
+
 ## DIFICULTADES
-(Resumen de cosillas que hemos implementado)
+A nivel de programación, la mayor dificultad que hemos encontrado ha sido trabajar en mecánicas diferentes y que luego al juntarlas en un mismo juego no diese problemas.
+Otra dificultad que tuvimos al principio en este ámbito fue la inexperiencia con Phaser 3, aunque gracias a los tutoriales y a nuestros conocimientos previos de javaScript y html nos terminamos adaptando rápidamente.
+Además, ha sido complicado encontrar código de ayuda en algunos momentos. Por ejemplo, cuando queríamos meter audio, las páginas nos decían que debíamos usar this.audio.add(); en lugar de this.sound.add();, esto se debe a que son funcionalidades de diferentes versiones de phaser 3 y encontrar lo que necesitabamos y que funcionase en nuestra versión ha sido difícil.
+
+
 ## MECÁNICAS
+Para esta fase 2 hemos conseguido implementar todas las mecánicas que queríamos implementar. Sin embargo, una de las que nombramos en la anterior fase, "salto contra la pared", la hemos terminado por descartar. Ha sido una decisión tomada a raíz de que en nuestro escenario hay muchas plataformas en las que el gato se puede subir y muy poco espacio en la pared que utilizar para rebotar.
+El resto de funcionalidades: vómito cuando un jugador es aplastado por otro, salto simple, movimiento lateral, robar objeto al jugador contrario y ganar velocidad debido a coger un power up, las hemos implementado.
+
 ## INTERFACES
+
+Menú principal:
 
 ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/DaniEdits/assets/menu.jpg)
 
-Menú principal
+Cómo jugar:
+
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/DaniEdits/assets/comoJugar.jpg)
+
+Créditos:
+
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/DaniEdits/assets/creditos.jpg)
+
+Pantalla de victoria jugador 1:
+
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/DaniEdits/assets/ganadorMuffin.jpg)
+
+Pantalla de victoria jugador 2:
+
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/DaniEdits/assets/ganadorMungojerry.jpg)
+
+
 
 ## ARTE
-Todo lo visual ha sido realizado por nosotros. Para los personajes, realizamos concepts de las animaciones, en los que nos apoyamos para construir los sprites finales. El fondo y las diferentes pantallas han sido creados en Photoshop. 
+Todo lo visual ha sido realizado por nosotros. Para los personajes, realizamos concepts de las animaciones, en los que nos apoyamos para construir los sprites finales. El fondo y las diferentes pantallas han sido creados en Photoshop y los objetos hemos usado unos modelos de los que diseñamos para la anterior fase.
 
 ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/DaniEdits/assets/fondo.jpg)
 
@@ -138,7 +164,9 @@ Fondo
 
 Sprites de los personajes
 
-## MÚSICA Y SONIDO
+## MÚSICA Y FUENTES
+A pesar de que todos los recursos utilizados han sido creados por nosotros para el desarrollo de este juego, la música y la fuente de letra usada para los títulos de las interfaces las hemos descargado de unas páginas web que adjuntamos en la webgrafía.
+
 ## WEBGRAFÍA
 Fuentes de los grafitis:
 

@@ -1,6 +1,6 @@
 # JUST 4 CATS
 
-![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Im%C3%A1genes/Ilustracio%CC%81n_sin_ti%CC%81tulo.png)
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Imagenes_fase_1/Ilustracio%CC%81n_sin_ti%CC%81tulo.png)
 
 ## CONCEPTO Y GÉNERO
 
@@ -72,7 +72,7 @@ La estética será pixelArt. Utilizaremos una paleta de colores pastel.
 Hemos utilizado esta paleta porque creemos que es más agradable visualmente.
 A continuación, presentamos algunos concepts para los diseños del gato, aunque los colores serán diferentes y aún no hemos elegido cuál será el modelo definitivo.
 
-![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Im%C3%A1genes/Gatos1.jfif)
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Imagenes_fase_1/Gatos1.jfif)
 ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Im%C3%A1genes/Gatos2.jfif)
 
 Este es un boceto a papel del escenario, nos gustaría que tuviese una estética más oscura para encontrar el contraste con los colores pastel que tendrán los personajes.
@@ -114,46 +114,19 @@ Respecto a los nombres de los gatos, nos hemos inspirado en el musical CATS.
 
 ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Im%C3%A1genes/MusicalCats.jpg)
 
-# JUST 4 CATS V1.0
+## Just 4 Cats V1.0
 
 En esta primera entrega hemos implementado muchas de las funcionalidades que planteamos en el GDD inicial.
-
-## DIFICULTADES
-A nivel de programación, la mayor dificultad que hemos encontrado ha sido trabajar en mecánicas diferentes y que luego al juntarlas en un mismo juego no diese problemas.
-Otra dificultad que tuvimos al principio en este ámbito fue la inexperiencia con Phaser 3, aunque gracias a los tutoriales y a nuestros conocimientos previos de javaScript y html nos terminamos adaptando rápidamente.
-Además, ha sido complicado encontrar código de ayuda en algunos momentos. Por ejemplo, cuando queríamos meter audio, las páginas nos decían que debíamos usar this.audio.add(); en lugar de this.sound.add();, esto se debe a que son funcionalidades de diferentes versiones de phaser 3 y encontrar lo que necesitabamos y que funcionase en nuestra versión ha sido difícil.
-
-
-## MECÁNICAS
-Para esta fase 2 hemos conseguido implementar todas las mecánicas que queríamos implementar. Sin embargo, una de las que nombramos en la anterior fase, "salto contra la pared", la hemos terminado por descartar. Ha sido una decisión tomada a raíz de que en nuestro escenario hay muchas plataformas en las que el gato se puede subir y muy poco espacio en la pared que utilizar para rebotar.
-El resto de funcionalidades: vómito cuando un jugador es aplastado por otro, salto simple, movimiento lateral, robar objeto al jugador contrario y ganar velocidad debido a coger un power up, las hemos implementado.
-
-## INTERFACES
-
-Menú principal:
+- Dificultades encontradas en el desarrollo
+(Resumen de cosillas que hemos implementado)
+- Mecánicas
+- Interfaces
 
 ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/DaniEdits/assets/menu.jpg)
 
-Cómo jugar:
+Menú principal
 
-![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/DaniEdits/assets/comoJugar.jpg)
-
-Créditos:
-
-![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/DaniEdits/assets/creditos.jpg)
-
-Pantalla de victoria jugador 1:
-
-![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/DaniEdits/assets/ganadorMuffin.jpg)
-
-Pantalla de victoria jugador 2:
-
-![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/DaniEdits/assets/ganadorMungojerry.jpg)
-
-
-
-## ARTE
-Todo lo visual ha sido realizado por nosotros. Para los personajes, realizamos concepts de las animaciones, en los que nos apoyamos para construir los sprites finales. El fondo y las diferentes pantallas han sido creados en Photoshop y los objetos hemos usado unos modelos de los que diseñamos para la anterior fase.
+- Arte: Todo lo visual ha sido realizado por nosotros. Para los personajes, realizamos concepts de las animaciones, en los que nos apoyamos para construir los sprites finales. El fondo y las diferentes pantallas han sido creados en Photoshop. 
 
 ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/DaniEdits/assets/fondo.jpg)
 
@@ -164,37 +137,9 @@ Fondo
 
 Sprites de los personajes
 
-## MÚSICA Y FUENTES
-A pesar de que todos los recursos utilizados han sido creados por nosotros para el desarrollo de este juego, la música y la fuente de letra usada para los títulos de las interfaces las hemos descargado de unas páginas web que adjuntamos en la webgrafía.
+- Música y sonido -> buscar referencias de dónde es la música
 
-## WEBGRAFÍA
-Fuentes de los grafitis:
-
-https://www.dafont.com/es/kenny-izatt.d1179
-
-https://www.dafont.com/es/wassimo-wassimo-style.d2798
-
-https://www.dafont.com/es/joris-oostinga.d5745
-
-Música:
-
-https://freesound.org/people/bone666138/sounds/466998/
-
-https://freesound.org/people/Sirkoto51/sounds/349179/
-
-Código:
-
-https://phaser.io/tutorials/making-your-first-phaser-3-game-spanish
-
-https://www.youtube.com/watch?list=PLL_H5w4KA8dP9pPayzYxHCD4IQ80nkfY9&v=4RaN4g9KzDo
-
-Animación:
-
-https://www.pinterest.es/pin/13299761377376292/
-
-
-
-## DESARROLLADORES: 
+## Desarrolladores: 
 Alejandra Casado Ceballos, email: a.casadoce.2017@alumnos.urjc.es, GitHub: AlejandraCasadoCeballos (https://github.com/AlejandraCasadoCeballos)
 
 Patricia Ruiz Bermejo, email: p.ruizb.2018@alumnos.urjc.es, GitHub: potii (https://github.com/potii)

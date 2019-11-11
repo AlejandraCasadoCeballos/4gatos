@@ -122,6 +122,8 @@ En esta primera entrega hemos implementado muchas de las funcionalidades que pla
 - Mecánicas
 - Interfaces
 - Arte -> Todo lo visual ha sido realizado por nuestro equipo de arte. 
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Animaciones/ezgif.com-gif-maker%20(1).gif)
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Animaciones/ezgif.com-gif-maker.gif)
 - Música y sonido -> buscar referencias de dónde es la música
 
 ## Desarrolladores: 

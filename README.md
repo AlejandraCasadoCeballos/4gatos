@@ -123,7 +123,9 @@ En esta primera entrega hemos implementado muchas de las funcionalidades que pla
 - Interfaces
 - Arte: Todo lo visual ha sido realizado por nosotros. Para los personajes, realizamos concepts de las animaciones, en los que nos apoyamos para construir los sprites finales. El fondo y las diferentes pantallas han sido creados en Photoshop. 
 
-![alt text]()
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Fondo/Background.psd)
+
+Fondo
 
 ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Animaciones/ezgif.com-gif-maker%20(1).gif)
 ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Animaciones/ezgif.com-gif-maker.gif)

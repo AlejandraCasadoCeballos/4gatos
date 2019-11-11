@@ -126,7 +126,8 @@ En esta primera entrega hemos implementado muchas de las funcionalidades que pla
 
 Menú principal
 
-## Arte: Todo lo visual ha sido realizado por nosotros. Para los personajes, realizamos concepts de las animaciones, en los que nos apoyamos para construir los sprites finales. El fondo y las diferentes pantallas han sido creados en Photoshop. 
+## Arte
+Todo lo visual ha sido realizado por nosotros. Para los personajes, realizamos concepts de las animaciones, en los que nos apoyamos para construir los sprites finales. El fondo y las diferentes pantallas han sido creados en Photoshop. 
 
 ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/DaniEdits/assets/fondo.jpg)
 
@@ -140,16 +141,27 @@ Sprites de los personajes
 ## Música y sonido -> buscar referencias de dónde es la música
 ## Webgrafía
 Fuentes de los grafitis:
+
 https://www.dafont.com/es/kenny-izatt.d1179
+
 https://www.dafont.com/es/wassimo-wassimo-style.d2798
+
 https://www.dafont.com/es/joris-oostinga.d5745
+
 Música:
+
 https://freesound.org/people/bone666138/sounds/466998/
+
 https://freesound.org/people/Sirkoto51/sounds/349179/
+
 Código:
+
 https://phaser.io/tutorials/making-your-first-phaser-3-game-spanish
+
 https://www.youtube.com/watch?list=PLL_H5w4KA8dP9pPayzYxHCD4IQ80nkfY9&v=4RaN4g9KzDo
+
 Animación:
+
 https://www.pinterest.es/pin/13299761377376292/
 
 

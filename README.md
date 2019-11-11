@@ -121,6 +121,11 @@ En esta primera entrega hemos implementado muchas de las funcionalidades que pla
 (Resumen de cosillas que hemos implementado)
 - Mecánicas
 - Interfaces
+
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/DaniEdits/assets/menu.jpg)
+
+Menú principal
+
 - Arte: Todo lo visual ha sido realizado por nosotros. Para los personajes, realizamos concepts de las animaciones, en los que nos apoyamos para construir los sprites finales. El fondo y las diferentes pantallas han sido creados en Photoshop. 
 
 ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/DaniEdits/assets/fondo.jpg)

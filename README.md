@@ -121,7 +121,7 @@ En esta primera entrega hemos implementado muchas de las funcionalidades que pla
 (Resumen de cosillas que hemos implementado)
 - Mecánicas
 - Interfaces
-- Arte -> todo nuestro menos fuentes de los menús(referencia).
+- Arte -> Todo lo visual ha sido realizado por nuestro equipo de arte. 
 - Música y sonido -> buscar referencias de dónde es la música
 
 ## Desarrolladores: 

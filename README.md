@@ -114,6 +114,16 @@ Respecto a los nombres de los gatos, nos hemos inspirado en el musical CATS.
 
 ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Im%C3%A1genes/MusicalCats.jpg)
 
+## Just 4 Cats V1.0
+
+En esta primera entrega hemos implementado muchas de las funcionalidades que planteamos en el GDD inicial.
+- Dificultades encontradas en el desarrollo
+(Resumen de cosillas que hemos implementado)
+- Mecánicas
+- Interfaces
+- Arte -> todo nuestro menos fuentes de los menús(referencia).
+- Música y sonido -> buscar referencias de dónde es la música
+
 ## Desarrolladores: 
 Alejandra Casado Ceballos, email: a.casadoce.2017@alumnos.urjc.es, GitHub: AlejandraCasadoCeballos (https://github.com/AlejandraCasadoCeballos)
 

@@ -11,6 +11,8 @@
         <script src="Scene2.js"></script>
         <script src="Scene3.js"></script>
         <script src="Scene4.js"></script>
+        <script src="Scene5.js"></script>
+        <script src="Scene6.js"></script>
         <script src="game.js"></script>
         <style>
                 body {
@@ -25,6 +27,11 @@
 <body>
 
         <script>
+                var musica;
+                var musica2;
+                var pU;
+                var destruir=21;
+                var tiempoEspera=0;
                 var anim;
                 var player;
                 var player2;
@@ -38,7 +45,7 @@
                 var objetoPowerUp;
                 var total = 0;
                 var aleatorio;
-                var generarPowerUp1 = Phaser.Math.Between(40, 25);
+                var generarPowerUp1 = Phaser.Math.Between(50, 30);
                 var generarPowerUp2 = Phaser.Math.Between(20, 5);
                 var colisionPowerUp = false;
                 var colisionPowerUp2 = false;
@@ -51,8 +58,8 @@
                 var cuentaAtrasParadoP2 = false;
                 var P1P2 = false;
                 var P2P1 = false;
-                var tiempoParadoP1 = 150;
-                var tiempoParadoP2 = 150;
+                var tiempoParadoP1 = 50;
+                var tiempoParadoP2 = 50;
                 var onWallLeft = false;
                 var onWallRight = false;
                 var onWallLeft1 = false;

@@ -8,7 +8,7 @@ class Scene3 extends Phaser.Scene{
     
     preload () //precargar recursos
     {
-        this.load.image('fondo', 'assets/fondo.png');
+        this.load.image('fondo', 'assets/fondo.jpg');
         this.load.image('ground', 'assets/platform.png');
         this.load.image('pescado', 'assets/pescado.png');
         this.load.image('ovillo', 'assets/ovillo.png');
@@ -35,10 +35,22 @@ class Scene3 extends Phaser.Scene{
         this.add.image(400, 300, 'fondo');
 
         platforms = this.physics.add.staticGroup(); //crea un nuevo grupo de elementos estáticos y lo asigna a la variable platforms
-        platforms.create(400, 600, 'ground').setScale(2,0.90).refreshBody(); //cargarmos la imagen multiplicando por 2 su tamaño
-        platforms.create(600, 400, 'ground');
-        platforms.create(50, 250, 'ground');
-        platforms.create(750, 220, 'ground');
+        platforms.create(400, 600, 'ground').setScale(2, 0.90).refreshBody().setAlpha(0.2); //cargarmos la imagen multiplicando por 2 su tamaño
+
+        platforms.create(120, 240, 'ground').setScale(0.25, 0.3).refreshBody().setAlpha(0.2);//farola
+        platforms.create(120, 50, 'ground').setScale(0.25, 0.3).refreshBody().setAlpha(0.2);//ventilador1
+        platforms.create(640, 190, 'ground').setScale(0.33, 0.3).refreshBody().setAlpha(0.2);//venta izquierda
+
+        platforms.create(340, 190, 'ground').setScale(0.33, 0.3).refreshBody().setAlpha(0.2);//ventana derecha
+
+        platforms.create(339, 367, 'ground').setScale(0.33, 0.3).refreshBody().setAlpha(0.2);//ventana centro
+        platforms.create(512, 347, 'ground').setScale(0.23, 0.3).refreshBody().setAlpha(0.2);//ventilador bajo
+        platforms.create(640, 445, 'ground').setScale(0.43, 0.3).refreshBody().setAlpha(0.2);//basura
+        platforms.create(90, 470, 'ground').setScale(0.3, 0.3).refreshBody().setAlpha(0.2);//coche
+        platforms.create(180, 510, 'ground').setScale(0.2, 0.3).refreshBody().setAlpha(0.2);//coche
+        platforms.create(1, 1, 'ground').setScale(0.15, 200).refreshBody().setAlpha(0.2); //cargarmos la imagen multiplicando por 2 su tamaño
+        platforms.create(800, 800, 'ground').setScale(0.15, 200).refreshBody().setAlpha(0.2);
+        
 
         //Creación del personaje
         player = this.physics.add.sprite(100, 450, 'dude'); //creación de un sprite con físicas
@@ -404,7 +416,7 @@ class Scene3 extends Phaser.Scene{
             }
 
             //para mostrar el temporizador
-            info.setText('Time: ' + tiempo);
+            info.setText('Tiempo: ' + tiempo);
 
             //Si coge el power up y aun no se ha acabado el tiempo de duracion de este, el jugador se mueve más rápido
             if (colisionPowerUp && cuentaAtrasPowerUp) {

@@ -1,29 +1,35 @@
 # JUST 4 CATS
 ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Im%C3%A1genes/Ilustracio%CC%81n_sin_ti%CC%81tulo.png)
+
 ## CONCEPTO Y GÉNERO
 Se trata de un juego de plataformas multijugador.
 Al comienzo del juego se le asignará a cada jugador un personaje. Los personajes son diferentes tipos de gatos y luchan entre sí por conseguir un objeto (que cambiará en cada partida). El jugador que posea el objeto será el objetivo del resto, ya que el ganador será aquel que lo tenga al terminar el tiempo. Cada partida tiene un límite de tiempo predefinido de sesenta segundos.
+
 ## HISTORIA
 Los protagonistas de este juego son cuatro gatos. Cada uno es líder de una banda callejera de Nueva York. Se juegan el dominio de la calle en una competición, donde el más ágil se llevará la victoria.
+
 ## AUDIENCIA
 Será apto para todos los públicos, lo que correspondería con PEGI +3. Esto se debe a que no contiene palabras malsonantes ni contenido que pueda asustar a los niños. 
 Está dirigido a jugadores tanto casuales como habituales. La dificultad dependerá de la experiencia de los contrincantes.
+
 ## MECÁNICAS Y CONTROLES
-	 
 Como los jugadores tienen que moverse por el escenario de izquierda a derecha solo utilizaremos dos teclas, A y D. 
 Hay dos tipos de saltos en los que utilizaremos la tecla SPACE. El primer tipo de salto es un “salto simple” para alcanzar las plataformas o saltar encima de tus contrincantes. El segundo tipo de salto es el “salto rebote”, consiste en saltar desde una pared o incluso desde el grosor de una plataforma, es decir desde cualquier superficie vertical.
 También tenemos la mecánica de vomitar, consiste en que un jugador, al saltar encima de otro, deja a este último sin posibilidad de moverse durante 2 segundos vomitando una bola de pelo. 
 Por otro lado, si un jugador A toca a otro jugador B cuando B tenía el objeto, este pasa al jugador A. La finalidad de la partida es tener el objeto cuando termine el tiempo (un minuto).
 Como power up incluiremos una lata de atún que aparecerá en un sitio aleatorio del escenario y si el jugador se hace con ella, aumentará su velocidad.
+
 ## NIVEL
 Es un nivel de plataformas prediseñado, en el que se usan como plataformas elementos cotidianos de la calle, por ejemplo: caja de cartón, ventana, farola, cubo de basura…
 En este juego solo existirá un único nivel ya que la experiencia en este será diferente en cada partida.
+
 ## INTERFAZ
 En el juego habrá cuatro pantallas: pantalla de inicio, pantalla de explicación de controles, pantalla del juego y pantalla de créditos.
 En la pantalla de inicio tendremos cuatro botones con los que interactuar. Estos serían: Play, How to play, Exit y Credits. Respectivamente jugar, ver los controles del juego, salir de este y ver los créditos. En la esquina inferior derecha se encontrará el logo de la empresa, y en grande en el centro, en la parte superior, el nombre del juego.
 En la pantalla de explicación tendremos los controles básicos, salto simple y salto rebote. También hay un botón para volver al menú.
 En la pantalla de juego se encontrará el tiempo restante de este arriba a la derecha.
 En las cuatro pantallas aparecerá en la parte superior izquierda un botón para silenciar el juego.
+
 ## OBJETOS Y PERSONAJES
 El juego tiene cuatro personajes que son gatos de distintos colores. Sus nombres son los siguientes:
   •	Bombalurina: tiene el pelo rojizo. Pertenecía a una familia adinerada de París, pero un día se perdió entre las calles de Nueva York durante un viaje con sus dueños y tuvo que aprender a sobrevivir.
@@ -37,6 +43,7 @@ Los jugadores se pelearán por conseguir el objeto principal y mantenerlo hasta 
 El tipo de este objeto se seleccionará aleatoriamente (una raspa de pescado, un ovillo de lana y un ratón) al comienzo del juego. Este objeto se situará en el centro de la pantalla. Los 4 gatos comenzarán la partida en las cuatro esquinas (cada gato en una) estando equidistantes del objeto. 
 Una vez que todos los jugadores estén preparados, comenzará una cuenta atrás durante la cual no se podrán mover. Cuando la cuenta atrás termine, el juego dará comienzo.
 Además, hay otro objeto, la lata de atún, cuya función ha sido explicado en la parte de mecánicas.
+
 ## ESTÉTICA
 La estética será pixelArt. Utilizaremos una paleta de colores pastel.
 Hemos utilizado esta paleta porque creemos que es más agradable visualmente.
@@ -52,24 +59,33 @@ Por último, estos son los bocetos de los posibles power ups y objetos, aún no 
 ## MÚSICA Y SONIDOS
 La música y los sonidos serán agradables y alegres como la paleta de colores.  Por lo tanto, la canción que sonará durante el juego es Spanish Flea de Herb Alpert. En el menú queremos poner una canción como un solo de guitarra de forma que sea lenta y tranquila, y contraste con la música más frenética que hay durante el juego.
 También pondremos efectos de sonido en los siguientes momentos:
+
 •	Al pulsar cualquier botón del menú de inicio
+
 •	Cuando un personaje es aplastado
+
 •	Cuando uno de los gatos vomita una bola de pelo
+
 •	Al coger el objeto
+
 •	Al hacer el salto rebote
+
 •	Al coger el power up
+
 •	Al andar
+
 ## INFLUENCIA
 Nos hemos inspirado en el juego “move or die” y el juego tradicional pilla-pilla.
+
 ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Im%C3%A1genes/Moveordie.jpg)
 Respecto a los nombres de los gatos, nos hemos inspirado en el musical CATS.
-![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Im%C3%A1genes/MusicalCats.jpg)
-# JUST 4 CATS V1.0
 
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Im%C3%A1genes/MusicalCats.jpg)
+
+# JUST 4 CATS V1.0
 En esta primera entrega hemos implementado muchas de las funcionalidades que planteamos en el GDD inicial.
 
 ## DIFICULTADES
-(Resumen de cosillas que hemos implementado)
 A nivel de programación, la mayor dificultad que hemos encontrado ha sido trabajar en mecánicas diferentes y que luego al juntarlas en un mismo juego no diese problemas.
 Otra dificultad que tuvimos al principio en este ámbito fue la inexperiencia con Phaser 3, aunque gracias a los tutoriales y a nuestros conocimientos previos de javaScript y html nos terminamos adaptando rápidamente.
 Además, ha sido complicado encontrar código de ayuda en algunos momentos. Por ejemplo, cuando queríamos meter audio, las páginas nos decían que debíamos usar this.audio.add(); en lugar de this.sound.add();, esto se debe a que son funcionalidades de diferentes versiones de phaser 3 y encontrar lo que necesitabamos y que funcionase en nuestra versión ha sido difícil.
@@ -117,8 +133,8 @@ Fondo
 Sprites de los personajes
 
 ## MÚSICA Y SONIDO
-## MÚSICA Y FUENTES
 A pesar de que todos los recursos utilizados han sido creados por nosotros para el desarrollo de este juego, la música y la fuente de letra usada para los títulos de las interfaces las hemos descargado de unas páginas web que adjuntamos en la webgrafía.
+En el caso de los distintos sonidos que teníamos pensado implementar en el anterior GDD, aún no los hemos implementado pero para la siguiente fase lo haremos.
 
 ## WEBGRAFÍA
 Fuentes de los grafitis:
@@ -137,8 +153,13 @@ https://www.pinterest.es/pin/13299761377376292/
 
 ## DESARROLLADORES: 
 Alejandra Casado Ceballos, email: a.casadoce.2017@alumnos.urjc.es, GitHub: AlejandraCasadoCeballos (https://github.com/AlejandraCasadoCeballos)
+
 Patricia Ruiz Bermejo, email: p.ruizb.2018@alumnos.urjc.es, GitHub: potii (https://github.com/potii)
+
 Juan Sanchez Romero, email:j.sanchezro.2017@alumnos.urjc.es, Github:  JuanSancjezRo (https://github.com/JuanSanchezRo)
+
 Blanca de la Fuente Alonso, email: b.delafuente.2017@alumnos.urjc.es, Github: Blancadlf13 (https://github.com/Blancadlf13)
+
 Daniel Brenlla Gómez, email: d.brenlla.2017@alumnos.urjc.es, GitHub: Brenlli (https://github.com/brenlli)
+
 Nuestro Trello: https://trello.com/b/oaRhrlCT

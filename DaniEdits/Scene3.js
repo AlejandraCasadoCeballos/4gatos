@@ -29,6 +29,7 @@ class Scene3 extends Phaser.Scene{
     create ()
     { 
         musica=this.sound.add('juego');
+        musica.setLoop(true);
         musica.play();
         
         this.add.image(400, 300, 'fondo');
@@ -264,6 +265,12 @@ class Scene3 extends Phaser.Scene{
             this.scene.start("Ganador2");
         else 
             this.scene.start("Menu");
+
+        objetoCogido=false;
+        objetoCogido2=false;
+        generarPowerUp1 = Phaser.Math.Between(50, 30);
+        generarPowerUp2 = Phaser.Math.Between(20, 5);
+        pU.x+=50;
     }
 
     // coleccionar
@@ -379,7 +386,7 @@ class Scene3 extends Phaser.Scene{
             tiempoEspera++;
             tiempo = Math.round(Math.floor(45000 - timer.getElapsed()) / 1000);
             //Cuando el tiempo que queda es igual al random en el que aparecen los power ups
-            if (tiempo === generarPowerUp1) {
+            if (tiempo< generarPowerUp1 && tiempo> (generarPowerUp1-2)) {
                 generarPowerUp1=130;
                 pU=objetoPowerUp.create(Phaser.Math.Between(50, 100), Phaser.Math.Between(50, 100), "lata");
                 this.physics.add.overlap(player, objetoPowerUp, this.colectPowerUp1, null, this);

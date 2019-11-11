@@ -52,7 +52,7 @@ class Scene2 extends Phaser.Scene{
     }
 
     toYellow(boton){
-        boton.setImage({ fill: 'Yellow'});
+        boton.setStyle({ fill: 'Yellow'});
     }
 
     toWhite(boton){

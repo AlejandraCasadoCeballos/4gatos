@@ -114,19 +114,19 @@ Respecto a los nombres de los gatos, nos hemos inspirado en el musical CATS.
 
 ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Im%C3%A1genes/MusicalCats.jpg)
 
-# Just 4 Cats V1.0
+# JUST 4 CATS V1.0
 
 En esta primera entrega hemos implementado muchas de las funcionalidades que planteamos en el GDD inicial.
-## Dificultades encontradas en el desarrollo
+## DIFICULTADES
 (Resumen de cosillas que hemos implementado)
-## Mecánicas
-## Interfaces
+## MECÁNICAS
+## INTERFACES
 
 ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/DaniEdits/assets/menu.jpg)
 
 Menú principal
 
-## Arte
+## ARTE
 Todo lo visual ha sido realizado por nosotros. Para los personajes, realizamos concepts de las animaciones, en los que nos apoyamos para construir los sprites finales. El fondo y las diferentes pantallas han sido creados en Photoshop. 
 
 ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/DaniEdits/assets/fondo.jpg)
@@ -138,8 +138,8 @@ Fondo
 
 Sprites de los personajes
 
-## Música y sonido -> buscar referencias de dónde es la música
-## Webgrafía
+## MÚSICA Y SONIDO
+## WEBGRAFÍA
 Fuentes de los grafitis:
 
 https://www.dafont.com/es/kenny-izatt.d1179
@@ -166,7 +166,7 @@ https://www.pinterest.es/pin/13299761377376292/
 
 
 
-## Desarrolladores: 
+## DESARROLLADORES: 
 Alejandra Casado Ceballos, email: a.casadoce.2017@alumnos.urjc.es, GitHub: AlejandraCasadoCeballos (https://github.com/AlejandraCasadoCeballos)
 
 Patricia Ruiz Bermejo, email: p.ruizb.2018@alumnos.urjc.es, GitHub: potii (https://github.com/potii)

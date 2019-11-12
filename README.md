@@ -141,10 +141,10 @@ Power Ups:
 Sprites de los personajes
 
 
-![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Personajes/MuffinGrande.png)
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Personajes/Mungojerry.gif)
 ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Personajes/Muffin.png)
 
-![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Personajes/MungojerryGrande.png)
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Personajes/Muffin.gif)
 ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Personajes/Mungojerry.png)
 
 

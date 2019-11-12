@@ -163,6 +163,12 @@ Música:
 https://freesound.org/people/bone666138/sounds/466998/
 https://freesound.org/people/Sirkoto51/sounds/349179/
 
+Sonidos:
+
+https://freesound.org/people/GameAudio/sounds/220173/
+https://freesound.org/people/Leszek_Szary/sounds/133280/
+https://freesound.org/people/InspectorJ/sounds/415209/
+
 Código:
 
 https://phaser.io/tutorials/making-your-first-phaser-3-game-spanish

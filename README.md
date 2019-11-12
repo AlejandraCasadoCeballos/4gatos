@@ -130,8 +130,6 @@ Fondo:
 
 Animaciones:
 
-![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Personajes/Muffin_gif.gif)
-![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Personajes/Mungojerry_gif.gif)
 
 Objetos:
 

@@ -124,11 +124,14 @@ Pantalla de victoria jugador 2:
 Todo lo visual ha sido realizado por nosotros. Para los personajes, realizamos concepts de las animaciones, en los que nos apoyamos para construir los sprites finales. El fondo y las diferentes pantallas han sido creados en Photoshop. 
 Todo lo visual ha sido realizado por nosotros. Para los personajes, realizamos concepts de las animaciones, en los que nos apoyamos para construir los sprites finales. El fondo y las diferentes pantallas han sido creados en Photoshop y los objetos hemos usado unos modelos de los que diseñamos para la anterior fase.
 
-Fondo
+Fondo:
 
 ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Interfaz/fondo.jpg)
 
-Animaciones
+Animaciones:
+
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Personajes/Muffin_gif.gif)
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Personajes/Mungojerry_gif.gif)
 
 Objetos:
 

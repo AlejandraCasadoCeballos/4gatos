@@ -130,7 +130,17 @@ Fondo
 
 Animaciones
 
+Objetos:
 
+Ovillo: ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Objetos/ovillo.png)
+
+Rata: ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Objetos/rata.png)
+
+Pescado: ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Objetos/pescado.png)
+
+Power Ups:
+
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Objetos/lata.png)
 
 Sprites de los personajes
 

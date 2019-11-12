@@ -132,11 +132,7 @@ Animaciones
 
 Objetos:
 
-Ovillo: ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Objetos/ovillo.png)
-
-Rata: ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Objetos/rata.png)
-
-Pescado: ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Objetos/pescado.png)
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Objetos/ovillo.png)  ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Objetos/rata.png) ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Objetos/pescado.png)
 
 Power Ups:
 

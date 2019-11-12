@@ -168,6 +168,7 @@ Sonidos:
 https://freesound.org/people/GameAudio/sounds/220173/
 https://freesound.org/people/Leszek_Szary/sounds/133280/
 https://freesound.org/people/InspectorJ/sounds/415209/
+https://freesound.org/people/thomasevd/sounds/202193/
 
 Código:
 

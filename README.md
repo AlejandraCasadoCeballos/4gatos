@@ -128,9 +128,6 @@ Fondo:
 
 ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Interfaz/fondo.jpg)
 
-Animaciones:
-
-
 Objetos:
 
 ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Objetos/ovillo.png)  ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Objetos/rata.png) ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Objetos/pescado.png)

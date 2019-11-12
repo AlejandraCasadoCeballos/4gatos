@@ -401,7 +401,7 @@ class Scene3 extends Phaser.Scene{
             tiempoEspera++;
             tiempo = Math.round(Math.floor(45000 - timer.getElapsed()) / 1000);
             //Cuando el tiempo que queda es igual al random en el que aparecen los power ups
-            if (tiempo< generarPowerUp1 && tiempo> (generarPowerUp1-2)) {
+            if (tiempo===generarPowerUp1) {
                 generarPowerUp1=130;
                 pU=objetoPowerUp.create(640,170, "lata");
                 this.physics.add.overlap(player, objetoPowerUp, this.colectPowerUp1, null, this);

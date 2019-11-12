@@ -1,5 +1,5 @@
 # JUST 4 CATS
-![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Objetos/pescado.png)
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Imagenes_fase_1/Ilustración_sin_título.png)
 
 ## CONCEPTO Y GÉNERO
 Se trata de un juego de plataformas multijugador.
@@ -54,7 +54,7 @@ Este es un boceto a papel del escenario, nos gustaría que tuviese una estética
 ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Im%C3%A1genes/bocetoNivel.jpg)
 Por último, estos son los bocetos de los posibles power ups y objetos, aún no sabemos cuáles serán los definitivos.
 ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Im%C3%A1genes/Objetos1.jfif)
-![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Im%C3%A1genes/Objetos2.png)
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Imagenes_fase_1/Objetos2.png)
   
 ## MÚSICA Y SONIDOS
 La música y los sonidos serán agradables y alegres como la paleta de colores.  Por lo tanto, la canción que sonará durante el juego es Spanish Flea de Herb Alpert. En el menú queremos poner una canción como un solo de guitarra de forma que sea lenta y tranquila, y contraste con la música más frenética que hay durante el juego.
@@ -77,10 +77,10 @@ También pondremos efectos de sonido en los siguientes momentos:
 ## INFLUENCIA
 Nos hemos inspirado en el juego “move or die” y el juego tradicional pilla-pilla.
 
-![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Im%C3%A1genes/Moveordie.jpg)
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Imagenes_fase_1/Moveordie.jpg)
 Respecto a los nombres de los gatos, nos hemos inspirado en el musical CATS.
 
-![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Im%C3%A1genes/MusicalCats.jpg)
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Imagenes_fase_1/MusicalCats.jpg)
 
 # JUST 4 CATS V1.0
 En esta primera entrega hemos implementado muchas de las funcionalidades que planteamos en el GDD inicial.
@@ -99,24 +99,24 @@ El resto de funcionalidades: vómito cuando un jugador es aplastado por otro, sa
 
 Menú principal:
 
-![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/DaniEdits/assets/menu.jpg)
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Interfaz/menu.jpg)
 
 Menú principal
 Cómo jugar:
 
-![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/DaniEdits/assets/comoJugar.jpg)
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Interfaz/comoJugar.jpg)
 
 Créditos:
 
-![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/DaniEdits/assets/creditos.jpg)
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Interfaz/creditos.jpg)
 
 Pantalla de victoria jugador 1:
 
-![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/DaniEdits/assets/ganadorMuffin.jpg)
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Interfaz/ganadorMungojerry.jpg)
 
 Pantalla de victoria jugador 2:
 
-![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/DaniEdits/assets/ganadorMungojerry.jpg)
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Interfaz/ganadorMuffin.jpg)
 
 
 
@@ -124,11 +124,12 @@ Pantalla de victoria jugador 2:
 Todo lo visual ha sido realizado por nosotros. Para los personajes, realizamos concepts de las animaciones, en los que nos apoyamos para construir los sprites finales. El fondo y las diferentes pantallas han sido creados en Photoshop. 
 Todo lo visual ha sido realizado por nosotros. Para los personajes, realizamos concepts de las animaciones, en los que nos apoyamos para construir los sprites finales. El fondo y las diferentes pantallas han sido creados en Photoshop y los objetos hemos usado unos modelos de los que diseñamos para la anterior fase.
 
-![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/DaniEdits/assets/fondo.jpg)
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Interfaz/fondo.jpg)
 
 Fondo
-![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Animaciones/ezgif.com-gif-maker%20(1).gif)
-![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Animaciones/ezgif.com-gif-maker.gif)
+
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Personajes/Muffin.png)
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Personajes/Mungojerry.png)
 
 Sprites de los personajes
 

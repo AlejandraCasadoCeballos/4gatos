@@ -105,7 +105,7 @@ Para esta fase 2 hemos conseguido implementar todas las mecánicas que queríamo
 El resto de funcionalidades: vómito cuando un jugador es aplastado por otro, salto simple, movimiento lateral, robar objeto al jugador contrario y ganar velocidad debido a coger un power up, las hemos implementado.
 
 ## INTERFACES
-A diferencia de lo que pensamos en un principio, nuestro juego finalemente consta de 7 pantallas diferentes. Las nuevas son: una pantalla de pausa, una de que ha ganado muffin y otra de que ha ganado Mungojerry.
+A diferencia de lo que pensamos en un principio, nuestro juego finalemente consta de 7 pantallas diferentes. Las nuevas son: una pantalla de pausa, una de que ha ganado muffin y otra de que ha ganado Mungojerry. El diseño de estas pantallas se ha realizado en photoshop a partir del fondo de ladrillo creado por los artistas para el juego. Este fondo lo hemos teñido de negro y le hemos añadido los títulos y botones correspondientes a cada una. La fuente de los botones es de Photoshop, pero sin embargo, las fuentes de los títulos son de una página que adjuntamos en la webgrafía. 
 
 Menú principal:
 
@@ -160,7 +160,7 @@ Sprites de los personajes
 
 
 ## MÚSICA Y SONIDO
-A pesar de que todos los recursos utilizados han sido creados por nosotros para el desarrollo de este juego, la música y la fuente de letra usada para los títulos de las interfaces las hemos descargado de unas páginas web que adjuntamos en la webgrafía.
+A pesar de que todos los recursos utilizados han sido creados por nosotros para el desarrollo de este juego, la fuente de letra usada para los títulos de las interfaces y la música las hemos descargado de unas páginas web que adjuntamos en la webgrafía.
 De esta manera hemos puesto dos músicas diferentes: una que suena durante el juego y otra en el menú. Cuando el jugador tiene el power Up, la música del juego acelera.
 En el caso de los distintos sonidos que teníamos pensado implementar en el anterior GDD, hemos cumplido con la mayoría. Tenemos distintos sonidos cuando suceden distintas acciones: cuando un gato aplasta a otro, cuando cogen el objeto, cuando cogen el power Up. Además, hemos añadido un sonido cuando quedan 10s de juego y otro cuando aparece la pantalla del ganador.
 

@@ -129,7 +129,7 @@ Pantalla de victoria jugador 2:
 
 Pantalla de pausa:
 
-![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Interfaz/pause.jpg)
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Interfaz/pausa.jpg)
 
 
 ## ARTE

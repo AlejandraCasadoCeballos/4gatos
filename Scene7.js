@@ -23,7 +23,7 @@ class Scene7 extends Phaser.Scene{
         //Al poner el ratón sobre el botón la imagen cambia a otra que tiene las letras de dicho botón de otro color
         //Al quitar el ratón, la imagen vuelve a ser la original. Al pulsar el botón volvemos a la escena de juego y se reinicia la música
         //BOTON MENÚ
-        botonVolver.on('pointerdown', () => { this.scene.resume("Juego"); this.scene.stop(); musica.resume(); });
+        botonVolver.on('pointerdown', () => { this.scene.resume("Juego"); this.scene.stop(); musica.resume(); sonidoCuentaAtras.resume();});
         botonVolver.on('pointerover', () => {this.add.image(400, 300,'botonPausaEncima'); });
         botonVolver.on('pointerout', () => {this.add.image(400, 300,'pausa'); });
     }

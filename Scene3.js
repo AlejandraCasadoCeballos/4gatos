@@ -39,8 +39,8 @@ class Scene3 extends Phaser.Scene{
         this.add.image(400, 300, 'fondo');//añadimos el fondo del juego
         const botonPausa = this.add.text(50,10,"Pausa",{font:"30px Courier", fill:"White"}); //cremos el botón de pausa
         botonPausa.setInteractive();
-        botonPausa.on('pointerdown', () => { this.scene.pause(); musica.pause(); this.scene.launch("Pausa");}); //cuando le damos cambiamos
-        //a la escena de pausa, paramos la música y esta escena
+        //cuando le damos cambiamos a la escena de pausa, paramos la música y esta escena
+        botonPausa.on('pointerdown', () => { this.scene.pause(); musica.pause(); this.scene.launch("Pausa"); sonidoCuentaAtras.pause();}); 
 
         plataformas = this.physics.add.staticGroup(); //crea un nuevo grupo de elementos estáticos y lo asigna a la variable plataformas
         //hemos creado plataformas con el alpha a 0 para que fuesen invisibles pero cumpliesen su función de colisionar con el jugador
@@ -385,7 +385,7 @@ class Scene3 extends Phaser.Scene{
             //actualizamos el tiempo, dividmmos entre mil para que salga en segundos
             tiempo = Math.round(Math.floor(45000 - timer.getElapsed()) / 1000);
 
-            if(tiempo===10)//si quedan 10 segundos de partida, se activa el sonido de la cuenta atrás
+            if(tiempo1===10)//si quedan 10 segundos de partida, se activa el sonido de la cuenta atrás
                 sonidoCuentaAtras.play();
             
             //Cuando el tiempo que queda es igual al random en el que aparece el power up 2

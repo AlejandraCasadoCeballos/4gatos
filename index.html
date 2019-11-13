@@ -13,11 +13,11 @@
         <script src="Scene4.js"></script>
         <script src="Scene5.js"></script>
         <script src="Scene6.js"></script>
+        <script src="Scene7.js"></script>
         <script src="game.js"></script>
         <style>
                 body {
                         background-image: url("/Recursos/Interfaz/fondoHTML2.png");
-
                 }
         </style>
 
@@ -27,44 +27,52 @@
 <body>
 
         <script>
+                
+                //Todas las variables usadas para nuestro juego
+                // música de juego
                 var musica;
                 var musica2;
                 var musica3;
-                var pU;
-                var destruir=21;
-                var tiempoEspera=0;
-                var anim;
-                var player;
-                var player2;
-                var platforms;
-                var cursors;
-                var timer;
-                var tiempo;
-                var info;
-                var objetoAleatorio;
-                var objeto;
-                var objetoPowerUp;
+                //sonidos
+                var sonidoCuentaAtras; 
+                var sonidoObjeto;
+                var sonidoAplastado;
+                var sonidoPowerUp;
+                var pU; // objeto donde guardamos el power up
+                var destruir=21;//momento en el que se destruye el power up 1 si no lo han cogido
+                var tiempoEspera=0;// para que el jugador no pueda hacer chicle
+                var anim;//para las animaciones
+                var player;//gato1
+                var player2;//gato2 
+                var plataformas;//plataformas
+                var cursors;//para el movimiento del jugador 2
+                var timer;// variable del tiempo
+                var tiempo;// para guardar el tiempo que será impreso
+                var info;// texto del tiempo
+                var objetoAleatorio;// variable donde se guardará el objeto aleatorio
+                var objeto;//para crear el objeto aleatorio
+                var objetoPowerUp;//para crear el power up
                 var total = 0;
-                var aleatorio;
-                var generarPowerUp1 = Phaser.Math.Between(40, 30);
-                var generarPowerUp2 = Phaser.Math.Between(20, 5);
-                var colisionPowerUp = false;
-                var colisionPowerUp2 = false;
-                var cuentaAtrasPowerUp = false;
-                var tiempoPowerUp = 500;
-                var tiempoPowerUp2 = 500;
-                var objetoCogido = false;
-                var objetoCogido2 = false;
+                var aleatorio;//guarda un numero aleatorio entre 1 y 3 para elegir el objeto que aparecerá
+                var generarPowerUp1 = Phaser.Math.Between(40, 30);// tiempo en que el primer power up que aparece en la partida
+                var generarPowerUp2 = Phaser.Math.Between(20, 5);// tiempo en el que el segundo power up que aparece en la partida
+                var colisionPowerUp = false;//  gato1 coge objeto
+                var colisionPowerUp2 = false;//  gato2 coge objeto
+                var cuentaAtrasPowerUp = false;// empieza el tiempo del powerUp
+                var tiempoPowerUp = 500;// tiempo que dura el efecto del pu en gato1 
+                var tiempoPowerUp2 = 500;// tiempo que dura el efecto del pu en gato2 
+                var objetoCogido = false;// si el gato1 coge el objeto
+                var objetoCogido2 = false;// si el gato 2 coge el objeto
                 var cuentaAtrasParadoP1 = false;
                 var cuentaAtrasParadoP2 = false;
-                var P1P2 = false;
-                var P2P1 = false;
-                var tiempoParadoP1 = 50;
-                var tiempoParadoP2 = 50;
-                var onWallLeft = false;
-                var onWallRight = false;
-                var onWallLeft1 = false;
-                var onWallRight1 = false;
+                var P1P2 = false;//si gato1 salta sobre gato2 es decir gato 2 se queda parado
+                var P2P1 = false;// si gato2 salta sobre gato1 es decir gato 1 se queda parado
+                var tiempoParadoP1 = 50;// tiempo que tendra que esperar el gato 1 si le chocan
+                var tiempoParadoP2 = 50;// tiempo que tendra que esperar el gato 2 si le chocan
+                var onWallLeft = false;// para saber si el gato 2 se ha chocado por la izquierda
+                var onWallRight = false;// para saber si el gato 2 se ha chocado por la derecha
+                var onWallLeft1 = false;// para saber si el gato 1 se ha chocado por la izquierda
+                var onWallRight1 = false;// para saber si el gato 1 se ha chocado por la derecha
 
         </script>
 

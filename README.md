@@ -32,6 +32,7 @@ En las cuatro pantallas aparecerá en la parte superior izquierda un botón para
 
 ## OBJETOS Y PERSONAJES
 El juego tiene cuatro personajes que son gatos de distintos colores. Sus nombres son los siguientes:
+  
   •	Bombalurina: tiene el pelo rojizo. Pertenecía a una familia adinerada de París, pero un día se perdió entre las calles de Nueva York durante un viaje con sus dueños y tuvo que aprender a sobrevivir.
   
   •	Mungojerri: tiene el pelo verde. Es el más chungo de todos. Es hijo de una gata callejera y creció en la calle.
@@ -39,6 +40,7 @@ El juego tiene cuatro personajes que son gatos de distintos colores. Sus nombres
   •	Muffin: tiene el pelo azul. Vivía en una familia corriente. Un día tuvieron un hijo que resultó ser alérgico a los gatos y le echaron.
   
   •	Grizabella: tiene el pelo amarillo. Se escapó voluntariamente de su casa porque uno de los miembros de la familia le maltrataba. Desde entonces no tiene miedo a nada.
+  
 Los jugadores se pelearán por conseguir el objeto principal y mantenerlo hasta el final de la partida.
 El tipo de este objeto se seleccionará aleatoriamente (una raspa de pescado, un ovillo de lana y un ratón) al comienzo del juego. Este objeto se situará en el centro de la pantalla. Los 4 gatos comenzarán la partida en las cuatro esquinas (cada gato en una) estando equidistantes del objeto. 
 Una vez que todos los jugadores estén preparados, comenzará una cuenta atrás durante la cual no se podrán mover. Cuando la cuenta atrás termine, el juego dará comienzo.
@@ -159,24 +161,31 @@ En el caso de los distintos sonidos que teníamos pensado implementar en el ante
 Fuentes de los grafitis:
 
 https://www.dafont.com/es/kenny-izatt.d1179
+
 https://www.dafont.com/es/wassimo-wassimo-style.d2798
+
 https://www.dafont.com/es/joris-oostinga.d5745
 
 Música:
 
 https://freesound.org/people/bone666138/sounds/466998/
+
 https://freesound.org/people/Sirkoto51/sounds/349179/
 
 Sonidos:
 
 https://freesound.org/people/GameAudio/sounds/220173/
+
 https://freesound.org/people/Leszek_Szary/sounds/133280/
+
 https://freesound.org/people/InspectorJ/sounds/415209/
+
 https://freesound.org/people/thomasevd/sounds/202193/
 
 Código:
 
 https://phaser.io/tutorials/making-your-first-phaser-3-game-spanish
+
 https://www.youtube.com/watch?list=PLL_H5w4KA8dP9pPayzYxHCD4IQ80nkfY9&v=4RaN4g9KzDo
 
 Animación:

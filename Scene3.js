@@ -446,7 +446,7 @@ class Scene3 extends Phaser.Scene{
                         this.animacion(player,'player','VO',objetoCogido2);
                         
                     } else {
-                        tiempoParadoP1 = 50;
+                        tiempoParadoP1 = 80;
                         P1P2 = false;
                     }
                 }
@@ -476,7 +476,7 @@ class Scene3 extends Phaser.Scene{
                     if (tiempoParadoP2 != 0) {
                         this.animacion(player2,'player2','VO',objetoCogido2);
                     } else {
-                        tiempoParadoP2 = 50;
+                        tiempoParadoP2 = 80;
                         P2P1 = false;
     
                     }
@@ -513,7 +513,7 @@ class Scene3 extends Phaser.Scene{
                     if (tiempoParadoP1 > 0) {
                         this.animacion(player,'player','VO',objetoCogido2);
                     } else {
-                        tiempoParadoP1 = 50;
+                        tiempoParadoP1 = 80;
                         P1P2 = false;
     
                     }
@@ -545,7 +545,7 @@ class Scene3 extends Phaser.Scene{
                         this.animacion(player2,'player2','VO',objetoCogido2);
                         
                     } else {
-                        tiempoParadoP2 = 50;
+                        tiempoParadoP2 = 80;
                         P2P1 = false;
     
                     }
@@ -582,7 +582,7 @@ class Scene3 extends Phaser.Scene{
                     if (tiempoParadoP1 > 0) {
                         this.animacion(player,'player','VO',objetoCogido);
                     } else {
-                        tiempoParadoP1 = 50;
+                        tiempoParadoP1 = 80;
                         P1P2 = false;
     
                     }
@@ -615,7 +615,7 @@ class Scene3 extends Phaser.Scene{
                     if (tiempoParadoP2 != 0) {
                         this.animacion(player2,'player2','VO',objetoCogido2);
                     } else {
-                        tiempoParadoP2 = 50;
+                        tiempoParadoP2 = 80;
                         P2P1 = false;
     
                     }

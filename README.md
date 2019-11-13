@@ -105,12 +105,12 @@ Para esta fase 2 hemos conseguido implementar todas las mecánicas que queríamo
 El resto de funcionalidades: vómito cuando un jugador es aplastado por otro, salto simple, movimiento lateral, robar objeto al jugador contrario y ganar velocidad debido a coger un power up, las hemos implementado.
 
 ## INTERFACES
+A diferencia de lo que pensamos en un principio, nuestro juego finalemente consta de 7 pantallas diferentes. Las nuevas son: una pantalla de pausa, una de que ha ganado muffin y otra de que ha ganado Mungojerry.
 
 Menú principal:
 
 ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Interfaz/menu.jpg)
 
-Menú principal
 Cómo jugar:
 
 ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Interfaz/comoJugar.jpg)

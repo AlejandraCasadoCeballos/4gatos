@@ -133,7 +133,6 @@ Pantalla de pausa:
 
 
 ## ARTE
-Todo lo visual ha sido realizado por nosotros. Para los personajes, realizamos concepts de las animaciones, en los que nos apoyamos para construir los sprites finales. El fondo y las diferentes pantallas han sido creados en Photoshop. 
 Todo lo visual ha sido realizado por nosotros. Para los personajes, realizamos concepts de las animaciones, en los que nos apoyamos para construir los sprites finales. El fondo y las diferentes pantallas han sido creados en Photoshop y los objetos hemos usado unos modelos de los que diseñamos para la anterior fase.
 
 Fondo:

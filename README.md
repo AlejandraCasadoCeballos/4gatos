@@ -1,5 +1,5 @@
 # JUST 4 CATS
-![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Imagenes_fase_1/Ilustración_sin_título.png)
+![](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Imagenes_fase_1/Ilustración_sin_título.png)
 
 ## CONCEPTO Y GÉNERO
 Se trata de un juego de plataformas multijugador.

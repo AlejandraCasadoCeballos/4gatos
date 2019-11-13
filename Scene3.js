@@ -297,6 +297,8 @@ class Scene3 extends Phaser.Scene{
         objetoCogido2=false;
         generarPowerUp1 = Phaser.Math.Between(40, 30);
         generarPowerUp2 = Phaser.Math.Between(20, 5);
+        colisionPowerUp=false;
+        colisionPowerUp2=false;
         pU.x+=50;
     }
 

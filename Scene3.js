@@ -385,7 +385,7 @@ class Scene3 extends Phaser.Scene{
             //actualizamos el tiempo, dividmmos entre mil para que salga en segundos
             tiempo = Math.round(Math.floor(45000 - timer.getElapsed()) / 1000);
 
-            if(tiempo1===10)//si quedan 10 segundos de partida, se activa el sonido de la cuenta atrás
+            if(tiempo===10)//si quedan 10 segundos de partida, se activa el sonido de la cuenta atrás
                 sonidoCuentaAtras.play();
             
             //Cuando el tiempo que queda es igual al random en el que aparece el power up 2

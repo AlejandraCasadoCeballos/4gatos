@@ -41,6 +41,7 @@ class Scene3 extends Phaser.Scene{
         botonPausa.setInteractive();
         //cuando le damos cambiamos a la escena de pausa, paramos la música y esta escena
         botonPausa.on('pointerdown', () => { this.scene.pause(); musica.pause(); this.scene.launch("Pausa"); sonidoCuentaAtras.pause();}); 
+ 
 
         plataformas = this.physics.add.staticGroup(); //crea un nuevo grupo de elementos estáticos y lo asigna a la variable plataformas
         //hemos creado plataformas con el alpha a 0 para que fuesen invisibles pero cumpliesen su función de colisionar con el jugador

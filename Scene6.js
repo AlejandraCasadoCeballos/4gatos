@@ -17,8 +17,8 @@ class Scene6 extends Phaser.Scene{
     create(){
         musica3=this.sound.add('celebracion2');//añade el sonido
         musica3.play();//activa la música
-        const botonMenu = this.add.text(config.width/8, 7*config.height/8,"Menu",{font:"80px Courier", fill:"white"}).setOrigin(0.5,0.5);
         this.add.image(400, 300,'ganador2');//añade la imagen
+        const botonMenu = this.add.text(90, 540,"Atras",{font:"30px Courier", fill:"Red"}).setOrigin(0.5,0.5);
 
         botonMenu.setInteractive();
         

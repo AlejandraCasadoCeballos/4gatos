@@ -17,9 +17,10 @@ class Scene4 extends Phaser.Scene{
         musica2.resume();//la musica sigue por donde se quedó al salir del menú
 
         //creamos el botón
-        const botonAtras = this.add.text(config.width/8, 7*config.height/8,"Atras",{font:"80px Courier", fill:"Red"}).setOrigin(0.5,0.5);
+        const botonAtras = this.add.text(90, 540,"Atras",{font:"30px Courier", fill:"Red"}).setOrigin(0.5,0.5);
         
         this.add.image(400, 300,'comoJugar');//añadimos la imagen
+        
 
         botonAtras.setInteractive();
 

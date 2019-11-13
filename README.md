@@ -118,6 +118,9 @@ Pantalla de victoria jugador 2:
 
 ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Interfaz/ganadorMuffin.jpg)
 
+Pantalla de pausa:
+
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Interfaz/pause.jpg)
 
 
 ## ARTE
@@ -149,7 +152,8 @@ Sprites de los personajes
 
 ## MÚSICA Y SONIDO
 A pesar de que todos los recursos utilizados han sido creados por nosotros para el desarrollo de este juego, la música y la fuente de letra usada para los títulos de las interfaces las hemos descargado de unas páginas web que adjuntamos en la webgrafía.
-En el caso de los distintos sonidos que teníamos pensado implementar en el anterior GDD, aún no los hemos implementado pero para la siguiente fase lo haremos.
+De esta manera hemos puesto dos músicas diferentes: una que suena durante el juego y otra en el menú. Cuando el jugador tiene el power Up, la música del juego acelera.
+En el caso de los distintos sonidos que teníamos pensado implementar en el anterior GDD, hemos cumplido con la mayoría. Tenemos distintos sonidos cuando suceden distintas acciones: cuando un gato aplasta a otro, cuando cogen el objeto, cuando cogen el power Up. Además, hemos añadido un sonido cuando quedan 10s de juego y otro cuando aparece la pantalla del ganador.
 
 ## WEBGRAFÍA
 Fuentes de los grafitis:

@@ -32,6 +32,7 @@ En las cuatro pantallas aparecerá en la parte superior izquierda un botón para
 
 ## OBJETOS Y PERSONAJES
 El juego tiene cuatro personajes que son gatos de distintos colores. Sus nombres son los siguientes:
+  
   •	Bombalurina: tiene el pelo rojizo. Pertenecía a una familia adinerada de París, pero un día se perdió entre las calles de Nueva York durante un viaje con sus dueños y tuvo que aprender a sobrevivir.
   
   •	Mungojerri: tiene el pelo verde. Es el más chungo de todos. Es hijo de una gata callejera y creció en la calle.
@@ -39,6 +40,7 @@ El juego tiene cuatro personajes que son gatos de distintos colores. Sus nombres
   •	Muffin: tiene el pelo azul. Vivía en una familia corriente. Un día tuvieron un hijo que resultó ser alérgico a los gatos y le echaron.
   
   •	Grizabella: tiene el pelo amarillo. Se escapó voluntariamente de su casa porque uno de los miembros de la familia le maltrataba. Desde entonces no tiene miedo a nada.
+  
 Los jugadores se pelearán por conseguir el objeto principal y mantenerlo hasta el final de la partida.
 El tipo de este objeto se seleccionará aleatoriamente (una raspa de pescado, un ovillo de lana y un ratón) al comienzo del juego. Este objeto se situará en el centro de la pantalla. Los 4 gatos comenzarán la partida en las cuatro esquinas (cada gato en una) estando equidistantes del objeto. 
 Una vez que todos los jugadores estén preparados, comenzará una cuenta atrás durante la cual no se podrán mover. Cuando la cuenta atrás termine, el juego dará comienzo.
@@ -48,12 +50,19 @@ Además, hay otro objeto, la lata de atún, cuya función ha sido explicado en l
 La estética será pixelArt. Utilizaremos una paleta de colores pastel.
 Hemos utilizado esta paleta porque creemos que es más agradable visualmente.
 A continuación, presentamos algunos concepts para los diseños del gato, aunque los colores serán diferentes y aún no hemos elegido cuál será el modelo definitivo.
+
 ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Imagenes_fase_1/Gatos1.jfif)
+
 ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Imagenes_fase_1/Gatos2.jfif)
+
 Este es un boceto a papel del escenario, nos gustaría que tuviese una estética más oscura para encontrar el contraste con los colores pastel que tendrán los personajes.
+
 ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Imagenes_fase_1/bocetoNivel.jpg)
+
 Por último, estos son los bocetos de los posibles power ups y objetos, aún no sabemos cuáles serán los definitivos.
+
 ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Imagenes_fase_1/Objetos1.jfif)
+
 ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Imagenes_fase_1/Objetos2.png)
   
 ## MÚSICA Y SONIDOS
@@ -96,12 +105,12 @@ Para esta fase 2 hemos conseguido implementar todas las mecánicas que queríamo
 El resto de funcionalidades: vómito cuando un jugador es aplastado por otro, salto simple, movimiento lateral, robar objeto al jugador contrario y ganar velocidad debido a coger un power up, las hemos implementado.
 
 ## INTERFACES
+A diferencia de lo que pensamos en un principio, nuestro juego finalemente consta de 7 pantallas diferentes. Las nuevas son: una pantalla de pausa, una de que ha ganado muffin y otra de que ha ganado Mungojerry. El diseño de estas pantallas se ha realizado en photoshop a partir del fondo de ladrillo creado por los artistas para el juego. Este fondo lo hemos teñido de negro y le hemos añadido los títulos y botones correspondientes a cada una. La fuente de los botones es de Photoshop, pero sin embargo, las fuentes de los títulos son de una página que adjuntamos en la webgrafía. 
 
 Menú principal:
 
 ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Interfaz/menu.jpg)
 
-Menú principal
 Cómo jugar:
 
 ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Interfaz/comoJugar.jpg)
@@ -118,6 +127,9 @@ Pantalla de victoria jugador 2:
 
 ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Interfaz/ganadorMuffin.jpg)
 
+Pantalla de pausa:
+
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Interfaz/pause.jpg)
 
 
 ## ARTE
@@ -148,24 +160,39 @@ Sprites de los personajes
 
 
 ## MÚSICA Y SONIDO
-A pesar de que todos los recursos utilizados han sido creados por nosotros para el desarrollo de este juego, la música y la fuente de letra usada para los títulos de las interfaces las hemos descargado de unas páginas web que adjuntamos en la webgrafía.
-En el caso de los distintos sonidos que teníamos pensado implementar en el anterior GDD, aún no los hemos implementado pero para la siguiente fase lo haremos.
+A pesar de que todos los recursos utilizados han sido creados por nosotros para el desarrollo de este juego, la fuente de letra usada para los títulos de las interfaces y la música las hemos descargado de unas páginas web que adjuntamos en la webgrafía.
+De esta manera hemos puesto dos músicas diferentes: una que suena durante el juego y otra en el menú. Cuando el jugador tiene el power Up, la música del juego acelera.
+En el caso de los distintos sonidos que teníamos pensado implementar en el anterior GDD, hemos cumplido con la mayoría. Tenemos distintos sonidos cuando suceden distintas acciones: cuando un gato aplasta a otro, cuando cogen el objeto, cuando cogen el power Up. Además, hemos añadido un sonido cuando quedan 10s de juego y otro cuando aparece la pantalla del ganador.
 
 ## WEBGRAFÍA
 Fuentes de los grafitis:
 
 https://www.dafont.com/es/kenny-izatt.d1179
+
 https://www.dafont.com/es/wassimo-wassimo-style.d2798
+
 https://www.dafont.com/es/joris-oostinga.d5745
 
 Música:
 
 https://freesound.org/people/bone666138/sounds/466998/
+
 https://freesound.org/people/Sirkoto51/sounds/349179/
+
+Sonidos:
+
+https://freesound.org/people/GameAudio/sounds/220173/
+
+https://freesound.org/people/Leszek_Szary/sounds/133280/
+
+https://freesound.org/people/InspectorJ/sounds/415209/
+
+https://freesound.org/people/thomasevd/sounds/202193/
 
 Código:
 
 https://phaser.io/tutorials/making-your-first-phaser-3-game-spanish
+
 https://www.youtube.com/watch?list=PLL_H5w4KA8dP9pPayzYxHCD4IQ80nkfY9&v=4RaN4g9KzDo
 
 Animación:

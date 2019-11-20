@@ -35,7 +35,7 @@ class Scene2 extends Phaser.Scene{
         //En cada uno, al poner el ratón sobre el botón la imagen cambia a otra que tiene las letras de dicho botón de otro color
         //Al quitar el ratón, la imagen vuelve a ser la original. Al pulsar cada botón cambiamos a la escena correspondiente y paramos la música
         //BOTON JUGAR
-        botonJugar.on('pointerdown', () => { this.scene.start("Juego"); musica2.stop();});
+        botonJugar.on('pointerdown', () => { this.scene.start("Mensaje"); musica2.stop();});
         botonJugar.on('pointerover', () => {this.add.image(400, 300,'pulsadoJugar');});
         botonJugar.on('pointerout', () => {this.add.image(400, 300,'menuFondo'); });
         //BOTON CRÉDITOS

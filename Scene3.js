@@ -248,14 +248,14 @@ class Scene3 extends Phaser.Scene{
         objetoPowerUp= this.physics.add.staticGroup(); //power up
 
         //elegimos un objeto aleatorio
-        aleatorio=Phaser.Math.Between(1, 3);
+        /*aleatorio=Phaser.Math.Between(1, 3);
         if(aleatorio===1)
             objetoAleatorio="pescado";
         else if(aleatorio===2)
             objetoAleatorio="ovillo";
         else if(aleatorio===3)
             objetoAleatorio="rata";
-
+        */
         //Generamos el objeto en el centro de la pantalla
         objeto.create(340, 175, objetoAleatorio);
 

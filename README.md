@@ -1,6 +1,6 @@
 # JUST 4 CATS
 ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Imagenes_fase_1/Ilustración_sin_título.png)
-
+# Fase 1
 ## CONCEPTO Y GÉNERO
 Se trata de un juego de plataformas multijugador.
 Al comienzo del juego se le asignará a cada jugador un personaje. Los personajes son diferentes tipos de gatos y luchan entre sí por conseguir un objeto (que cambiará en cada partida). El jugador que posea el objeto será el objetivo del resto, ya que el ganador será aquel que lo tenga al terminar el tiempo. Cada partida tiene un límite de tiempo predefinido de sesenta segundos.
@@ -91,7 +91,7 @@ Respecto a los nombres de los gatos, nos hemos inspirado en el musical CATS.
 
 ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Imagenes_fase_1/MusicalCats.jpg)
 
-# JUST 4 CATS V1.0
+# Fase 2
 En esta primera entrega hemos implementado muchas de las funcionalidades que planteamos en el GDD inicial.
 
 ## DIFICULTADES
@@ -163,6 +163,19 @@ A pesar de que todos los recursos utilizados han sido creados por nosotros para 
 De esta manera hemos puesto dos músicas diferentes: una que suena durante el juego y otra en el menú. Cuando el jugador tiene el power Up, la música del juego acelera.
 En el caso de los distintos sonidos que teníamos pensado implementar en el anterior GDD, hemos cumplido con la mayoría. Tenemos distintos sonidos cuando suceden distintas acciones: cuando un gato aplasta a otro, cuando cogen el objeto, cuando cogen el power Up. Además, hemos añadido un sonido cuando quedan 10s de juego y otro cuando aparece la pantalla del ganador.
 
+# Fase 3
+## Cambios
+•	Todas las tildes de las pantallas corregidas.
+
+•	Ahora se puede ir al menú desde la pantalla de pausa.
+
+•	Hay una nueva escena que se carga después del menú al pulsar el botón de jugar. En esta nueva pantalla aparece un mensaje que especifica al jugador cuál es el objeto por el que debe luchar para ganar el juego.
+
+•	Nueva pantalla de cómo jugar mejorada, en esta nueva pantalla se especifica qué posibles objetos son los que pueden aparecer y qué significan cada uno, diferenciando el power up del objeto que debe tener el jugador al final de la partida para poder ganar. Esta nueva versión de "Cómo jugar" incluye 3 pantallas diferentes entre las que se reparte la información para no cargar mucho una y entre las que el jugador podrá cambiar a su antojo pulsando siguiente o atrás.
+
+•	Además en la anterior versión el juego no estaba en función de delta y por tanto el tiempo de acciones como el vómito del gato dependía de lo rápido o lento que iba cada ordenador. 
+
+
 ## WEBGRAFÍA
 Fuentes de los grafitis:
 
@@ -197,6 +210,7 @@ https://www.youtube.com/watch?list=PLL_H5w4KA8dP9pPayzYxHCD4IQ80nkfY9&v=4RaN4g9K
 Animación:
 
 https://www.pinterest.es/pin/13299761377376292/
+
 
 ## DESARROLLADORES: 
 Alejandra Casado Ceballos, email: a.casadoce.2017@alumnos.urjc.es, GitHub: AlejandraCasadoCeballos (https://github.com/AlejandraCasadoCeballos)

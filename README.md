@@ -171,7 +171,7 @@ En el caso de los distintos sonidos que teníamos pensado implementar en el ante
 
 •	Hay una nueva escena que se carga después del menú al pulsar el botón de jugar. En esta nueva pantalla aparece un mensaje que especifica al jugador cuál es el objeto por el que debe luchar para ganar el juego.
 
-•	Nueva pantalla de cómo jugar mejorada, en esta nueva pantalla se especifica qué posibles objetos son los que pueden aparecer y qué significan cada uno, diferenciando el power up del objeto que debe tener el jugador al final de la partida para poder ganar.
+•	Nueva pantalla de cómo jugar mejorada, en esta nueva pantalla se especifica qué posibles objetos son los que pueden aparecer y qué significan cada uno, diferenciando el power up del objeto que debe tener el jugador al final de la partida para poder ganar. Esta nueva versión de "Cómo jugar" incluye 3 pantallas diferentes entre las que se reparte la información para no cargar mucho una y entre las que el jugador podrá cambiar a su antojo pulsando siguiente o atrás.
 
 •	Además en la anterior versión el juego no estaba en función de delta y por tanto el tiempo de acciones como el vómito del gato dependía de lo rápido o lento que iba cada ordenador. 
 

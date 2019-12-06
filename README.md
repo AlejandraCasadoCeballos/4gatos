@@ -165,9 +165,9 @@ En el caso de los distintos sonidos que teníamos pensado implementar en el ante
 
 # Fase 3
 ## Cambios
-•	Todas las tildes de las pantallas corregidas
+•	Todas las tildes de las pantallas corregidas.
 
-•	Ahora se puede ir al menú desde la pantalla de pausa
+•	Ahora se puede ir al menú desde la pantalla de pausa.
 
 •	Hay una nueva escena que se carga después del menú al pulsar el botón de jugar. En esta nueva pantalla aparece un mensaje que especifica al jugador cuál es el objeto por el que debe luchar para ganar el juego.
 

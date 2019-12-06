@@ -73,6 +73,7 @@ class Scene3 extends Phaser.Scene{
         // hacemos lo mismo para el gato2
         player2.setCollideWorldBounds(true);
         player2.body.setGravityY(700);
+        Juego.physics.add.collider(player2, player, this.touchPlayer);
 
         //PLAYER 1 animaciones -----------------------------------------------------------------------------------------
         //animaciones sin objeto

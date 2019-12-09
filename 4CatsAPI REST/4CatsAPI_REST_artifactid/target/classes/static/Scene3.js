@@ -69,11 +69,11 @@ class Scene3 extends Phaser.Scene{
         //player2.body.checkCollision.up=false; practica2
         this.physics.add.collider(player2, player, this.touchPlayer);//añadimos las fisicas cuando se chocan los personajes
         player.setCollideWorldBounds(true);// para no salirse del mapa
-        player.body.setGravityY(700)//incorporamos la gravedad al gato1
+        player.body.setGravityY(700);//incorporamos la gravedad al gato1
         // hacemos lo mismo para el gato2
-  
         player2.setCollideWorldBounds(true);
-        player2.body.setGravityY(700)
+        player2.body.setGravityY(700);
+        this.physics.add.collider(player2, player, this.touchPlayer);
 
         //PLAYER 1 animaciones -----------------------------------------------------------------------------------------
         //animaciones sin objeto
@@ -381,12 +381,15 @@ class Scene3 extends Phaser.Scene{
         }
     }
     //A continuación comienza la función update que se ejecuta en bucle
-    update(time, delta) {
-            
+    update (time, delta) {
+    	
+    		PUTservidor(jugador);
+        
             tiempoEspera++;//la variable que controla hace cuánto ha sido transferido el objeto aumenta 
-
+            time*=delta;//para que el tiempo no dependa de la máquina que compila este código
             //actualizamos el tiempo, dividmmos entre mil para que salga en segundos
             tiempo = Math.round(Math.floor(45000 - timer.getElapsed()) / 1000);
+            
 
             if(tiempo===10)//si quedan 10 segundos de partida, se activa el sonido de la cuenta atrás
                 sonidoCuentaAtras.play();
@@ -396,7 +399,7 @@ class Scene3 extends Phaser.Scene{
                 generarPowerUp1=130;
                 pU=objetoPowerUp.create(640,170, "lata");
                 this.physics.add.overlap(player, objetoPowerUp, this.colectPowerUp1, null, this);
-                this.physics.add.overlap(player2, objetoPowerUp, this.colectPowerUp2, null, this);
+                this.physics.add.overlap(player2, objetoPowerUp, this.colectPowerUp1, null, this);
             }
             //si tiempo es igual al momento que hemos elegido para destruir el primer power up, lo movemos fuera de la pantalla
             if(tiempo<destruir){
@@ -406,7 +409,7 @@ class Scene3 extends Phaser.Scene{
             if (tiempo === generarPowerUp2) {
                 generarPowerUp2 = 130;
                 objetoPowerUp.create(339, 350, "lata");
-                this.physics.add.overlap(player, objetoPowerUp, this.colectPowerUp1, null, this);
+                this.physics.add.overlap(player, objetoPowerUp, this.colectPowerUp2, null, this);
                 this.physics.add.overlap(player2, objetoPowerUp, this.colectPowerUp2, null, this);
             }
 
@@ -518,7 +521,8 @@ class Scene3 extends Phaser.Scene{
                         P1P2 = false;
     
                     }
-                }     
+                }    
+                    
                  
                 //jugador 2
                 if (player2.right.isDown && P2P1 == false) {

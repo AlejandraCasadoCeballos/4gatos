@@ -1,12 +1,12 @@
-class Scene8 extends Phaser.Scene {
-    constructor() {
+class Scene8 extends Phaser.Scene{
+    constructor(){
         super("Mensaje");
     }
 
-    init() {
-
+    init(){
+        
     }
-    preload() //precargar recursos
+    preload () //precargar recursos
     {
         this.load.image('pescado', '/Recursos/Objetos/pescado.png');
         this.load.image('ovillo', '/Recursos/Objetos/ovillo.png');
@@ -15,28 +15,30 @@ class Scene8 extends Phaser.Scene {
 
     }
 
-    create() {
+    create(){
 
         timer = this.time.addEvent({ delay: 3000, callback: this.empezar, callbackScope: this });
-        objeto = this.physics.add.staticGroup();
-        aleatorio = Phaser.Math.Between(1, 3);
-        if (aleatorio == 1)
-            objetoAleatorio = "pescado";
-        else if (aleatorio == 2)
-            objetoAleatorio = "ovillo";
-        else if (aleatorio == 3)
-            objetoAleatorio = "rata";
+        objeto= this.physics.add.staticGroup(); 
+        aleatorio=Phaser.Math.Between(1, 3);
+        if(aleatorio==1)
+            objetoAleatorio="pescado";
+        else if(aleatorio==2)
+            objetoAleatorio="ovillo";
+        else if(aleatorio==3)
+            objetoAleatorio="rata";
 
         //Generamos el objeto en el centro de la pantalla
-        this.add.image(400, 300, 'mensaje');
+        this.add.image(400, 300, 'mensaje').setAlpha(1);
         objeto.create(400, 300, objetoAleatorio).setScale(2, 2);
-
+        
     }
-    update() {
+    update(time, delta) {
+    
+    	PUTservidor(jugador);
         tiempo = Math.round(Math.floor(45000 - timer.getElapsed()) / 1000);
     }
-    empezar() {
+    empezar(){
         this.scene.start("Juego");
     }
-
+    
 }

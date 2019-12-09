@@ -16,39 +16,29 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-
+import java.time.*;
 
 @RestController
 @RequestMapping("/Jugador")
 public class JugadorController {
 
-	/*boolean alguienConectado;
-	
-	@GetMapping("/conexiones/")
-	public boolean getAlguienConectado() {
-		return alguienConectado;
-	}
-
-	@PutMapping("/conexiones/")
-	public ResponseEntity putAlguienConectado(@RequestBody boolean b) {
-		alguienConectado = b;
-		return new ResponseEntity<>(alguienConectado, HttpStatus.OK);
-	}*/
-	
-	private Map<Long, Jugador> jugadores = new ConcurrentHashMap<>();
+	public static Map<Long, Jugador> jugadores = new ConcurrentHashMap<>();
 	private AtomicLong ultimoId = new AtomicLong();
 
-	@GetMapping("/")
+	@GetMapping
 	public Collection<Jugador> jugadores() {
+		System.out.println(jugadores.values());
+		
 		return jugadores.values();
 	}
 
-	@PostMapping("/")
+	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
 	public Jugador nuevoJugador(@RequestBody Jugador jugador) {
 
 		long id = ultimoId.incrementAndGet();
-		jugador.setId(id);
+		jugador.setUltimoId(id);
+		jugador.registro(id);
 		jugadores.put(id, jugador);
 
 		return jugador;
@@ -57,11 +47,13 @@ public class JugadorController {
 	@PutMapping("/{id}")
 	public ResponseEntity<Jugador> actualizaJugador(@PathVariable long id, @RequestBody Jugador jugadorActualizado) {
 
-		Jugador jugador = jugadores.get(id);
+		Jugador jugador = jugadores.get(jugadorActualizado.getId());
 
 		if (jugador != null) {
 
 			jugadorActualizado.setId(id);
+			jugadorActualizado.setUltimaInteraccion(LocalDateTime.now());
+			
 			jugadores.put(id, jugadorActualizado);
 
 			return new ResponseEntity<>(jugadorActualizado, HttpStatus.OK);
@@ -84,10 +76,10 @@ public class JugadorController {
 
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Jugador> borraJugador(@PathVariable long id) {
-
+		
 		Jugador jugador = jugadores.remove(id);
-
-		if (jugador != null) {
+		
+		if (jugador != null && jugador.getInactivo()) {
 			return new ResponseEntity<>(jugador, HttpStatus.OK);
 		} else {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);

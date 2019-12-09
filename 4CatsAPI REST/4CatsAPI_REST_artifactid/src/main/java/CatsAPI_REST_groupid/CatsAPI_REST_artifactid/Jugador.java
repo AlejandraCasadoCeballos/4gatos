@@ -4,44 +4,52 @@ import java.time.*;
 
 public class Jugador {
 
-	public double tiempoMaximoInactividad=30;
-	
-	private boolean inactivo;
 	private long id=-1;
+	private static long ultimoId=-1;
 	private String nombre;
-	private LocalDateTime momentoDeRegistro;
+	public LocalDateTime momentoDeRegistro;
 	private LocalDateTime ultimaInteraccion;
+	
+	public static double tiempoMaximoInactividad=5;
 		
+	public Jugador(){}
 	public Jugador(String nombre, LocalDateTime momentoDeRegistro, LocalDateTime ultimaInteraccion) {	
 		super();
 		this.nombre = nombre;
 		this.momentoDeRegistro = momentoDeRegistro;
-		this.ultimaInteraccion = ultimaInteraccion;
+		this.ultimaInteraccion= ultimaInteraccion;
 	}
 	
 	//Métodos
 	public boolean getInactivo() {
 		LocalDateTime momentoActual=LocalDateTime.now();
-		Duration diferencia= Duration.between(momentoActual, getUltimaInteraccion());
-		double tiempoPasado=diferencia.getSeconds();
+		Duration diferencia= Duration.between(momentoActual, ultimaInteraccion);
+		double tiempoPasado=(double)diferencia.getSeconds();
+		
 		if(tiempoPasado>tiempoMaximoInactividad)
-			inactivo=true;
+			return true;
 		else
-			inactivo=false;
-		return inactivo;
+			return false;	
 	}
 	
 	public void registro(long id) {
 		this.setId(id);
 		this.momentoDeRegistro=LocalDateTime.now();
-		this.ultimaInteraccion= momentoDeRegistro;
-		
+		this.momentoDeRegistro.toString();
+		this.ultimaInteraccion=momentoDeRegistro;
 	}
 	public long getId() {
 		return id;
 	} 
 	public void setId(long id) {
 		this.id=id;
+	} 
+	
+	public static long getultimoId() {
+		return ultimoId;
+	} 
+	public void setUltimoId(long id) {
+		ultimoId=id;
 	} 
 	
 	public String getNombre() {
@@ -57,18 +65,17 @@ public class Jugador {
 	public void setMomentoRegistro(LocalDateTime momentoDeRegistro) {
 		this.momentoDeRegistro = momentoDeRegistro;
 	}
-
 	public LocalDateTime getUltimaInteraccion() {
 		return ultimaInteraccion;
 	}
 	public void setUltimaInteraccion(LocalDateTime ultimaInteraccion) {
 		this.ultimaInteraccion = ultimaInteraccion;
 	}
+
 	@Override
 	public String toString() {
-		return "Anuncio [id=" + id + ", Nombre=" + nombre + ", Momento de registro=" + 
-				momentoDeRegistro + ", Ultima interacción=" + ultimaInteraccion + 
-				"Inactivo=" + inactivo +"]";
+		return "Jugador [id=" + id + ", Nombre=" + nombre + ", Momento de registro=" + 
+				momentoDeRegistro + ", ultima interacción " + ultimaInteraccion +"]";
 	}
 	
 }

@@ -30,5 +30,8 @@ class Scene5 extends Phaser.Scene{
         botonMenu.on('pointerover', () => {this.add.image(400, 300,'atrasG1'); });
         botonMenu.on('pointerout', () => {this.add.image(400, 300,'ganador1'); });
     }
+    update(){
+    	PUTservidor(jugador);
+    }
 
 }

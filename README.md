@@ -170,10 +170,18 @@ En el caso de los distintos sonidos que teníamos pensado implementar en el ante
 •	Ahora se puede ir al menú desde la pantalla de pausa.
 
 •	Hay una nueva escena que se carga después del menú al pulsar el botón de jugar. En esta nueva pantalla aparece un mensaje que especifica al jugador cuál es el objeto por el que debe luchar para ganar el juego.
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Interfaz/objetoGanarCaptura.png)
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Interfaz/objetoGanarCaptura2.png)
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Interfaz/objetoGanarCaptura3.png)
 
 •	Nueva pantalla de cómo jugar mejorada, en esta nueva pantalla se especifica qué posibles objetos son los que pueden aparecer y qué significan cada uno, diferenciando el power up del objeto que debe tener el jugador al final de la partida para poder ganar. Esta nueva versión de "Cómo jugar" incluye 3 pantallas diferentes entre las que se reparte la información para no cargar mucho una y entre las que el jugador podrá cambiar a su antojo pulsando siguiente o atrás.
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Interfaz/comoJugar.jpg)
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Interfaz/comoJugar2.jpg)
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Interfaz/comoJugar3.jpg)
 
 •	Además en la anterior versión el juego no estaba en función de delta y por tanto el tiempo de acciones como el vómito del gato dependía de lo rápido o lento que iba cada ordenador. 
+
+• Para la implementación de los métodos POST, PUT, GET y DELETE hemos creado una nueva pantalla que aparece nada más comenzar el juego y en la que dependiendo del gato que elijas se te asignará el nombre de uno o del otro.
 
 
 ## WEBGRAFÍA

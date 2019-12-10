@@ -206,9 +206,15 @@ Para poder usar el juego, lo primero será abrir Spring y activar el servidor. U
 Al comenzar se debe escoger al gato con el que se jugará la partida. Tras hacerlo se mostrará la pantalla del menú donde se puede acceder a los créditos pulsando sobre el botón "Créditos"; acceder al recordatorio de los controles, pulsando el botón "Cómo jugar" y navegando entre las pantallas de recordatorio de controles pulsando los botones "Siguiente" y "Atrás"; y comenzar una partida, en el botón "Jugar". Una vez en la partida, se puede pausar el juego pulsando en el botón "Pausa", y para salir de él solo hay que pulsar sobre le botón "Atrás", si se quiere ir al menú, se deberá pulsar sobre el botón "Menú". A la hora de jugar, para mover al personaje se deben utilizar las flechas del teclado o las teclas WASD dependiendo del gato elegido. Ganará el gato que tenga el objeto en cuestión en su posesión cuando se termine el tiempo.
 ## DIAGRAMA DE NAVEGACIÓN
 Hemos incorporado unas mejoras a la hora de navegar por el juego:
+
 ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Interfaz/Diagrama1.5.PNG)
-Diagrama de navagación resultante: 
+Diagrama de navagación resultante:
+
 ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Interfaz/Diagrama2.PNG)
+
+## DIAGRAMA DE CLASES
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Interfaz/DiagramaDeClases.PNG)
+
 # WEBGRAFÍA
 Fuentes de los grafitis:
 

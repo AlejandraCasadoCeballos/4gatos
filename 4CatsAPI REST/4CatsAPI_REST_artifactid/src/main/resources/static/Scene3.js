@@ -384,6 +384,7 @@ class Scene3 extends Phaser.Scene{
     update (time, delta) {
     	
     		PUTservidor(jugador);
+    		GETservidor();
         
             tiempoEspera++;//la variable que controla hace cuánto ha sido transferido el objeto aumenta 
             time*=delta;//para que el tiempo no dependa de la máquina que compila este código

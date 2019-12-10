@@ -78,7 +78,7 @@ public class JugadorController {
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Jugador> borraJugador(@PathVariable long id) {
 		
-		Jugador jugador = jugadores.remove(id);
+		Jugador jugador = jugadores.remove(id); 
 		
 		if (jugador != null && jugador.getInactivo()) {
 			return new ResponseEntity<>(jugador, HttpStatus.OK);

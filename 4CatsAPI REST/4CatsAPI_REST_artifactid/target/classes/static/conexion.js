@@ -5,7 +5,7 @@ function GETservidor() { //GET
     }).done(function(jugador){
         var max = jugador.length;
         for(var i=0; i<max; i++){
-            console.log("id= "+jugador[i].id+", nombre= "+jugador[i].nombre+", fecha= "+jugador[i].momentoDeRegistro+", ultima interacción "+jugador[i].ultimaInteraccion+", Inactivo: "+jugador[i].inactivo);
+            console.log("GET: \nid= "+jugador[i].id+", nombre= "+jugador[i].nombre+", fecha= "+jugador[i].momentoDeRegistro+", ultima interacción "+jugador[i].ultimaInteraccion+", Inactivo: "+jugador[i].inactivo);
             
         }
         

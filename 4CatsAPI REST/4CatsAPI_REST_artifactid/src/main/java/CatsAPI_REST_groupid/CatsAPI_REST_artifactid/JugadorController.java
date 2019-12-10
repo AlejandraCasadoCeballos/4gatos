@@ -23,7 +23,7 @@ import java.time.*;
 public class JugadorController {
 
 	public static Map<Long, Jugador> jugadores = new ConcurrentHashMap<>();
-	private AtomicLong ultimoId = new AtomicLong();
+	public static AtomicLong ultimoId = new AtomicLong();
 
 	@GetMapping
 	public Collection<Jugador> jugadores() {
@@ -37,7 +37,6 @@ public class JugadorController {
 	public Jugador nuevoJugador(@RequestBody Jugador jugador) {
 
 		long id = ultimoId.incrementAndGet();
-		jugador.setUltimoId(id);
 		jugador.registro(id);
 		jugadores.put(id, jugador);
 

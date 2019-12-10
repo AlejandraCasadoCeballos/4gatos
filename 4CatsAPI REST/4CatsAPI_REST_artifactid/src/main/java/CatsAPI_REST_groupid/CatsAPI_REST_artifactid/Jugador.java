@@ -5,13 +5,12 @@ import java.time.*;
 public class Jugador {
 
 	private long id=-1;
-	private static long ultimoId=-1;
 	private String nombre;
 	public LocalDateTime momentoDeRegistro;
 	public boolean inactivo;
 	private LocalDateTime ultimaInteraccion;
 	
-	public static double tiempoMaximoInactividad=5;
+	public static double tiempoMaximoInactividad=2;
 		
 	public Jugador(){}
 	public Jugador(String nombre, LocalDateTime momentoDeRegistro, LocalDateTime ultimaInteraccion) {	
@@ -27,7 +26,7 @@ public class Jugador {
 		LocalDateTime momentoActual=LocalDateTime.now();
 		Duration diferencia= Duration.between(momentoActual, ultimaInteraccion);
 		double tiempoPasado=-(double)diferencia.getSeconds();
-		System.out.println("Tiempo pasado = "+tiempoPasado);
+		//System.out.println("Tiempo pasado = "+tiempoPasado);
 		if(tiempoPasado>tiempoMaximoInactividad)
 			return true;
 		else
@@ -45,13 +44,6 @@ public class Jugador {
 	} 
 	public void setId(long id) {
 		this.id=id;
-	} 
-	
-	public static long getultimoId() {
-		return ultimoId;
-	} 
-	public void setUltimoId(long id) {
-		ultimoId=id;
 	} 
 	
 	public String getNombre() {

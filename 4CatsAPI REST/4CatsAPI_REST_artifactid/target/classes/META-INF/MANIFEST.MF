@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Implementation-Title: 4CatsAPI_REST_artifactid
 Implementation-Version: 0.0.1-SNAPSHOT
-Built-By: brenlli
+Built-By: aleja
 Implementation-Vendor-Id: 4CatsAPI_REST_groupid
 Build-Jdk: 1.8.0_231
 Implementation-URL: http://maven.apache.org

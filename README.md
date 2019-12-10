@@ -201,6 +201,7 @@ Para implementar API REST en nuestro juego, lo hemos realizado de la siguiente m
 • En el resto de pantallas, en la función update el cliente realiza la petición PUT en bucle de manera que si el jugador está en el juego, se actualiza la ultima hora de interacion de manera constante. En el momento que el jugador cierra la pestaña o se va a otra pantalla, tiene 3 segundos antes de que el servidor lo pase a inactivo y lo elimine de la lista de jugadores.
 
 ## Cómo usar el juego
+Para poder usar el juego, lo primero será abrir Spring y activar el servidor. Una vez realizado esto, en el navegador que se desee se deberá poner: localhost:8080/. 
 Al comenzar se debe escoger al gato con el que se jugará la partida. Tras hacerlo se mostrará la pantalla del menú donde se puede acceder a los créditos pulsando sobre el botón "Créditos"; acceder al recordatorio de los controles, pulsando el botón "Cómo jugar" y navegando entre las pantallas de recordatorio de controles pulsando los botones "Siguiente" y "Atrás"; y comenzar una partida, en el botón "Jugar". Una vez en la partida, se puede pausar el juego pulsando en el botón "Pausa", y para salir de él solo hay que pulsar sobre le botón "Atrás", si se quiere ir al menú, se deberá pulsar sobre el botón "Menú". A la hora de jugar, para mover al personaje se deben utilizar las flechas del teclado o las teclas WASD dependiendo del gato elegido. Ganará el gato que tenga el objeto en cuestión en su posesión cuando se termine el tiempo.
 
 # WEBGRAFÍA

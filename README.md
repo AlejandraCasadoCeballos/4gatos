@@ -181,7 +181,7 @@ En el caso de los distintos sonidos que teníamos pensado implementar en el ante
 
 •	Además en la anterior versión el juego no estaba en función de delta y por tanto el tiempo de acciones como el vómito del gato dependía de lo rápido o lento que iba cada ordenador. 
 
-• Para la implementación de los métodos POST, PUT, GET y DELETE hemos creado una nueva pantalla que aparece nada más comenzar el juego y en la que dependiendo del gato que elijas se te asignará el nombre de uno o del otro.
+• Hemos creado una nueva pantalla que aparece nada más comenzar el juego y en la que se permite al jugador elegir entre dos gatos.
 ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Interfaz/eligeGatoCaptura.PNG)
 
 ## Dificultades

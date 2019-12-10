@@ -162,7 +162,8 @@ Sprites de los personajes
 A pesar de que todos los recursos utilizados han sido creados por nosotros para el desarrollo de este juego, la fuente de letra usada para los títulos de las interfaces y la música las hemos descargado de unas páginas web que adjuntamos en la webgrafía.
 De esta manera hemos puesto dos músicas diferentes: una que suena durante el juego y otra en el menú. Cuando el jugador tiene el power Up, la música del juego acelera.
 En el caso de los distintos sonidos que teníamos pensado implementar en el anterior GDD, hemos cumplido con la mayoría. Tenemos distintos sonidos cuando suceden distintas acciones: cuando un gato aplasta a otro, cuando cogen el objeto, cuando cogen el power Up. Además, hemos añadido un sonido cuando quedan 10s de juego y otro cuando aparece la pantalla del ganador.
-
+## DIAGRAMA DE NAVEGACIÓN
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Interfaz/Diagrama1.PNG)
 # Fase 3
 ## Cambios
 •	Todas las tildes de las pantallas corregidas.
@@ -203,7 +204,11 @@ Para implementar API REST en nuestro juego, lo hemos realizado de la siguiente m
 ## Cómo usar el juego
 Para poder usar el juego, lo primero será abrir Spring y activar el servidor. Una vez realizado esto, en el navegador que se desee se deberá poner: localhost:8080/. 
 Al comenzar se debe escoger al gato con el que se jugará la partida. Tras hacerlo se mostrará la pantalla del menú donde se puede acceder a los créditos pulsando sobre el botón "Créditos"; acceder al recordatorio de los controles, pulsando el botón "Cómo jugar" y navegando entre las pantallas de recordatorio de controles pulsando los botones "Siguiente" y "Atrás"; y comenzar una partida, en el botón "Jugar". Una vez en la partida, se puede pausar el juego pulsando en el botón "Pausa", y para salir de él solo hay que pulsar sobre le botón "Atrás", si se quiere ir al menú, se deberá pulsar sobre el botón "Menú". A la hora de jugar, para mover al personaje se deben utilizar las flechas del teclado o las teclas WASD dependiendo del gato elegido. Ganará el gato que tenga el objeto en cuestión en su posesión cuando se termine el tiempo.
-
+## DIAGRAMA DE NAVEGACIÓN
+Hemos incorporado unas mejoras a la hora de navegar por el juego:
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Interfaz/Diagrama1.5.PNG)
+Diagrama de navagación resultante: 
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Interfaz/Diagrama2.PNG)
 # WEBGRAFÍA
 Fuentes de los grafitis:
 

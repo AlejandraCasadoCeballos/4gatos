@@ -184,7 +184,10 @@ En el caso de los distintos sonidos que teníamos pensado implementar en el ante
 • Para la implementación de los métodos POST, PUT, GET y DELETE hemos creado una nueva pantalla que aparece nada más comenzar el juego y en la que dependiendo del gato que elijas se te asignará el nombre de uno o del otro.
 ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Interfaz/eligeGatoCaptura.PNG)
 
-## WEBGRAFÍA
+## Dificultades
+A la hora de probar si funcionaba correctamente los métodos de la API REST, nos aparecía constantemente un error de que no era posible hacer peticiones al servidor REST porque estas habían sido bloqueadas por la política CORS. No entendíamos lo que sucedía, y decidimos buscar soluciones en internet. Encontramos una extensión de Chrome que solucionaba el problema para algunos integrantes de nuestro grupo, pero para otros no. Finalmente compañeros de otro grupo nos dijeron que lo que debíamos hacer era añadir un archivo .java que se encontraba en las diapositivas de clase, y al añadirlo ya funcionaba todo perfectamente.
+
+# WEBGRAFÍA
 Fuentes de los grafitis:
 
 https://www.dafont.com/es/kenny-izatt.d1179
@@ -220,7 +223,7 @@ Animación:
 https://www.pinterest.es/pin/13299761377376292/
 
 
-## DESARROLLADORES: 
+# DESARROLLADORES: 
 Alejandra Casado Ceballos, email: a.casadoce.2017@alumnos.urjc.es, GitHub: AlejandraCasadoCeballos (https://github.com/AlejandraCasadoCeballos)
 
 Patricia Ruiz Bermejo, email: p.ruizb.2018@alumnos.urjc.es, GitHub: potii (https://github.com/potii)

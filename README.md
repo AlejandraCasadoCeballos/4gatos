@@ -188,7 +188,7 @@ En el caso de los distintos sonidos que teníamos pensado implementar en el ante
 A la hora de probar si funcionaba correctamente los métodos de la API REST, nos aparecía constantemente un error de que no era posible hacer peticiones al servidor REST porque estas habían sido bloqueadas por la política CORS. No entendíamos lo que sucedía, y decidimos buscar soluciones en internet. Encontramos una extensión de Chrome que solucionaba el problema para algunos integrantes de nuestro grupo, pero para otros no. Finalmente compañeros de otro grupo nos dijeron que lo que debíamos hacer era añadir un archivo .java que se encontraba en las diapositivas de clase, y al añadirlo ya funcionaba todo perfectamente.
 
 ## Aplicación de API REST a nuestro juego
-A la hora de implementar API REST en nuestro juego, lo hemos realizado de la siguiente manera:
+Para implementar API REST en nuestro juego, lo hemos realizado de la siguiente manera:
 
 • En el momento en el que se carga el juego, se realiza un GET y el cliente recibe todos los usuarios activos en ese momento.
 

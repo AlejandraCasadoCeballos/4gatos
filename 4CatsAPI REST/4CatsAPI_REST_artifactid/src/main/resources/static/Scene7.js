@@ -15,6 +15,7 @@ class Scene7 extends Phaser.Scene{
     }
 
     create(){
+    	GETservidor();
         const botonVolver = this.add.text(50, 530,"Atras",{font:"30px Courier", fill:"Red"});
         const botonMenu = this.add.text(680,530,"Menú",{font:"30px Courier", fill:"White"}); //cremos el botón de pausa
         this.add.image(400, 300,'pausa');//añade la imagen
@@ -34,6 +35,8 @@ class Scene7 extends Phaser.Scene{
         botonMenu.on('pointerdown', () => {this.scene.stop("Juego"); this.gameOver(); this.scene.switch("Menu"); });
         botonMenu.on('pointerover', () => {this.add.image(400, 300,'botonMenuEncima'); });
         botonMenu.on('pointerout', () => {this.add.image(400, 300,'pausa'); });
+        
+        
     }
     gameOver ()
     {   
@@ -48,6 +51,7 @@ class Scene7 extends Phaser.Scene{
         pU.x+=50;
     }
     update(){
-    	PUTservidor(jugador);
+    	//PUTservidor(jugador);
+    	
     }
 }

@@ -8,6 +8,7 @@ public class Jugador {
 	private static long ultimoId=-1;
 	private String nombre;
 	public LocalDateTime momentoDeRegistro;
+	public boolean inactivo;
 	private LocalDateTime ultimaInteraccion;
 	
 	public static double tiempoMaximoInactividad=5;
@@ -18,14 +19,15 @@ public class Jugador {
 		this.nombre = nombre;
 		this.momentoDeRegistro = momentoDeRegistro;
 		this.ultimaInteraccion= ultimaInteraccion;
+		this.inactivo = false;
 	}
 	
 	//Métodos
 	public boolean getInactivo() {
 		LocalDateTime momentoActual=LocalDateTime.now();
 		Duration diferencia= Duration.between(momentoActual, ultimaInteraccion);
-		double tiempoPasado=(double)diferencia.getSeconds();
-		
+		double tiempoPasado=-(double)diferencia.getSeconds();
+		System.out.println("Tiempo pasado = "+tiempoPasado);
 		if(tiempoPasado>tiempoMaximoInactividad)
 			return true;
 		else
@@ -71,11 +73,15 @@ public class Jugador {
 	public void setUltimaInteraccion(LocalDateTime ultimaInteraccion) {
 		this.ultimaInteraccion = ultimaInteraccion;
 	}
+	
+	public void setInactivo(boolean act) {
+		this.inactivo=act;
+	} 
 
 	@Override
 	public String toString() {
 		return "Jugador [id=" + id + ", Nombre=" + nombre + ", Momento de registro=" + 
-				momentoDeRegistro + ", ultima interacción " + ultimaInteraccion +"]";
+				momentoDeRegistro + ", ultima interacción " + ultimaInteraccion +", Inactivo= "+inactivo+" ]";
 	}
 	
 }

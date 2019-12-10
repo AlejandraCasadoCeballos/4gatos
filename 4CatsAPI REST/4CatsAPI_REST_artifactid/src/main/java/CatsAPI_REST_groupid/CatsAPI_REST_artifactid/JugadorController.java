@@ -48,9 +48,10 @@ public class JugadorController {
 	public ResponseEntity<Jugador> actualizaJugador(@PathVariable long id, @RequestBody Jugador jugadorActualizado) {
 
 		Jugador jugador = jugadores.get(jugadorActualizado.getId());
-
+		//Jugador jugadorReal = jugadores.get(id);
+		
 		if (jugador != null) {
-
+			//jugadorActualizado.setInactivo(jugadorReal.getInactivo());
 			jugadorActualizado.setId(id);
 			jugadorActualizado.setUltimaInteraccion(LocalDateTime.now());
 			
@@ -64,10 +65,11 @@ public class JugadorController {
 
 	@GetMapping("/{id}")
 	public ResponseEntity<Jugador> getJugador(@PathVariable long id) {
-
+		
 		Jugador jugador = jugadores.get(id);
-
+		
 		if (jugador != null) {
+			jugador.setInactivo(jugador.getInactivo());
 			return new ResponseEntity<>(jugador, HttpStatus.OK);
 		} else {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -85,4 +87,5 @@ public class JugadorController {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 	}
+	
 }

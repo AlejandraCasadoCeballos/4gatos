@@ -113,7 +113,7 @@ Menú principal:
 
 Cómo jugar:
 
-![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Interfaz/comoJugar.jpg)
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Imagenes_fase_1/comoJugar1.0.jpg)
 
 Créditos:
 
@@ -129,7 +129,7 @@ Pantalla de victoria jugador 2:
 
 Pantalla de pausa:
 
-![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Interfaz/pausa.jpg)
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Imagenes_fase_1/pausa1.0.jpg)
 
 
 ## ARTE

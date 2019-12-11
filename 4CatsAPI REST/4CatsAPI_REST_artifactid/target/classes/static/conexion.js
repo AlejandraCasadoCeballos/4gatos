@@ -1,7 +1,7 @@
 
 function GETservidor() { //GET 
     $.ajax({
-        url: "http://127.0.0.1:8080/Jugador"
+        url: "/Jugador"
     }).done(function(jugador){
         var max = jugador.length;
         for(var i=0; i<max; i++){
@@ -17,7 +17,7 @@ function POSTservidor(jugador) { //POST
     console.log("NuevoJugador: " + JSON.stringify(jugador));
     $.ajax({
         method: "POST",
-        url:"http://localhost:8080/Jugador",
+        url:"/Jugador",
         data: JSON.stringify(jugador),
         processData: false,
         headers: {
@@ -35,7 +35,7 @@ function PUTservidor(jugador) {
     console.log(jugador.id);
     $.ajax({
         method: "PUT",
-        url: "http://localhost:8080/Jugador/" + jugador.id,
+        url:"/Jugador/" + jugador.id,
         data: JSON.stringify(jugador),
         processData: false,
         headers: {
@@ -51,7 +51,7 @@ function PUTservidor(jugador) {
 function deleteItem(jugadorId) {
     $.ajax({
         method: 'DELETE',
-        url: 'http://localhost:8080/Jugador/' + jugadorId
+        url: '/Jugador/' + jugadorId
     }).done(function (jugador) {
         console.log("Deleted jugador " + jugadorId)
     })

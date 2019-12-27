@@ -15,12 +15,13 @@ public class Jugador {
 		
 	public Jugador(){}
 	
-	public Jugador(String nombre, LocalDateTime momentoDeRegistro, LocalDateTime ultimaInteraccion) {	
+	public Jugador(String nombre, LocalDateTime momentoDeRegistro, LocalDateTime ultimaInteraccion, String nickname) {	
 		super();
 		this.nombreDelGato = nombre;
 		this.momentoDeRegistro = momentoDeRegistro;
 		this.ultimaInteraccion= ultimaInteraccion;
 		this.inactivo = false;
+		this.nickname= nickname;
 	}
 	
 	//Métodos
@@ -80,8 +81,9 @@ public class Jugador {
 	}
 	@Override
 	public String toString() {
-		return "Jugador [ID: " + id + ", Nombre del gato: " + nombreDelGato + ", Momento de registro: " + 
-				momentoDeRegistro + ", ultima interacción: " + ultimaInteraccion +", Inactivo: "+inactivo+" ]";
+		return "Jugador [ID: " + id + ", Nombre jugador: "+ nickname+", Nombre del gato: " + nombreDelGato + 
+				", Momento de registro: " + momentoDeRegistro + ", ultima interacción: " + ultimaInteraccion +
+				", Inactivo: "+inactivo+" ]";
 	}
 	
 }

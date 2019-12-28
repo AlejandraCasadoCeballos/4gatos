@@ -45,8 +45,7 @@ class Scene11 extends Phaser.Scene
         botonMungojerry.setInteractive();
         botonMuffin.setInteractive();
         
-        var nickname = window.prompt("Introduce tu nickname, por favor");
-        alert("Bienvenid@, " + nickname + "!");
+       
 
         // Distintas interacciones (pulsarlo, estar sobre él y dejar de estar sobre él) para cada botón del menú
         // En cada uno, al poner el ratón sobre el botón la imagen cambia a otra que tiene las letras de dicho botón de otro color

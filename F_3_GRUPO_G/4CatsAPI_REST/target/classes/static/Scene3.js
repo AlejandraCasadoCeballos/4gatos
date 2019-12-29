@@ -6,7 +6,7 @@ class Scene3 extends Phaser.Scene{
     preload () //precargamos recursos, en este caso, el fondo, la plataforma, los objetos, la musica, los sonidos y los sprites de 
                //las animaciones de los dos gatos
     {
-        this.load.image('fondo', '/Recursos/Interfaz/fondo.jpg');
+        this.load.image('escenario1', '/Recursos/Interfaz/escenario1.jpg');
         this.load.image('plataforma', '/Recursos/Plataformas/plataforma.png');
         this.load.image('pescado', '/Recursos/Objetos/pescado.png');
         this.load.image('ovillo', '/Recursos/Objetos/ovillo.png');
@@ -36,26 +36,43 @@ class Scene3 extends Phaser.Scene{
         musica.setLoop(true);//hacemos que la música del juego suene en bucle
         musica.play();//hacemos que suene la música
       
-        this.add.image(400, 300, 'fondo');//añadimos el fondo del juego
-        const botonPausa = this.add.text(50,10,"Pausa",{font:"30px Courier", fill:"White"}); //cremos el botón de pausa
+        plataformas = this.physics.add.staticGroup(); //crea un nuevo grupo de elementos estáticos y lo asigna a la variable plataformas
+      //hemos creado plataformas con el alpha a 0 para que fuesen invisibles pero cumpliesen su función de colisionar con el jugador
+        if(escenarioUno){
+        	this.add.image(400, 300, 'escenario1');//añadimos el fondo del juego
+        	
+        	//plataformas propias del escenario
+        	plataformas.create(120, 240, 'plataforma').setScale(0.25, 0.3).refreshBody().setAlpha(0);//farola
+            plataformas.create(120, 50, 'plataforma').setScale(0.25, 0.3).refreshBody().setAlpha(0);//ventilador superior
+            plataformas.create(640, 190, 'plataforma').setScale(0.33, 0.3).refreshBody().setAlpha(0);//venta derecha
+            plataformas.create(340, 190, 'plataforma').setScale(0.33, 0.3).refreshBody().setAlpha(0);//ventana izquierda superior
+            plataformas.create(339, 367, 'plataforma').setScale(0.33, 0.3).refreshBody().setAlpha(0);//ventana izquierda inferior
+            plataformas.create(512, 347, 'plataforma').setScale(0.23, 0.3).refreshBody().setAlpha(0);//ventilador inferior
+            plataformas.create(640, 480, 'plataforma').setScale(0.5, 0.3).refreshBody().setAlpha(0);//basura
+            plataformas.create(90, 480, 'plataforma').setScale(0.3, 0.3).refreshBody().setAlpha(0);//coche
+            plataformas.create(180, 520, 'plataforma').setScale(0.2, 0.3).refreshBody().setAlpha(0);//coche
+            
+        	escenarioUno=false;
+        }
+        else if(escenarioDos){
+        	this.add.image(400, 300, 'escenario1').setScale(0.5,0.5);
+        	escenarioDos=false;
+        }
+        else if(escenarioTres){
+        	this.add.image(400, 300, 'escenario1').setAlpha(0.5);
+        	escenarioTres=false;
+        }
+        
+        const botonPausa = this.add.text(40,10,"Pausa",{font:"25px Courier", fill:"White"}); //cremos el botón de pausa
         botonPausa.setInteractive();
         //cuando le damos cambiamos a la escena de pausa, paramos la música y esta escena
         botonPausa.on('pointerdown', () => { this.scene.pause(); musica.pause(); this.scene.launch("Pausa"); sonidoCuentaAtras.pause();}); 
- 
-
-        plataformas = this.physics.add.staticGroup(); //crea un nuevo grupo de elementos estáticos y lo asigna a la variable plataformas
-        //hemos creado plataformas con el alpha a 0 para que fuesen invisibles pero cumpliesen su función de colisionar con el jugador
+        botonPausa.on('pointerout', () => {/*this.add.text(50,10,"Pausa",{font:"30px Courier", fill:"White"});*/}); 
+        botonPausa.on('pointerover', () => { /*this.add.text(50,10,"Pausa",{font:"30px Courier", fill:""});*/}); 
+        
+        //plataformas generales(suelo y paredes)
         plataformas.create(400, 600, 'plataforma').setScale(2, 0.70).refreshBody().setAlpha(0); //cargarmos la imagen multiplicando por 2 
                                                                                                 //su tamaño, esta plataforma es la del suelo
-        plataformas.create(120, 240, 'plataforma').setScale(0.25, 0.3).refreshBody().setAlpha(0);//farola
-        plataformas.create(120, 50, 'plataforma').setScale(0.25, 0.3).refreshBody().setAlpha(0);//ventilador superior
-        plataformas.create(640, 190, 'plataforma').setScale(0.33, 0.3).refreshBody().setAlpha(0);//venta derecha
-        plataformas.create(340, 190, 'plataforma').setScale(0.33, 0.3).refreshBody().setAlpha(0);//ventana izquierda superior
-        plataformas.create(339, 367, 'plataforma').setScale(0.33, 0.3).refreshBody().setAlpha(0);//ventana izquierda inferior
-        plataformas.create(512, 347, 'plataforma').setScale(0.23, 0.3).refreshBody().setAlpha(0);//ventilador inferior
-        plataformas.create(640, 480, 'plataforma').setScale(0.5, 0.3).refreshBody().setAlpha(0);//basura
-        plataformas.create(90, 480, 'plataforma').setScale(0.3, 0.3).refreshBody().setAlpha(0);//coche
-        plataformas.create(180, 520, 'plataforma').setScale(0.2, 0.3).refreshBody().setAlpha(0);//coche
         plataformas.create(1, 1, 'plataforma').setScale(0.15, 200).refreshBody().setAlpha(0); //cargarmos la imagen multiplicando por 2 su 
                                                                                               //tamaño, esta plataforma es la pared izquierda
         plataformas.create(800, 800, 'plataforma').setScale(0.15, 200).refreshBody().setAlpha(0);//pared derecha
@@ -275,10 +292,10 @@ class Scene3 extends Phaser.Scene{
         this.physics.add.overlap(player2, player, this.hitPlayer, null, this);
         
         //imprimimos el tiempo por pantalla en blanco
-        info = this.add.text(570, 10, '', {font:"30px Courier", fill:"white"});
+        info = this.add.text(600, 10, '', {font:"25px Courier", fill:"White"});
         timer = this.time.addEvent({ delay: 45000, callback: this.gameOver, callbackScope: this });
 
-        var textoPantalla =this.add.text(570, 10, GETservidor(), {font:"30px Courier", fill:"white"});
+       //var textoPantalla =this.add.text(570, 10, GETservidor(), {font:"20px Courier", fill:"white"});
     }
 
     //función de acabar el juego. Al terminar, dependiendo de quién tenga el objeto al final de la partida, el juego lleva a la escena del 
@@ -286,14 +303,20 @@ class Scene3 extends Phaser.Scene{
     //la próxima partida
     gameOver ()
     {   
+    	DELETEservidor(jugador);
         musica.stop();
         if(objetoCogido)
-            this.scene.start("Ganador1");
+        	ganadorUno=true;
+            //this.scene.start("Ganador1");
+        	
         else if(objetoCogido2)
-            this.scene.start("Ganador2");
+        	ganadorDos=true;
+            //this.scene.start("Ganador2");
         else if(!objetoCogido && !objetoCogido2)
-            this.scene.start("Menu");
+        	empate=true;
+            //this.scene.start("Menu");
 
+        this.scene.start("Fin");
         objetoCogido=false;
         objetoCogido2=false;
         generarPowerUp1 = Phaser.Math.Between(40, 30);
@@ -358,10 +381,11 @@ class Scene3 extends Phaser.Scene{
     //Esta función se usa cuando un jugador toca a otro. En este momento, si el jugador 1 tiene el objeto, si ha pasado un tiempo desde que se 
     //activó, se desactiva y se activa la del jugador contrario, pasándole el objeto. Además se activa el sonido de coger objeto. En el caso
     //del jugador 2 funciona igual.
-    touchPlayer(player, player2) { 
+    touchPlayer() { 
 
         if(objetoCogido)
         {
+        	//if(cursors.left.isDown || cursors.right.isDown){
             if(tiempoEspera>70){
                 sonidoObjeto.play();//suena el sonido de cuando coges el objeto
                 tiempoEspera=0;
@@ -372,6 +396,7 @@ class Scene3 extends Phaser.Scene{
         }
         else if (objetoCogido2)
         {
+        	//if(player2.left.isDown || player2.right.isDown){
             if(tiempoEspera>70){
                 sonidoObjeto.play();//suena el sonido de cuando coges el objeto
                 tiempoEspera=0;
@@ -382,7 +407,7 @@ class Scene3 extends Phaser.Scene{
     }
     //A continuación comienza la función update que se ejecuta en bucle
     update (time, delta) {
-    	
+    		//tiempoInactividad(this);
     		PUTservidor(jugador);
     		//GETservidor();
         

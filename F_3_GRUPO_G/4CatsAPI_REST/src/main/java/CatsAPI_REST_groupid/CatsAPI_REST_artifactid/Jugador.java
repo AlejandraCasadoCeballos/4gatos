@@ -11,7 +11,7 @@ public class Jugador {
 	public boolean inactivo;
 	private LocalDateTime ultimaInteraccion;
 	
-	public static double tiempoMaximoInactividad = 3;
+	public static double tiempoMaximoInactividad = 32;
 		
 	public Jugador(){}
 	

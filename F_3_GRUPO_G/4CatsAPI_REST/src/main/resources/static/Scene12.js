@@ -40,12 +40,13 @@ class Scene12 extends Phaser.Scene{
      });
  
     botonAceptar.setInteractive();
-    botonAceptar.on('pointerdown', () => {musica2.stop(); this.scene.start("EligeGato"); prepararYEnviarJugador("", nombre.value);console.log(jugador.nombre);PUTnombreJugador();});
+    botonAceptar.on('pointerdown', () => {musica2.stop(); this.scene.start("elegirEscenario"); prepararYEnviarJugador("", nombre.value);console.log(jugador.nombre);/*PUTnombreJugador(jugador);*/});
     botonAceptar.on('pointerover', () => {this.add.image(400, 300,'introducir nombre pulsado' );});
     botonAceptar.on('pointerout', () => {this.add.image(400, 300,'introducir nombre'); });
   
 }
     update(){
-    	//PUTservidor();
+    	PUTservidor(jugador);
+    	tiempoInactividad(this);
     }
 }

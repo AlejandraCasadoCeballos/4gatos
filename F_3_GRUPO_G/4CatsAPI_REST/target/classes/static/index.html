@@ -18,7 +18,7 @@
 		<script src="Scene9.js"></script>
 		<script src="Scene10.js"></script>
 		<script src="Scene11.js"></script>
-	<script src="Scene12.js"></script>
+		<script src="Scene12.js"></script>
 		<script src="game.js"></script>
 		<script src="conexion.js"></script>
 		
@@ -38,12 +38,12 @@
 			var tiempoInactividad = function (escena) { 
 				
 				var t;
-				window.onload = resetearTemporizador; // DOM Events 
-	    		document.onmousemove = resetearTemporizador; 
-	    		document.onkeypress = resetearTemporizador; 
+				//window.onload = resetearTemporizador; // DOM Events 
+	    		window.onmousemove = resetearTemporizador; 
+	    		window.onkeypress = resetearTemporizador; 
 		    	function cambioPantalla() { 
 		    		escena.scene.start("Menu");
-		    		musica2.stop();
+		    		//musica2.stop();
 		    	} 
 		   	 	function resetearTemporizador() { 
 		   	 		clearTimeout(t); 
@@ -73,6 +73,7 @@
 			// Todas las variables usadas para nuestro juego
 			var numeroJugadores = 0;
 			var te;
+			var te2;
 			var cambiarPantalla = false;
 			var muffin;
 			var mungojerry;
@@ -83,6 +84,13 @@
 			var musica2;
 			var musica3;
 			
+			var ganadorUno=false;
+			var ganadorDos=false;
+			var empate=false;
+			var escenarioUno=false;
+			var escenarioDos=false;
+			var escenarioTres=false;
+			var im;
 			// Sonidos
 			var sonidoCuentaAtras; 
 			var sonidoObjeto;

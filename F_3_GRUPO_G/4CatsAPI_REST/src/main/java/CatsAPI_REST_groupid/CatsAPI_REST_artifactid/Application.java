@@ -32,7 +32,8 @@ public class Application
 					{
 						System.out.printf("El siguiente jugador ha sido eliminado:"+ id);
 						JugadorController.jugadores.remove(id);
-					}
+						JugadorController.ultimoId.decrementAndGet();
+						}
 					else System.out.printf("El jugador"+ id+ "no está inactivo");
 				}
 			}

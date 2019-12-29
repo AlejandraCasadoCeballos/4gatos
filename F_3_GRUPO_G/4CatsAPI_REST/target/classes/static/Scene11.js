@@ -52,23 +52,26 @@ class Scene11 extends Phaser.Scene
         // En cada uno, al poner el ratón sobre el botón la imagen cambia a otra que tiene las letras de dicho botón de otro color
         // Al quitar el ratón, la imagen vuelve a ser la original. Al pulsar cada botón cambiamos a la escena correspondiente y paramos la música
         // BOTÓN JUGAR
-        botonMungojerry.on('pointerdown', () => { musica2.stop(); this.scene.start("Mensaje"); prepararYEnviarJugador("Mungojerry", nombre);PUTnombreGato(); });
+        botonMungojerry.on('pointerdown', () => { musica2.stop(); this.scene.start("Mensaje"); prepararYEnviarJugador("Mungojerry", jugador.nombre);/*PUTnombreGato(jugador);*/ });
         botonMungojerry.on('pointerover', () => { mungojerry.anims.play('leftplayer2',true); });
         botonMungojerry.on('pointerout', () => { mungojerry.anims.stop('leftplayer2',true); });
         // BOTÓN CRÉDITOS
-        botonMuffin.on('pointerdown', () => { musica2.stop(); this.scene.start("Mensaje"); prepararYEnviarJugador("Muffin", nombre); PUTnombreGato();});
+        botonMuffin.on('pointerdown', () => { musica2.stop(); this.scene.start("Mensaje"); prepararYEnviarJugador("Muffin", jugador.nombre); /*PUTnombreGato(jugador);*/});
         botonMuffin.on('pointerover', () => { muffin.anims.play('leftplayer',true); });
         botonMuffin.on('pointerout', () => { muffin.anims.stop('leftplayer',true); });
         
         numeroJugadores = GETnumJugadores();
-    	te = this.add.text(570, 10, "Jugadores conectados: " + numeroJugadores, {font:"20px Courier", fill:"white"});
+        te = this.add.text(420, 10, "Jugadores conectados: " + numeroJugadores, {font:"25px Courier", fill:"white"});
+    	te2 = this.add.text(40, 10, jugador.nombre, {font:"25px Courier", fill:"white"});
     }
     
     update() {
-    	//PUTservidor();
+    	
+    	PUTservidor(jugador);
     	tiempoInactividad(this);
     	te.destroy();
     	numeroJugadores = GETnumJugadores();
-    	te = this.add.text(500, 10, "Jugadores conectados: " + numeroJugadores, {font:"20px Courier", fill:"white"});
+    	te = this.add.text(420, 10, "Jugadores conectados: " + numeroJugadores, {font:"25px Courier", fill:"white"});
+    	
     }
 }

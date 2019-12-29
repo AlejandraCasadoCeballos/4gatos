@@ -67,7 +67,7 @@ public class JugadorController {
       return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
   }
-  @PutMapping("/{id}/{nombreDelGato}")
+  /*@PutMapping("/{id}/{nombreDelGato}")
   public ResponseEntity<Jugador> actualizaNombreDelGato(@PathVariable long id,@PathVariable String nombreDelGato, @RequestBody Jugador jugadorActualizado) {
 
     Jugador jugador = jugadores.get(jugadorActualizado.getId());
@@ -102,7 +102,7 @@ public class JugadorController {
     } else {
       return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
-  }
+  }*/
   @GetMapping("/{id}")
   public ResponseEntity<Jugador> getJugador(@PathVariable long id) {
     
@@ -120,8 +120,9 @@ public class JugadorController {
   public ResponseEntity<Jugador> borraJugador(@PathVariable long id) {
     
     Jugador jugador = jugadores.remove(id); 
+    ultimoId.decrementAndGet();
     
-    if (jugador != null && jugador.getInactivo()) {
+    if (jugador != null) {
       return new ResponseEntity<>(jugador, HttpStatus.OK);
     } else {
       return new ResponseEntity<>(HttpStatus.NOT_FOUND);

@@ -1,6 +1,6 @@
 class Scene6 extends Phaser.Scene{
     constructor(){
-        super("Ganador2");
+        super("elegirEscenario");
     }
 
     init(){
@@ -8,30 +8,40 @@ class Scene6 extends Phaser.Scene{
     }
     preload () //precargar recursos
     {
-        this.load.image('ganador2','/Recursos/Interfaz/ganadorMungojerry.jpg');//imagen de cuando gana Mungojerry normal
-        this.load.audio('celebracion2','/Recursos/Musica/celebracion.mp3');//música de celebración
-        this.load.image('atrasG2','/Recursos/Interfaz/atrasGanadorMungojerry.jpg');//imagen cuando el ratón esá sobre el botón
-
+    	this.load.image('elegirEscenario','/Recursos/Interfaz/elegirEscenario.jpg');
+    	this.load.image('escenario1','/Recursos/Interfaz/escenario1.jpg');
+    	this.load.image('filtro','/Recursos/Interfaz/filtro.jpg');
+    	
     }
 
     create(){
-        musica3=this.sound.add('celebracion2');//añade el sonido
-        musica3.play();//activa la música
-        const botonMenu = this.add.text(90, 540,"Atras",{font:"30px Courier", fill:"Red"}).setOrigin(0.5,0.5);
-        this.add.image(400, 300,'ganador2');//añade la imagen
-    
-        botonMenu.setInteractive();
+    	
+    	this.add.image(400, 300,'elegirEscenario');
+    	im= this.physics.add.staticGroup(); 
+    	
+    	const botonEscenario1=im.create(150, 400, 'escenario1').setScale(0.25, 0.25).refreshBody();
+    	const botonEscenario2=im.create(400, 400, 'elegirEscenario').setScale(0.25, 0.25).refreshBody();
+    	const botonEscenario3=im.create(650, 400, 'elegirEscenario').setScale(0.25, 0.25).refreshBody();
+    	
+    	te2 = this.add.text(40, 10, jugador.nombre, {font:"25px Courier", fill:"white"});
+    	
+    	botonEscenario1.setInteractive();
+    	botonEscenario2.setInteractive();
+    	botonEscenario3.setInteractive();
         
-        //Distintas interaciones (pulsarlo,estar sobre él y dejar de estar sobre él) 
-        //Al poner el ratón sobre el botón la imagen cambia a otra que tiene las letras de dicho botón de otro color
-        //Al quitar el ratón, la imagen vuelve a ser la original. Al pulsar el botón volvemos a la escena de menú
-        //BOTON MENÚ
-        botonMenu.on('pointerdown', () => { this.scene.start("Menu"); });
-        botonMenu.on('pointerover', () => {this.add.image(400, 300,'atrasG2'); });
-        botonMenu.on('pointerout', () => {this.add.image(400, 300,'ganador2'); });
+    	botonEscenario1.on('pointerdown', () => { this.scene.start("EligeGato"); escenarioUno=true;});
+    	botonEscenario1.on('pointerover', () => {im.create(150, 400, 'filtro').setScale(0.25, 0.25).refreshBody().setAlpha(0.4);});
+    	botonEscenario1.on('pointerout', () => {im.create(150, 400, 'escenario1').setScale(0.25, 0.25).refreshBody(); });
+    	
+    	botonEscenario2.on('pointerdown', () => { this.scene.start("EligeGato"); escenarioDos=true;});
+    	botonEscenario2.on('pointerover', () => {im.create(400, 400, 'filtro').setScale(0.25, 0.25).refreshBody().setAlpha(0.4);});
+    	botonEscenario2.on('pointerout', () => {im.create(400, 400, 'elegirEscenario').setScale(0.25, 0.25).refreshBody(); });
+    	
+    	botonEscenario3.on('pointerdown', () => { this.scene.start("EligeGato"); escenarioTres=true;});
+    	botonEscenario3.on('pointerover', () => {im.create(650, 400, 'filtro').setScale(0.25, 0.25).refreshBody().setAlpha(0.4);});
+    	botonEscenario3.on('pointerout', () => {im.create(650, 400, 'elegirEscenario').setScale(0.25, 0.25).refreshBody(); });
     }
     update(){
-    	//PUTservidor(jugador);
-    	//GETservidor();
+    	
     }
 }

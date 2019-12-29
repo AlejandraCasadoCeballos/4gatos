@@ -31,7 +31,7 @@ class Scene7 extends Phaser.Scene{
         botonVolver.on('pointerover', () => {this.add.image(400, 300,'botonPausaEncima'); });
         botonVolver.on('pointerout', () => {this.add.image(400, 300,'pausa'); });
 
-        botonMenu.on('pointerdown', () => {this.scene.stop("Juego"); this.gameOver(); this.scene.switch("Menu"); });
+        botonMenu.on('pointerdown', () => {musica2.stop(); DELETEservidor();this.scene.stop("Juego"); this.gameOver(); this.scene.switch("Menu"); });
         botonMenu.on('pointerover', () => {this.add.image(400, 300,'botonMenuEncima'); });
         botonMenu.on('pointerout', () => {this.add.image(400, 300,'pausa'); });
         

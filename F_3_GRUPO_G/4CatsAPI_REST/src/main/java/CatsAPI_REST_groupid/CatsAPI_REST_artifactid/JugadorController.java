@@ -67,7 +67,42 @@ public class JugadorController {
       return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
   }
+  @PutMapping("/{id}/{nombreDelGato}")
+  public ResponseEntity<Jugador> actualizaNombreDelGato(@PathVariable long id,@PathVariable String nombreDelGato, @RequestBody Jugador jugadorActualizado) {
 
+    Jugador jugador = jugadores.get(jugadorActualizado.getId());
+    //Jugador jugadorReal = jugadores.get(id);
+    
+    if (jugador != null) {
+      //jugadorActualizado.setInactivo(jugadorReal.getInactivo());
+      jugadorActualizado.setId(id);
+      jugadorActualizado.setNombreDelGato(nombreDelGato);
+      
+      jugadores.put(id, jugadorActualizado);
+
+      return new ResponseEntity<>(jugadorActualizado, HttpStatus.OK);
+    } else {
+      return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
+  }
+  @PutMapping("/{id}/{nombre}")
+  public ResponseEntity<Jugador> actualizaNombre(@PathVariable long id,@PathVariable String nombre, @RequestBody Jugador jugadorActualizado) {
+
+    Jugador jugador = jugadores.get(jugadorActualizado.getId());
+    //Jugador jugadorReal = jugadores.get(id);
+    
+    if (jugador != null) {
+      //jugadorActualizado.setInactivo(jugadorReal.getInactivo());
+      jugadorActualizado.setId(id);
+      jugadorActualizado.setNombre(nombre);
+      
+      jugadores.put(id, jugadorActualizado);
+
+      return new ResponseEntity<>(jugadorActualizado, HttpStatus.OK);
+    } else {
+      return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
+  }
   @GetMapping("/{id}")
   public ResponseEntity<Jugador> getJugador(@PathVariable long id) {
     

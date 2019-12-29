@@ -5,7 +5,7 @@ function GETservidor() { //GET
     }).done(function(jugadores){
         var max = jugadores.length;
         for(var i=0; i<max; i++){
-            console.log("GET: \nID: " + jugadores[i].id + "\nNickname: " + jugadores[i].nickname + "\nNombre del gato: " + jugadores[i].nombreDelGato + "\nInactivo: " + jugadores[i].inactivo);
+            //console.log("GET: \nID: " + jugadores[i].id + "\nNickname: " + jugadores[i].nickname + "\nNombre del gato: " + jugadores[i].nombreDelGato + "\nInactivo: " + jugadores[i].inactivo);
         }
     });
 }
@@ -21,10 +21,10 @@ function GETnumJugadores(){
             r = msg;
         },
         error: function (jqXHR, textStatus, errorThrown) {
-            console.log("ERROR" + textStatus);
+            //console.log("ERROR" + textStatus);
         }
     }).done(function(numJug){
-    	console.log("Hay " + numJug + " jugadores conectados")
+    	//console.log("Hay " + numJug + " jugadores conectados")
     });
 	
 	return r;
@@ -40,14 +40,14 @@ function POSTservidor(jugador) { //POST
         "Content-Type":"application/json"
         }
         }).done(function(jugadorPost) {
-        	console.log("POST: \nID: " + jugadorPost.id + "\nNickname: " + jugadorPost.nickname + "\nNombre del gato: " + jugadorPost.nombreDelGato + "\nInactivo: " + jugadorPost.inactivo);
+            console.log("POST: \nID: " + jugadorPost.id + "\nNombre: " + jugadorPost.nombre + "\nNombre del gato: " + jugadorPost.nombreDelGato + "\nInactivo: " + jugadorPost.inactivo);
             jugador.id= jugadorPost.id;
         })
 }
 
 function PUTservidor(jugador) { //PUT
     var old = "Actualización: " + JSON.stringify(jugador);
-    console.log(jugador.id);
+    //console.log(jugador.id);
     $.ajax({
         method: "PUT",
         url:"/Jugador/" + jugador.id,
@@ -60,12 +60,38 @@ function PUTservidor(jugador) { //PUT
         console.log("PUT: \nOld: "+old+"\nUpdated: " + JSON.stringify(jugador))
     })
 }
-
-function deleteItem(jugadorId) {
+function PUTnombreJugador(jugador) { //PUT
+    var old = "Actualización: " + JSON.stringify(jugador);
+    $.ajax({
+        method: "PUT",
+        url:"/Jugador/" + jugador.id +"/"+ jugador.nombre,
+        data: JSON.stringify(jugador),
+        processData: false,
+        headers: {
+            "Content-Type": "application/json"
+        }
+    }).done(function (jugador) {
+        //console.log("PUT: \nOld: "+old+"\nUpdated: " + JSON.stringify(jugador))
+    })
+}function PUTnombreGato(jugador) { //PUT
+    var old = "Actualización: " + JSON.stringify(jugador);
+    $.ajax({
+        method: "PUT",
+        url:"/Jugador/" + jugador.id +"/"+ jugador.nombreDelGato,
+        data: JSON.stringify(jugador),
+        processData: false,
+        headers: {
+            "Content-Type": "application/json"
+        }
+    }).done(function (jugador) {
+        //console.log("PUT: \nOld: "+old+"\nUpdated: " + JSON.stringify(jugador))
+    })
+}
+function DELETEservidor(jugadorId) {
     $.ajax({
         method: 'DELETE',
         url: '/Jugador/' + jugadorId
     }).done(function (jugador) {
-        console.log("Deleted jugador " + jugadorId)
+        //console.log("Deleted jugador " + jugadorId)
     })
 }

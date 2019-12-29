@@ -383,7 +383,7 @@ class Scene3 extends Phaser.Scene{
     //A continuación comienza la función update que se ejecuta en bucle
     update (time, delta) {
     	
-    		//PUTservidor(jugador);
+    		PUTservidor(jugador);
     		//GETservidor();
         
             tiempoEspera++;//la variable que controla hace cuánto ha sido transferido el objeto aumenta 

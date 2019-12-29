@@ -1,5 +1,8 @@
 class Scene12 extends Phaser.Scene{
-    
+	
+	constructor(){
+        super("introducirNombre");
+    }
     init(){
         
     }
@@ -13,6 +16,7 @@ class Scene12 extends Phaser.Scene{
 
  create ()
  {
+	 musica2.resume();
 	 const botonAceptar = this.add.text(400, 355,"Aceptar",{font:"22px Courier", fill:"white"}).setOrigin(0.5,0.5);   
 	 this.add.image(400, 300,'introducir nombre');
    
@@ -36,12 +40,12 @@ class Scene12 extends Phaser.Scene{
      });
  
     botonAceptar.setInteractive();
-    botonAceptar.on('pointerdown', () => {this.scene.start("EligeGato");prepararYEnviarJugador("", nombre.value); });
+    botonAceptar.on('pointerdown', () => {musica2.stop(); this.scene.start("EligeGato"); prepararYEnviarJugador("", nombre.value);console.log(jugador.nombre);PUTnombreJugador();});
     botonAceptar.on('pointerover', () => {this.add.image(400, 300,'introducir nombre pulsado' );});
     botonAceptar.on('pointerout', () => {this.add.image(400, 300,'introducir nombre'); });
   
 }
     update(){
-    	
+    	//PUTservidor();
     }
 }

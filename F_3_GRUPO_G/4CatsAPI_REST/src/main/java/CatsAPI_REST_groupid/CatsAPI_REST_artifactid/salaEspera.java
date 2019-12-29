@@ -42,25 +42,25 @@ public class salaEspera {
 		jugadoresSinSala.remove(0);
 		
 		if(jugador1=="muffin") {
-			this.muffin=jugadoresSinSala.get(0).getNickname();
+			this.muffin=jugadoresSinSala.get(0).getNombre();
 			while(i<jugadoresSinSala.size() && jugador2!="mungojerry") {
 				jugador2=jugadoresSinSala.get(i).getNombreDelGato();
 				if(jugador2=="mungojerry") {
 					completa=true;
 					jugador2=jugadoresSinSala.remove(i).getNombreDelGato();
-					this.mungojerry=jugadoresSinSala.get(i).getNickname();
+					this.mungojerry=jugadoresSinSala.get(i).getNombre();
 				}
 				i++;
 			}
 		}
 		else if(jugador1=="mungojerry") {
-			this.mungojerry=jugadoresSinSala.get(0).getNickname();
+			this.mungojerry=jugadoresSinSala.get(0).getNombre();
 			while(i<jugadoresSinSala.size() && jugador2!="muffin") {
 				jugador2=jugadoresSinSala.get(i).getNombreDelGato();
 				if(jugador2=="muffin") {
 					completa=true;
 					jugador2=jugadoresSinSala.remove(i).getNombreDelGato();
-					this.muffin=jugadoresSinSala.get(i).getNickname();
+					this.muffin=jugadoresSinSala.get(i).getNombre();
 				}
 				i++;
 			}

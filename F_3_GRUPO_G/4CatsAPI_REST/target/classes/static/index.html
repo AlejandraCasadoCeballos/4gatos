@@ -35,9 +35,23 @@
  
 
 <script>
-
-
-	var nombre = "";
+			var tiempoInactividad = function (escena) { 
+				
+				var t;
+				window.onload = resetearTemporizador; // DOM Events 
+	    		document.onmousemove = resetearTemporizador; 
+	    		document.onkeypress = resetearTemporizador; 
+		    	function cambioPantalla() { 
+		    		escena.scene.start("Menu");
+		    		musica2.stop();
+		    	} 
+		   	 	function resetearTemporizador() { 
+		   	 		clearTimeout(t); 
+		   	 		t = setTimeout(cambioPantalla, 30000);
+				}
+		   	}; 
+	
+			var nombre = "";
 
 			var jugador = 
 		    {
@@ -45,14 +59,15 @@
 		   	    nombre: "",
 		   	    nombreDelGato: "",
 		   	    momentoDeRegistro:"",
+		   	    
 		   	}
 			
-		    function prepararYEnviarJugador(gato, nick) 
+		    function prepararYEnviarJugador(gato, nombre) 
 		    {
 				jugador.nombre = nombre;
 		    	jugador.nombreDelGato = gato;
 		    	jugador.momentoDeRegistro = new Date();
-		    	POSTservidor(jugador);
+		    	//PUTservidor(jugador);
 		    }
 		    
 			// Todas las variables usadas para nuestro juego

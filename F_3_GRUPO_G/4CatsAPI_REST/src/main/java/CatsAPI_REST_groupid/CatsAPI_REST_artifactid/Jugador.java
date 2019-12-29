@@ -6,22 +6,22 @@ public class Jugador {
 
 	private long id = -1;
 	private String nombreDelGato;
-	private String nickname;
+	private String nombre;
 	public LocalDateTime momentoDeRegistro;
 	public boolean inactivo;
 	private LocalDateTime ultimaInteraccion;
 	
-	public static double tiempoMaximoInactividad = 30;
+	public static double tiempoMaximoInactividad = 3;
 		
 	public Jugador(){}
 	
-	public Jugador(String nombre, LocalDateTime momentoDeRegistro, LocalDateTime ultimaInteraccion, String nickname) {	
+	public Jugador(long id,String nombre, LocalDateTime momentoDeRegistro, LocalDateTime ultimaInteraccion, String nombreJugador) {	
 		super();
 		this.nombreDelGato = nombre;
 		this.momentoDeRegistro = momentoDeRegistro;
 		this.ultimaInteraccion= ultimaInteraccion;
 		this.inactivo = false;
-		this.nickname= nickname;
+		this.nombre= nombreJugador;
 	}
 	
 	//Métodos
@@ -73,15 +73,15 @@ public class Jugador {
 		this.ultimaInteraccion = ultimaInteraccion;
 	}
 	
-	public String getNickname() {
-		return nickname;
+	public String getNombre() {
+		return nombre;
 	}
-	public void setNickname(String nickname) {
-		this.nickname = nickname;
+	public void setNombre(String nombreJugador) {
+		this.nombre = nombreJugador;
 	}
 	@Override
 	public String toString() {
-		return "Jugador [ID: " + id + ", Nombre jugador: "+ nickname+", Nombre del gato: " + nombreDelGato + 
+		return "Jugador [ID: " + id + ", Nombre jugador: "+ nombre+", Nombre del gato: " + nombreDelGato + 
 				", Momento de registro: " + momentoDeRegistro + ", ultima interacción: " + ultimaInteraccion +
 				", Inactivo: "+inactivo+" ]";
 	}

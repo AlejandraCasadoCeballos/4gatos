@@ -400,7 +400,7 @@ class Scene3 extends Phaser.Scene{
     //A continuación comienza la función update que se ejecuta en bucle
     update (time, delta) {
     		//tiempoInactividad(this);
-    		//PUTservidor(jugador);
+    		PUTservidor(jugador);
     		//GETservidor();
         
             //tiempoEspera++;//la variable que controla hace cuánto ha sido transferido el objeto aumenta 
@@ -417,7 +417,7 @@ class Scene3 extends Phaser.Scene{
                 generarPowerUp1=130;
                 pU=objetoPowerUp.create(640,170, "lata");
                 this.physics.add.overlap(player, objetoPowerUp, this.colectPowerUp1, null, this);
-                this.physics.add.overlap(player2, objetoPowerUp, this.colectPowerUp1, null, this);
+                this.physics.add.overlap(player2, objetoPowerUp, this.colectPowerUp2, null, this);
             }
             //si tiempo es igual al momento que hemos elegido para destruir el primer power up, lo movemos fuera de la pantalla
             if(tiempo<destruir){
@@ -427,7 +427,7 @@ class Scene3 extends Phaser.Scene{
             if (tiempo === generarPowerUp2) {
                 generarPowerUp2 = 130;
                 objetoPowerUp.create(339, 350, "lata");
-                this.physics.add.overlap(player, objetoPowerUp, this.colectPowerUp2, null, this);
+                this.physics.add.overlap(player, objetoPowerUp, this.colectPowerUp1, null, this);
                 this.physics.add.overlap(player2, objetoPowerUp, this.colectPowerUp2, null, this);
             }
 

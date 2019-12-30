@@ -10,10 +10,47 @@ class Scene11 extends Phaser.Scene
         this.load.spritesheet('Muffin', '/Recursos/Personajes/Muffin.png', { frameWidth: 64, frameHeight: 54 });
         this.load.spritesheet('Mungojerry', '/Recursos/Personajes/Mungojerry.png', { frameWidth: 64, frameHeight: 54 });
         this.load.image('plataforma', '/Recursos/Plataformas/plataforma.png');
+        this.load.image('eligeGatoAtras','/Recursos/Interfaz/eligeGatoAtrasPulsado.jpg');//imagen menú cuando estás sobre el botón de créditos
+       
     }
 
     create()
     {
+    	const botonAtras = this.add.text(90, 540,"Atras",{font:"30px Courier", fill:"Red"}).setOrigin(0.5,0.5);
+        this.add.image(400, 300,'eligeGato');
+        
+        plataformaGorda = this.physics.add.staticGroup();
+        plataformaGorda.create(400, 700, 'plataforma').setScale(2, 12.5).refreshBody().setAlpha(0);
+
+        muffin = this.physics.add.sprite(300, 450,'Muffin').setScale(2);
+        mungojerry = this.physics.add.sprite(500, 450,'Mungojerry').setScale(2);
+
+        this.physics.add.collider(muffin, plataformaGorda);
+        this.physics.add.collider(mungojerry, plataformaGorda);
+        
+   	 	botonAtras.setInteractive();
+   	 	botonAtras.on('pointerdown', () => { this.scene.start("elegirEscenario");});
+        botonAtras.on('pointerover', () => {
+        	this.add.image(400, 300,'eligeGatoAtras');
+        	plataformaGorda.create(400, 700, 'plataforma').setScale(2, 12.5).refreshBody().setAlpha(0);
+        	muffin = this.physics.add.sprite(300, 450,'Muffin').setScale(2);
+        	mungojerry = this.physics.add.sprite(500, 450,'Mungojerry').setScale(2);
+        	plataformaGorda.create(400, 700, 'plataforma').setScale(2, 12.5).refreshBody().setAlpha(0);
+        	this.physics.add.collider(muffin, plataformaGorda);
+            this.physics.add.collider(mungojerry, plataformaGorda);
+        	
+        });
+        botonAtras.on('pointerout', () => {
+        	this.add.image(400, 300,'eligeGato');
+        	plataformaGorda.create(400, 700, 'plataforma').setScale(2, 12.5).refreshBody().setAlpha(0);
+        	muffin = this.physics.add.sprite(300, 450,'Muffin').setScale(2);
+        	mungojerry = this.physics.add.sprite(500, 450,'Mungojerry').setScale(2); 
+        	plataformaGorda.create(400, 700, 'plataforma').setScale(2, 12.5).refreshBody().setAlpha(0);
+        	this.physics.add.collider(muffin, plataformaGorda);
+            this.physics.add.collider(mungojerry, plataformaGorda);
+        	
+        });
+        
     	musica2.resume(); 
         this.anims.create(
         {
@@ -31,22 +68,15 @@ class Scene11 extends Phaser.Scene
             repeat: -1 // Volver a empezar cuando termine
         });
         
-        this.add.image(400, 300,'eligeGato');
-        plataformaGorda = this.physics.add.staticGroup();
-        plataformaGorda.create(400, 700, 'plataforma').setScale(2, 12.5).refreshBody().setAlpha(0);
-
-        muffin = this.physics.add.sprite(300, 450,'Muffin').setScale(2);
-        mungojerry = this.physics.add.sprite(500, 450,'Mungojerry').setScale(2);
-
-        this.physics.add.collider(muffin, plataformaGorda);
-        this.physics.add.collider(mungojerry, plataformaGorda);
+       
+        
         const botonMungojerry = mungojerry;
         const botonMuffin = muffin;
 
         botonMungojerry.setInteractive();
         botonMuffin.setInteractive();
         
-       
+        
 
         // Distintas interacciones (pulsarlo, estar sobre él y dejar de estar sobre él) para cada botón del menú
         // En cada uno, al poner el ratón sobre el botón la imagen cambia a otra que tiene las letras de dicho botón de otro color
@@ -70,8 +100,10 @@ class Scene11 extends Phaser.Scene
     	PUTservidor(jugador);
     	//tiempoInactividad(this);
     	te.destroy();
+    	te2.destroy();
     	numeroJugadores = GETnumJugadores();
     	te = this.add.text(420, 10, "Jugadores conectados: " + numeroJugadores, {font:"25px Courier", fill:"white"});
-    	
+    	te2 = this.add.text(40, 10, jugador.nombre, {font:"25px Calibri", fill:"white"});
     }
+    
 }

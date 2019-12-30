@@ -11,13 +11,16 @@ class Scene12 extends Phaser.Scene{
 	 this.load.image('introducir nombre','/Recursos/Interfaz/introducir nombre.jpg');// cargamos la imagen de introducir nombre
 	 this.load.image('introducir nombre pulsado','/Recursos/Interfaz/introducir nombre pulsado.jpg');// cargamos la imagen de los introducir nombre pulsado
      this.load.html('nameform','nameform.html');
+     this.load.image('introducir nombre atras','/Recursos/Interfaz/introducir nombre atras pulsado.jpg');// cargamos la imagen de los introducir nombre pulsado
         
  }
 
  create ()
  {
 	 musica2.resume();
-	 const botonAceptar = this.add.text(400, 355,"Aceptar",{font:"22px Courier", fill:"white"}).setOrigin(0.5,0.5);   
+	 const botonAceptar = this.add.text(400, 355,"Aceptar",{font:"22px Courier", fill:"white"}).setOrigin(0.5,0.5); 
+	 const botonAtras = this.add.text(90, 540,"Atras",{font:"30px Courier", fill:"Red"}).setOrigin(0.5,0.5);
+	 
 	 this.add.image(400, 300,'introducir nombre');
    
 	 this.input.on('dragstart', function (pointer, gameObject) {
@@ -39,10 +42,16 @@ class Scene12 extends Phaser.Scene{
      	}    
      });
  
-    botonAceptar.setInteractive();
-    botonAceptar.on('pointerdown', () => {musica2.stop(); this.scene.start("elegirEscenario"); prepararYEnviarJugador("", nombre.value);console.log(jugador.nombre);/*PUTnombreJugador(jugador);*/});
-    botonAceptar.on('pointerover', () => {this.add.image(400, 300,'introducir nombre pulsado' );});
-    botonAceptar.on('pointerout', () => {this.add.image(400, 300,'introducir nombre'); });
+	 
+	 botonAtras.setInteractive();
+	 botonAtras.on('pointerdown', () => { this.scene.start("Menu");musica2.stop();});
+     botonAtras.on('pointerover', () => {this.add.image(400, 300,'introducir nombre atras'); });
+     botonAtras.on('pointerout', () => {this.add.image(400, 300,'introducir nombre'); });
+     
+  	 botonAceptar.setInteractive();
+  	 botonAceptar.on('pointerdown', () => {musica2.stop(); this.scene.start("elegirEscenario"); prepararYEnviarJugador("", nombre.value);console.log(jugador.nombre);/*PUTnombreJugador(jugador);*/});
+  	 botonAceptar.on('pointerover', () => {this.add.image(400, 300,'introducir nombre pulsado' );});
+  	 botonAceptar.on('pointerout', () => {this.add.image(400, 300,'introducir nombre'); });
   
 }
     update(){

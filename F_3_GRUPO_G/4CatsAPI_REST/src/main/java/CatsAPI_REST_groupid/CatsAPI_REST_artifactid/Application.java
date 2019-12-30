@@ -4,14 +4,14 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.*;
 import java.util.Timer;
 import java.util.TimerTask;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
+//import java.util.Map;
+//import java.util.concurrent.ConcurrentHashMap;
 
 @SpringBootApplication
 public class Application
 {
 	
-	public static Map<Long, Jugador> jugadoresSinSala = new ConcurrentHashMap<>();
+	//public static Map<Long, Jugador> jugadoresSinSala = new ConcurrentHashMap<>();
 	
 	
 	public static void main(String[] args) 

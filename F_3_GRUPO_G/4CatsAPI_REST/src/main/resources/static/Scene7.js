@@ -50,7 +50,7 @@ class Scene7 extends Phaser.Scene{
         pU.x+=50;
     }
     update(){
-    	tiempoInactividad(this);
+    	//tiempoInactividad(this);
     	PUTservidor(jugador);
     	//GETservidor();
     }

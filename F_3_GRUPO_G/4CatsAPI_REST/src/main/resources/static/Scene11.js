@@ -62,13 +62,13 @@ class Scene11 extends Phaser.Scene
         
         numeroJugadores = GETnumJugadores();
         te = this.add.text(420, 10, "Jugadores conectados: " + numeroJugadores, {font:"25px Courier", fill:"white"});
-    	te2 = this.add.text(40, 10, jugador.nombre, {font:"25px Courier", fill:"white"});
+    	te2 = this.add.text(40, 10, jugador.nombre, {font:"25px Calibri", fill:"white"});
     }
     
     update() {
     	
     	PUTservidor(jugador);
-    	tiempoInactividad(this);
+    	//tiempoInactividad(this);
     	te.destroy();
     	numeroJugadores = GETnumJugadores();
     	te = this.add.text(420, 10, "Jugadores conectados: " + numeroJugadores, {font:"25px Courier", fill:"white"});

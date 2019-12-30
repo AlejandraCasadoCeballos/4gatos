@@ -264,15 +264,6 @@ class Scene3 extends Phaser.Scene{
         objeto= this.physics.add.staticGroup(); //objeto por el que lucharán
         objetoPowerUp= this.physics.add.staticGroup(); //power up
 
-        //elegimos un objeto aleatorio
-        /*aleatorio=Phaser.Math.Between(1, 3);
-        if(aleatorio===1)
-            objetoAleatorio="pescado";
-        else if(aleatorio===2)
-            objetoAleatorio="ovillo";
-        else if(aleatorio===3)
-            objetoAleatorio="rata";
-        */
         //Generamos el objeto en el centro de la pantalla
         objeto.create(340, 175, objetoAleatorio);
 
@@ -385,10 +376,10 @@ class Scene3 extends Phaser.Scene{
 
         if(objetoCogido)
         {
-        	//if(cursors.left.isDown || cursors.right.isDown){
-            if(tiempoEspera>70){
+        	if(player2.left.isDown || player2.right.isDown){
+            //if(tiempoEspera>70){
                 sonidoObjeto.play();//suena el sonido de cuando coges el objeto
-                tiempoEspera=0;
+                //tiempoEspera=0;
                 objetoCogido=false;
                 objetoCogido2=true;
             }
@@ -396,10 +387,11 @@ class Scene3 extends Phaser.Scene{
         }
         else if (objetoCogido2)
         {
-        	//if(player2.left.isDown || player2.right.isDown){
-            if(tiempoEspera>70){
+        	
+        	if(cursors.left.isDown || cursors.right.isDown){
+            //if(tiempoEspera>70){
                 sonidoObjeto.play();//suena el sonido de cuando coges el objeto
-                tiempoEspera=0;
+                //tiempoEspera=0;
                 objetoCogido=true;
                 objetoCogido2=false;
             }
@@ -411,7 +403,7 @@ class Scene3 extends Phaser.Scene{
     		PUTservidor(jugador);
     		//GETservidor();
         
-            tiempoEspera++;//la variable que controla hace cuánto ha sido transferido el objeto aumenta 
+            //tiempoEspera++;//la variable que controla hace cuánto ha sido transferido el objeto aumenta 
             time*=delta;//para que el tiempo no dependa de la máquina que compila este código
             //actualizamos el tiempo, dividmmos entre mil para que salga en segundos
             tiempo = Math.round(Math.floor(45000 - timer.getElapsed()) / 1000);

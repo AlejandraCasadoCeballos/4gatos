@@ -47,6 +47,6 @@ class Scene12 extends Phaser.Scene{
 }
     update(){
     	PUTservidor(jugador);
-    	tiempoInactividad(this);
+    	//tiempoInactividad(this);
     }
 }

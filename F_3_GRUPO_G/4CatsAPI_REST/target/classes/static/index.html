@@ -19,6 +19,7 @@
 		<script src="Scene10.js"></script>
 		<script src="Scene11.js"></script>
 		<script src="Scene12.js"></script>
+		<script src="Scene13.js"></script>
 		<script src="game.js"></script>
 		<script src="conexion.js"></script>
 		
@@ -61,6 +62,12 @@
 		   	    momentoDeRegistro:"",
 		   	    
 		   	}
+			
+			var sala = {
+					id: null,
+					muffin: null, //contiene el id del jugador que elige muffin (asi luego podemos acceder al jugador mas facilmetne con su id)
+					mungojerry: null,
+			}
 			
 		    function prepararYEnviarJugador(gato, nombre) 
 		    {

@@ -1,5 +1,6 @@
 package CatsAPI_REST_groupid.CatsAPI_REST_artifactid;
 
+import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -21,6 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/SalaEspera")
 public class SalaEsperaController {
 
+  
   public static Map<Long, salaEspera> salas = new ConcurrentHashMap<>();
   public static AtomicLong ultimoId = new AtomicLong();
 
@@ -47,11 +49,14 @@ public class SalaEsperaController {
   }
 
   @PutMapping("/{id}")
-  public ResponseEntity<salaEspera> actualizaSala(@PathVariable long id, @RequestBody salaEspera salaActualizada) {
+  public ResponseEntity<salaEspera> actualizaSala(@PathVariable long id, @RequestBody salaEspera salaActualizada, @RequestBody long idPlayer) {
 
+	  Jugador jugadorRestante = JugadorController.jugadores.get(idPlayer);
+	  //salaEspera sala = salas.get(id);
 	  salaEspera sala = salas.get(salaActualizada.getId());
     
     if (sala != null) {
+      sala.completarSala(jugadorRestante);
       salas.put(id, salaActualizada);
       return new ResponseEntity<>(salaActualizada, HttpStatus.OK);
       
@@ -60,8 +65,9 @@ public class SalaEsperaController {
     }
   }
 
+  
   @GetMapping("/{id}")
-  public ResponseEntity<salaEspera> getJugador(@PathVariable long id) {
+  public ResponseEntity<salaEspera> getSala(@PathVariable long id) {
     
 	salaEspera sala =  salas.get(id);
     

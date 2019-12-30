@@ -6,10 +6,11 @@ public class Jugador {
 
 	private long id = -1;
 	private String nombreDelGato;
-	private String nombre;
+	private String nickname;
 	public LocalDateTime momentoDeRegistro;
 	public boolean inactivo;
 	private LocalDateTime ultimaInteraccion;
+	public salaEspera sala;
 	
 	public static double tiempoMaximoInactividad = 32;
 		
@@ -21,7 +22,9 @@ public class Jugador {
 		this.momentoDeRegistro = momentoDeRegistro;
 		this.ultimaInteraccion= ultimaInteraccion;
 		this.inactivo = false;
-		this.nombre= nombreJugador;
+		this.nickname= nombreJugador;
+		Application.jugadoresSinSala.put(this.id, this);
+		this.sala = null;
 	}
 	
 	//Métodos
@@ -73,15 +76,20 @@ public class Jugador {
 		this.ultimaInteraccion = ultimaInteraccion;
 	}
 	
-	public String getNombre() {
-		return nombre;
+	public String getNickname() {
+		return nickname;
 	}
-	public void setNombre(String nombreJugador) {
-		this.nombre = nombreJugador;
+	public void setNickname(String nombreJugador) {
+		this.nickname = nombreJugador;
 	}
+	
+	public salaEspera getSala() {return sala;}
+	
+	public void setSala(salaEspera nuevaSala) {this.sala = nuevaSala;}
+	
 	@Override
 	public String toString() {
-		return "Jugador [ID: " + id + ", Nombre jugador: "+ nombre+", Nombre del gato: " + nombreDelGato + 
+		return "Jugador [ID: " + id + ", Nombre jugador: "+ nickname+", Nombre del gato: " + nombreDelGato + 
 				", Momento de registro: " + momentoDeRegistro + ", ultima interacción: " + ultimaInteraccion +
 				", Inactivo: "+inactivo+" ]";
 	}

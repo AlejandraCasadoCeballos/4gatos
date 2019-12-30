@@ -42,8 +42,8 @@ class Scene4 extends Phaser.Scene{
         
     }
     update(){
-    	PUTservidor(jugador);
-    	GETservidor();
+    	//PUTservidor(jugador);
+    	//GETservidor();
     }
 
 

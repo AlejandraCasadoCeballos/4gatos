@@ -13,7 +13,7 @@ class Scene10 extends Phaser.Scene{
     }
     
     create(){
-    	PUTservidor(jugador);
+    	//PUTservidor(jugador);
         musica2.resume();//la musica sigue por donde se quedó al salir del menú
 
         //creamos el botón

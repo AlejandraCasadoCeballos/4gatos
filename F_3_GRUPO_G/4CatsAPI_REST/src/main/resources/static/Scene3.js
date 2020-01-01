@@ -7,6 +7,7 @@ class Scene3 extends Phaser.Scene{
                //las animaciones de los dos gatos
     {
         this.load.image('escenario1', '/Recursos/Interfaz/escenario1.jpg');
+        this.load.image('escenario2', '/Recursos/Interfaz/escenario2.jpg');
         this.load.image('plataforma', '/Recursos/Plataformas/plataforma.png');
         this.load.image('pescado', '/Recursos/Objetos/pescado.png');
         this.load.image('ovillo', '/Recursos/Objetos/ovillo.png');
@@ -17,17 +18,22 @@ class Scene3 extends Phaser.Scene{
         this.load.audio('objeto',['/Recursos/Sonidos/objeto.mp3', '/Recursos/Sonidos/objeto.ogg']);
         this.load.audio('powerUp',['/Recursos/Sonidos/powerUp.mp3', '/Recursos/Sonidos/powerUp.ogg']);
         this.load.audio('cuentaAtras',['/Recursos/Sonidos/cuentaAtras.mp3', '/Recursos/Sonidos/cuentaAtras.ogg']);
-
+        this.load.video('nieve','/Recursos/Interfaz/nieve.mp4');
+        
         this.load.spritesheet('Muffin', '/Recursos/Personajes/Muffin.png',
         { frameWidth: 64, frameHeight: 54 } 
         );
         this.load.spritesheet('Mungojerry', '/Recursos/Personajes/Mungojerry.png',
         { frameWidth: 64, frameHeight: 54 } 
         );
+        this.load.spritesheet('nieve', '/Recursos/Interfaz/nieve.png',
+        { frameWidth: 800, frameHeight: 600 } 
+        );
     }
 
     create ()
     { 
+    	
         musica=this.sound.add('juego');//añadimos la música al juego
         sonidoObjeto=this.sound.add('objeto');//añadimos el sonido que sonará al coger el objeto
         sonidoAplastado=this.sound.add('aplastado');//añadimos el sonido que sonará al aplastar a un gato
@@ -36,6 +42,7 @@ class Scene3 extends Phaser.Scene{
         musica.setLoop(true);//hacemos que la música del juego suene en bucle
         musica.play();//hacemos que suene la música
       
+        
         plataformas = this.physics.add.staticGroup(); //crea un nuevo grupo de elementos estáticos y lo asigna a la variable plataformas
       //hemos creado plataformas con el alpha a 0 para que fuesen invisibles pero cumpliesen su función de colisionar con el jugador
         if(escenarioUno){
@@ -52,15 +59,25 @@ class Scene3 extends Phaser.Scene{
             plataformas.create(90, 480, 'plataforma').setScale(0.3, 0.3).refreshBody().setAlpha(0);//coche
             plataformas.create(180, 520, 'plataforma').setScale(0.2, 0.3).refreshBody().setAlpha(0);//coche
             
-        	escenarioUno=false;
+        	
         }
         else if(escenarioDos){
-        	this.add.image(400, 300, 'escenario1').setScale(0.5,0.5);
-        	escenarioDos=false;
+        	this.add.image(400, 300, 'escenario2');
+        	//plataformas propias del escenario
+        	plataformas.create(95, 225, 'plataforma').setScale(0.20, 0.3).refreshBody().setAlpha(0);//chimenea
+            plataformas.create(480, 165, 'plataforma').setScale(0.27, 0.3).refreshBody().setAlpha(0);//antena arriba
+            plataformas.create(650, 315, 'plataforma').setScale(0.5, 0.3).refreshBody().setAlpha(0);//bordillo arriba
+            plataformas.create(360, 310, 'plataforma').setScale(0.27, 0.3).refreshBody().setAlpha(0);//antena abajo
+            plataformas.create(155, 430, 'plataforma').setScale(0.55, 0.3).refreshBody().setAlpha(0);//bordillo abajo izq
+            plataformas.create(570, 495, 'plataforma').setScale(0.5, 0.3).refreshBody().setAlpha(0);//bodillo abajo derecha
+            
+            nieve=this.physics.add.sprite(400,300,'nieve');
+            nieve.setCollideWorldBounds(true);
+            
         }
         else if(escenarioTres){
         	this.add.image(400, 300, 'escenario1').setAlpha(0.5);
-        	escenarioTres=false;
+        	
         }
         
         const botonPausa = this.add.text(40,10,"Pausa",{font:"25px Courier", fill:"White"}); //cremos el botón de pausa
@@ -79,6 +96,8 @@ class Scene3 extends Phaser.Scene{
 
         //Creación del personaje
         player = this.physics.add.sprite(734, 560, 'Muffin'); //creación de un sprite con físicas
+        
+        
         this.physics.add.collider(player, plataformas);// añadimos las fisicas al choque
         //player.body.checkCollision.up=false; practica 2
         player2 = this.physics.add.sprite(60, 560, 'Mungojerry'); //creación de un sprite con físicas
@@ -259,13 +278,23 @@ class Scene3 extends Phaser.Scene{
             frameRate: 20,
             repeat: -1 //volver a empezar cuando termine
         });
+        //NIEVE
+        this.anims.create({
+            key: 'nieve', //nombre de la animación
+            frames: this.anims.generateFrameNumbers('nieve', { start: 0, end: 47}),// frames que utilziamos para la animacion
+            frameRate: 20,//velocidad de la animación
+            repeat: -1 //volver a empezar cuando termine
+        });
         //FIN ANIMACIONES--------------------------------------------------------------------
 
         objeto= this.physics.add.staticGroup(); //objeto por el que lucharán
         objetoPowerUp= this.physics.add.staticGroup(); //power up
 
         //Generamos el objeto en el centro de la pantalla
-        objeto.create(340, 175, objetoAleatorio);
+        if(escenarioUno)
+        	objeto.create(340, 175, objetoAleatorio);
+        else if(escenarioDos)
+        	objeto.create(480, 150, objetoAleatorio);
 
         //colision con los objetos
         this.physics.add.overlap(player, objeto, this.collectObject, null, this);
@@ -282,11 +311,15 @@ class Scene3 extends Phaser.Scene{
         this.physics.add.overlap(player, player2, this.hitPlayer, null, this);
         this.physics.add.overlap(player2, player, this.hitPlayer, null, this);
         
+        if(escenarioDos){
+        	nieve.anims.play("nieve",true);
+        }
         //imprimimos el tiempo por pantalla en blanco
         info = this.add.text(600, 10, '', {font:"25px Courier", fill:"White"});
         timer = this.time.addEvent({ delay: 45000, callback: this.gameOver, callbackScope: this });
 
        //var textoPantalla =this.add.text(570, 10, GETservidor(), {font:"20px Courier", fill:"white"});
+        
     }
 
     //función de acabar el juego. Al terminar, dependiendo de quién tenga el objeto al final de la partida, el juego lleva a la escena del 
@@ -298,23 +331,24 @@ class Scene3 extends Phaser.Scene{
         musica.stop();
         if(objetoCogido)
         	ganadorUno=true;
-            //this.scene.start("Ganador1");
-        	
         else if(objetoCogido2)
         	ganadorDos=true;
-            //this.scene.start("Ganador2");
         else if(!objetoCogido && !objetoCogido2)
         	empate=true;
-            //this.scene.start("Menu");
 
         this.scene.start("Fin");
         objetoCogido=false;
         objetoCogido2=false;
+        
         generarPowerUp1 = Phaser.Math.Between(40, 30);
         generarPowerUp2 = Phaser.Math.Between(20, 5);
         colisionPowerUp=false;
         colisionPowerUp2=false;
         pU.x+=50;
+        escenarioUno=false;
+        escenarioDos=false;
+        escenarioTres=false;
+        
     }
 
     //esta función se usa para detectar la colisión entre el objeto y el jugador 1
@@ -402,7 +436,7 @@ class Scene3 extends Phaser.Scene{
     		//tiempoInactividad(this);
     		PUTservidor(jugador);
     		//GETservidor();
-        
+    		
             //tiempoEspera++;//la variable que controla hace cuánto ha sido transferido el objeto aumenta 
             time*=delta;//para que el tiempo no dependa de la máquina que compila este código
             //actualizamos el tiempo, dividmmos entre mil para que salga en segundos
@@ -415,7 +449,11 @@ class Scene3 extends Phaser.Scene{
             //Cuando el tiempo que queda es igual al random en el que aparece el power up 2
             if (tiempo===generarPowerUp1) {
                 generarPowerUp1=130;
-                pU=objetoPowerUp.create(640,170, "lata");
+                if(escenarioUno)
+                	pU=objetoPowerUp.create(640,170, "lata");
+                else if(escenarioDos)
+                	pU=objetoPowerUp.create(155,405, "lata");
+                
                 this.physics.add.overlap(player, objetoPowerUp, this.colectPowerUp1, null, this);
                 this.physics.add.overlap(player2, objetoPowerUp, this.colectPowerUp2, null, this);
             }
@@ -426,7 +464,10 @@ class Scene3 extends Phaser.Scene{
             //Cuando el tiempo que queda es igual al random en el que aparece el power up 2
             if (tiempo === generarPowerUp2) {
                 generarPowerUp2 = 130;
-                objetoPowerUp.create(339, 350, "lata");
+                if(escenarioUno)
+                	objetoPowerUp.create(339, 350, "lata");
+                else if(escenarioDos)
+                	objetoPowerUp.create(650, 295, "lata");
                 this.physics.add.overlap(player, objetoPowerUp, this.colectPowerUp1, null, this);
                 this.physics.add.overlap(player2, objetoPowerUp, this.colectPowerUp2, null, this);
             }

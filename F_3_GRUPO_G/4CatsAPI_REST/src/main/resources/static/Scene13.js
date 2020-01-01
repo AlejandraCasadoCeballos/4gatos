@@ -16,6 +16,7 @@ class Scene13 extends Phaser.Scene{
 
  create ()
  {
+	 POSTsalaNueva(sala,jugador);
 	 musica2.resume();
 	 const botonAtras = this.add.text(90, 540,"Atras",{font:"30px Courier", fill:"Red"}).setOrigin(0.5,0.5);
 	 this.add.image(400, 300,'salaEspera');
@@ -26,7 +27,11 @@ class Scene13 extends Phaser.Scene{
      botonAtras.on('pointerout', () => {this.add.image(400, 300,'salaEspera'); });
  	}
     update(){
+    	//POSTsalaNueva(sala);
+    	GETunaSala(sala);
+    	if(sala.completa)
+    		this.scene.start("Mensaje");
     	PUTservidor(jugador);
-    	//tiempoInactividad(this);
+    	tiempoInactividad(this);
     }
 }

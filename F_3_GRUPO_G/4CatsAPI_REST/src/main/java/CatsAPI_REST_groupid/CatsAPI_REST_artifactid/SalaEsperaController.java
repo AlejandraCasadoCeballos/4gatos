@@ -38,14 +38,23 @@ public class SalaEsperaController {
 
   @PostMapping
   @ResponseStatus(HttpStatus.CREATED)
-  public salaEspera nuevaSala(@RequestBody salaEspera sala) {
-
-    long id = ultimoId.incrementAndGet();
-    sala.setId(id);
-    salas.put(id, sala);
-    sala.emparejar();
-
-    return sala;
+  public salaEspera nuevaSala(@RequestBody salaEspera sala, @RequestBody Jugador jugador) {
+	
+	
+	if(jugador.getNombreDelGato()=="muffin")
+		sala.setMuffin(jugador);
+	else if(jugador.getNombreDelGato()=="mungojerry")
+		sala.setMungojerry(jugador);
+	
+	jugador.setSala(sala);
+	
+	if(!jugador.emparejar()) {
+		long id = ultimoId.incrementAndGet();
+	    sala.setId(id);
+		salas.put(id, sala);
+	}
+	
+    return jugador.sala;
   }
 
   @PutMapping("/{id}")
@@ -56,7 +65,7 @@ public class SalaEsperaController {
 	  salaEspera sala = salas.get(salaActualizada.getId());
     
     if (sala != null) {
-      sala.completarSala(jugadorRestante);
+      //sala.completarSala(jugadorRestante);
       salas.put(id, salaActualizada);
       return new ResponseEntity<>(salaActualizada, HttpStatus.OK);
       

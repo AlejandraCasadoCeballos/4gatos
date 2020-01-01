@@ -22,6 +22,7 @@
 		<script src="Scene13.js"></script>
 		<script src="game.js"></script>
 		<script src="conexion.js"></script>
+		<script src="salas_REST.js"></script>
 		
 		<style>
 			body 
@@ -36,20 +37,25 @@
  
 
 <script>
+			var t=2000;
 			var tiempoInactividad = function (escena) { 
 				
-				var t;
-				//window.onload = resetearTemporizador; // DOM Events 
-	    		window.onmousemove = resetearTemporizador; 
-	    		window.onkeypress = resetearTemporizador; 
-		    	function cambioPantalla() { 
-		    		escena.scene.start("Menu");
-		    		//musica2.stop();
-		    	} 
-		   	 	function resetearTemporizador() { 
-		   	 		clearTimeout(t); 
-		   	 		t = setTimeout(cambioPantalla, 30000);
+				
+				//falta mirar que este tecleando
+	    		escena.input.on('pointermove', function (pointer) {
+	    			clearTimeout(t); 
+		   	 		t = 2000;
+	    			//console.log("hola");
+	    		}, this);
+				
+				t--;
+			
+				if(t<=0){
+					escena.scene.start("Menu");
+					musica2.stop();
+					t=2000;
 				}
+				
 		   	}; 
 	
 			var nombre = "";
@@ -67,6 +73,7 @@
 					id: null,
 					muffin: null, //contiene el id del jugador que elige muffin (asi luego podemos acceder al jugador mas facilmetne con su id)
 					mungojerry: null,
+					completa:false,
 			}
 			
 		    function prepararYEnviarJugador(gato, nombre) 
@@ -86,6 +93,7 @@
 			var mungojerry;
 			var plataformaGorda;
 			
+			var nieve;
 			// Música de juego
 			var musica;
 			var musica2;

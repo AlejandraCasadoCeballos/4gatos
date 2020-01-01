@@ -17,8 +17,12 @@ class Scene12 extends Phaser.Scene{
 
  create ()
  {
+	 var escena=this;
+	 if(jugador.nombre!="")
+		 this.empezarPartida(escena);
+	 
 	 musica2.resume();
-	 const botonAceptar = this.add.text(400, 355,"Aceptar",{font:"22px Courier", fill:"white"}).setOrigin(0.5,0.5); 
+	 //const botonAceptar = this.add.text(400, 355,"Aceptar",{font:"22px Courier", fill:"white"}).setOrigin(0.5,0.5); 
 	 const botonAtras = this.add.text(90, 540,"Atras",{font:"30px Courier", fill:"Red"}).setOrigin(0.5,0.5);
 	 
 	 this.add.image(400, 300,'introducir nombre');
@@ -35,27 +39,33 @@ class Scene12 extends Phaser.Scene{
 	 var element=  this.add.dom(400,300, 'div', 'phaser').createFromCache('nameform');
 	 element.addListener("click");
   	 element.on("click", function (event) {
- 	
   		if (event.target.name === 'guardar')
      	{
     	 	nombre = this.getChildByName('nombre'); 
+    	 	escena.empezarPartida(escena);
      	}    
      });
  
 	 
 	 botonAtras.setInteractive();
-	 botonAtras.on('pointerdown', () => { this.scene.start("Menu");musica2.stop();});
+	 botonAtras.on('pointerdown', () => { DELETEservidor(jugador);musica2.stop();this.scene.start("Menu");});
      botonAtras.on('pointerover', () => {this.add.image(400, 300,'introducir nombre atras'); });
      botonAtras.on('pointerout', () => {this.add.image(400, 300,'introducir nombre'); });
      
-  	 botonAceptar.setInteractive();
-  	 botonAceptar.on('pointerdown', () => {musica2.stop(); this.scene.start("elegirEscenario"); prepararYEnviarJugador("", nombre.value);console.log(jugador.nombre);/*PUTnombreJugador(jugador);*/});
+  	 /*botonAceptar.setInteractive();
+  	 botonAceptar.on('pointerdown', () => {musica2.stop(); this.scene.start("elegirEscenario"); prepararYEnviarJugador("", nombre.value);console.log(jugador.nombre);PUTnombreJugador(jugador);});
   	 botonAceptar.on('pointerover', () => {this.add.image(400, 300,'introducir nombre pulsado' );});
-  	 botonAceptar.on('pointerout', () => {this.add.image(400, 300,'introducir nombre'); });
-  
+  	 botonAceptar.on('pointerout', () => {this.add.image(400, 300,'introducir nombre'); });*/
 }
     update(){
     	PUTservidor(jugador);
-    	//tiempoInactividad(this);
+    	tiempoInactividad(this);
+    }
+    
+    empezarPartida(escena){
+    	musica2.stop(); 
+    	escena.scene.start("elegirEscenario"); 
+	 	prepararYEnviarJugador("", nombre.value);
+	 	console.log(jugador.nombre);
     }
 }

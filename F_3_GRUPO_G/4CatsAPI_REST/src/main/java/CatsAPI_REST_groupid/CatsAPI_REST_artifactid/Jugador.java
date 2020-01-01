@@ -1,17 +1,19 @@
 package CatsAPI_REST_groupid.CatsAPI_REST_artifactid;
 
 import java.time.*;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class Jugador {
 
 	private long id = -1;
 	private String nombreDelGato;
-	private String nickname;
+	private String nombre;
 	public LocalDateTime momentoDeRegistro;
 	public boolean inactivo;
 	private LocalDateTime ultimaInteraccion;
 	public salaEspera sala;
-	
+	public static Map<Long, Jugador> jugadoresSinSala = new ConcurrentHashMap<>();
 	public static double tiempoMaximoInactividad = 32;
 		
 	public Jugador(){}
@@ -22,8 +24,8 @@ public class Jugador {
 		this.momentoDeRegistro = momentoDeRegistro;
 		this.ultimaInteraccion= ultimaInteraccion;
 		this.inactivo = false;
-		this.nickname= nombreJugador;
-		Application.jugadoresSinSala.put(this.id, this);
+		this.nombre= nombreJugador;
+		this.jugadoresSinSala.put(this.id, this);
 		this.sala = null;
 	}
 	
@@ -77,19 +79,57 @@ public class Jugador {
 	}
 	
 	public String getNickname() {
-		return nickname;
+		return nombre;
 	}
 	public void setNickname(String nombreJugador) {
-		this.nickname = nombreJugador;
+		this.nombre = nombreJugador;
 	}
 	
 	public salaEspera getSala() {return sala;}
 	
 	public void setSala(salaEspera nuevaSala) {this.sala = nuevaSala;}
 	
+	public static Map<Long, Jugador> getJugadoresSinSala() {return jugadoresSinSala;}
+	  
+	public void setJugadoresSinSala(Map<Long, Jugador> jugadoresSinSala) {this.jugadoresSinSala=jugadoresSinSala;}
+	
+	public boolean emparejar() {
+		boolean completa=false;
+	     //Coge el primer elemento de jugadores sin sala y lo mete en jugador 1
+	    //jugadoresSinSala.remove(0); //Elimina ese jugador
+	    
+	    if(this.getNombreDelGato() == "muffin") {
+		      for(long id: SalaEsperaController.salas.keySet()) {
+		    	  salaEspera sala=SalaEsperaController.salas.get(id);
+		    	  if(sala.getMuffin()==null && sala.getMungojerry()!=null && !completa) {
+		    		  this.setSala(sala);
+		    		  sala.completa=true;
+		    		  completa=true;
+		    		  sala.setMuffin(this);
+		    	  }
+		      }
+		      
+		    }
+	    else if(this.getNombreDelGato() == "mungojerry") {
+	      for(long id: SalaEsperaController.salas.keySet()) {
+	    	  salaEspera sala=SalaEsperaController.salas.get(id);
+	    	  if(sala.getMuffin()!=null && sala.getMungojerry()==null && !completa) {
+	    		  this.setSala(sala);
+	    		  sala.completa=true;
+	    		  completa=true;
+	    		  sala.setMungojerry(this);
+	    	  }
+	      }
+	      
+	    }
+	    if(completa)
+	    	jugadoresSinSala.remove(this.getId()); //Elimina ese jugador
+	    return completa;
+	  }
+	
 	@Override
 	public String toString() {
-		return "Jugador [ID: " + id + ", Nombre jugador: "+ nickname+", Nombre del gato: " + nombreDelGato + 
+		return "Jugador [ID: " + id + ", Nombre jugador: "+ nombre+", Nombre del gato: " + nombreDelGato + 
 				", Momento de registro: " + momentoDeRegistro + ", ultima interacción: " + ultimaInteraccion +
 				", Inactivo: "+inactivo+" ]";
 	}

@@ -45,7 +45,9 @@ public class JugadorController {
     long id = ultimoId.incrementAndGet();
     jugador.registro(id);
     jugadores.put(id, jugador);
+    Jugador.jugadoresSinSala.put(id, jugador);
 
+    
     return jugador;
   }
 
@@ -61,6 +63,7 @@ public class JugadorController {
       jugadorActualizado.setUltimaInteraccion(LocalDateTime.now());
       
       jugadores.put(id, jugadorActualizado);
+      
 
       return new ResponseEntity<>(jugadorActualizado, HttpStatus.OK);
     } else {
@@ -120,7 +123,6 @@ public class JugadorController {
   public ResponseEntity<Jugador> borraJugador(@PathVariable long id) {
     
     Jugador jugador = jugadores.remove(id); 
-    ultimoId.decrementAndGet();
     
     if (jugador != null) {
       return new ResponseEntity<>(jugador, HttpStatus.OK);

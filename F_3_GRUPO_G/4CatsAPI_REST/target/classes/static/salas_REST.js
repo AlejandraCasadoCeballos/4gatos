@@ -33,28 +33,27 @@ function GETnumSalas(){
 }
 
 
-function GETunaSala(sala){
-	var r = "asdfñlkj";
+function GETunaSala(){
 	
 	$.ajax({
+		method:"GET",
         url: "/SalaEspera/" + sala.id,
+        data: JSON.stringify(sala),
         async: false,
-    	success: function (msg) {
-            r = msg;
-        },
-        error: function (jqXHR, textStatus, errorThrown) {
-            console.log("ERROR" + textStatus);
+        processData: false,
+        headers: {
+            "Content-Type":"application/json"
         }
-    }).done(function(numSalas){
+    }).done(function(sala){
+    	console.log(sala);
     	
-    });
-	return r; //NO SE SI DEVUELVE LA SALA SOLICITADA O QUE DEVUELVE
+    }); 
 }
 
 //--------------------------------------------------------------------------------------------------
 //POST
 //--------------------------------------------------------------------------------------------------
-function POSTsalaNueva(sala) { //POST
+function POSTsalaNueva(sala,jugador) { //POST
     $.ajax({
         method: "POST",
         url:"/SalaEspera",
@@ -64,7 +63,7 @@ function POSTsalaNueva(sala) { //POST
         "Content-Type":"application/json"
         }
         }).done(function(salaPost) {
-            //console.log("POST: \nID: " + jugadorPost.id + "\nNombre: " + jugadorPost.nombre + "\nNombre del gato: " + jugadorPost.nombreDelGato + "\nInactivo: " + jugadorPost.inactivo);
+            console.log("POST: \nID: " + jugadorPost.id + "\nNombre: " + jugadorPost.nombre + "\nNombre del gato: " + jugadorPost.nombreDelGato + "\nInactivo: " + jugadorPost.inactivo);
             sala.id= salaPost.id;
         })
 }

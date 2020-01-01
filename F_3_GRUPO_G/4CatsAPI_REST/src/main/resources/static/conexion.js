@@ -40,7 +40,7 @@ function POSTservidor(jugador) { //POST
         "Content-Type":"application/json"
         }
         }).done(function(jugadorPost) {
-            console.log("POST: \nID: " + jugadorPost.id + "\nNombre: " + jugadorPost.nombre + "\nNombre del gato: " + jugadorPost.nombreDelGato + "\nInactivo: " + jugadorPost.inactivo);
+            //console.log("POST: \nID: " + jugadorPost.id + "\nNombre: " + jugadorPost.nombre + "\nNombre del gato: " + jugadorPost.nombreDelGato + "\nInactivo: " + jugadorPost.inactivo);
             jugador.id= jugadorPost.id;
         })
 }
@@ -57,37 +57,13 @@ function PUTservidor(jugador) { //PUT
             "Content-Type": "application/json"
         }
     }).done(function (jugador) {
-        console.log("PUT: \nOld: "+old+"\nUpdated: " + JSON.stringify(jugador))
+        //console.log("PUT: \nOld: "+old+"\nUpdated: " + JSON.stringify(jugador))
     })
 }
-/*function PUTnombreJugador(jugador) { //PUT
-    var old1 = "Actualización: " + JSON.stringify(jugador);
-    $.ajax({
-        method: "PUT",
-        url:"/Jugador/" + jugador.id +"/"+ jugador.nombre,
-        data: JSON.stringify(jugador),
-        processData: false,
-        headers: {
-            "Content-Type": "application/json"
-        }
-    }).done(function (jugador) {
-        console.log("hola")
-    })
-}function PUTnombreGato(jugador) { //PUT
-    var old2 = "Actualización: " + JSON.stringify(jugador);
-    $.ajax({
-        method: "PUTn",
-        url:"/Jugador/" + jugador.id +"/"+ jugador.nombreDelGato,
-        data: JSON.stringify(jugador),
-        processData: false,
-        headers: {
-            "Content-Type": "application/json"
-        }
-    }).done(function (jugador) {
-        console.log("PUT: \nOld: "+old2+"\nUpdated: " + JSON.stringify(jugador))
-    })
-}*/
 function DELETEservidor(jugador) {
+	//jugador.nombre= "";
+	//jugador.nombreDelGato= "";
+	//jugador.momentoDeRegistro="";
     $.ajax({
         method: 'DELETE',
         url: '/Jugador/' + jugador.id,
@@ -98,5 +74,6 @@ function DELETEservidor(jugador) {
         }
     }).done(function (jugador) {
         console.log("Jugador borrado: " + jugador.id)
+        
     })
 }

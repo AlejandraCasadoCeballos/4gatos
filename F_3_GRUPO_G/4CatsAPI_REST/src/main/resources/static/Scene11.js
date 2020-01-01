@@ -82,11 +82,23 @@ class Scene11 extends Phaser.Scene
         // En cada uno, al poner el ratón sobre el botón la imagen cambia a otra que tiene las letras de dicho botón de otro color
         // Al quitar el ratón, la imagen vuelve a ser la original. Al pulsar cada botón cambiamos a la escena correspondiente y paramos la música
         // BOTÓN JUGAR
-        botonMungojerry.on('pointerdown', () => { musica2.stop(); this.scene.start("salaEspera"); prepararYEnviarJugador("Mungojerry", jugador.nombre);/*PUTnombreGato(jugador);*/ });
+        botonMungojerry.on('pointerdown', () => { 
+        	musica2.stop(); 
+        	//this.scene.start("Mensaje");
+        	this.scene.start("salaEspera"); 
+        	prepararYEnviarJugador("Mungojerry", jugador.nombre);
+        	sala.mungojerry=jugador;
+        });
         botonMungojerry.on('pointerover', () => { mungojerry.anims.play('leftplayer2',true); });
         botonMungojerry.on('pointerout', () => { mungojerry.anims.stop('leftplayer2',true); });
         // BOTÓN CRÉDITOS
-        botonMuffin.on('pointerdown', () => { musica2.stop(); this.scene.start("salaEspera"); prepararYEnviarJugador("Muffin", jugador.nombre); /*PUTnombreGato(jugador);*/});
+        botonMuffin.on('pointerdown', () => { 
+        	musica2.stop(); 
+        	this.scene.start("salaEspera"); 
+        	//this.scene.start("Mensaje");
+        	prepararYEnviarJugador("Muffin", jugador.nombre); 
+        	sala.muffin=jugador;
+        });
         botonMuffin.on('pointerover', () => { muffin.anims.play('leftplayer',true); });
         botonMuffin.on('pointerout', () => { muffin.anims.stop('leftplayer',true); });
         
@@ -98,7 +110,7 @@ class Scene11 extends Phaser.Scene
     update() {
     	
     	PUTservidor(jugador);
-    	//tiempoInactividad(this);
+    	tiempoInactividad(this);
     	te.destroy();
     	te2.destroy();
     	numeroJugadores = GETnumJugadores();

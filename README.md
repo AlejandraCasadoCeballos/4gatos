@@ -225,12 +225,20 @@ Diagrama de navagación resultante:
 # Fase 4
 # Fase 5
 ## Cambios
+
 • Cambio de posesión del objeto
+
 • 3 escenarios
-• Fuentes de los textos puestos desde phaser
-• Vomito repeticion
+
+• Fuentes de los textos unificadas
+
+• Vomito repetición
+
 • Vomito bug
+
 • Destruir bien power ups
+
+• Botón para activar y desactivar sonido
 
 
 # Webgrafía

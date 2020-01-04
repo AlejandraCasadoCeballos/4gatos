@@ -1,6 +1,19 @@
 //--------------------------------------------------------------------------------------------------
 //GET
 //--------------------------------------------------------------------------------------------------
+/*
+function GETsalaEspera() { //GET 
+    $.ajax({
+        url: "/salaEspera"
+    }).done(function(sala){
+        numeroJugadoresSala = sala.length;
+        for(var i=0; i<numeroJugadores; i++){
+           //console.log("GET: \nID: " + sala.jugadoresEnSala[i].id + "\nNombre: " + jugadores[i].nombre + "\nNombre del gato: " + jugadores[i].nombreDelGato + "\nInactivo: " + jugadores[i].inactivo);
+        }
+    });
+}
+
+
 
 function GETsalas() { //GET 
     $.ajax({
@@ -105,4 +118,4 @@ function DELETEsala(sala) {
     }).done(function (sala) {
         console.log("Sala borrada: " + sala.id)
     })
-}
+}*/

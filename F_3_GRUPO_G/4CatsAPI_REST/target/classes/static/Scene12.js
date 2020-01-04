@@ -33,7 +33,7 @@ class Scene12 extends Phaser.Scene{
 		 gameObject.y = dragY;
 	 });
  
-	 var element=  this.add.dom(400,320, 'div',  'font: 30px Agency FB bold','phaser').createFromCache('nameform');
+	 var element=  this.add.dom(430,320, 'div','phaser').createFromCache('nameform');
 	 element.addListener("click");
   	 element.on("click", function (event) {
   		if (event.target.name === 'guardar')

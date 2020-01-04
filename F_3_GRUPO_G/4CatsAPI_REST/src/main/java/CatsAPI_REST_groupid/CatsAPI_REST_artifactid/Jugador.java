@@ -1,8 +1,6 @@
 package CatsAPI_REST_groupid.CatsAPI_REST_artifactid;
 
 import java.time.*;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 public class Jugador {
 
@@ -12,9 +10,10 @@ public class Jugador {
 	public LocalDateTime momentoDeRegistro;
 	public boolean inactivo;
 	private LocalDateTime ultimaInteraccion;
-	public salaEspera sala;
-	public static Map<Long, Jugador> jugadoresSinSala = new ConcurrentHashMap<>();
+	/*public salaEspera sala;
+	public static Map<Long, Jugador> jugadoresSinSala = new ConcurrentHashMap<>();*/
 	public static double tiempoMaximoInactividad = 32;
+	private boolean parejaEncontrada;
 		
 	public Jugador(){}
 	
@@ -25,8 +24,8 @@ public class Jugador {
 		this.ultimaInteraccion= ultimaInteraccion;
 		this.inactivo = false;
 		this.nombre= nombreJugador;
-		Jugador.jugadoresSinSala.put(this.id, this);
-		this.sala = null;
+		/*Jugador.jugadoresSinSala.put(this.id, this);
+		this.sala = null;*/
 	}
 	
 	//Métodos
@@ -85,7 +84,14 @@ public class Jugador {
 		this.nombre = nombreJugador;
 	}
 	
-	public salaEspera getSala() {return sala;}
+	public boolean getParejaEncontrada() {
+		return parejaEncontrada;
+	}
+	public void setParejaEncontrada(boolean PE) {
+		this.parejaEncontrada = PE;
+	}
+	
+	/*public salaEspera getSala() {return sala;}
 	
 	public void setSala(salaEspera nuevaSala) {this.sala = nuevaSala;}
 	
@@ -123,7 +129,7 @@ public class Jugador {
 	    if(completa)
 	    	jugadoresSinSala.remove(this.getId()); //Elimina ese jugador
 	    return completa;
-	  }
+	  }*/
 	
 	@Override
 	public String toString() {

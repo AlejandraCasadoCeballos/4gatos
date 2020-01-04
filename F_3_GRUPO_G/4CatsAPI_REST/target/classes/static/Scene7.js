@@ -50,7 +50,6 @@ class Scene7 extends Phaser.Scene{
         generarPowerUp2 = Phaser.Math.Between(20, 5);
         colisionPowerUp=false;
         colisionPowerUp2=false;
-        pU.x+=50;
     }
     update(){
     	tiempoInactividad(this);

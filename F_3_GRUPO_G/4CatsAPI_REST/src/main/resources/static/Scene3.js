@@ -8,18 +8,17 @@ class Scene3 extends Phaser.Scene{
     {
         this.load.image('escenario1', '/Recursos/Interfaz/escenario1.jpg');
         this.load.image('escenario2', '/Recursos/Interfaz/escenario2.png');
-        this.load.image('escenario3', '/Recursos/Interfaz/escenario2.png');
+        this.load.image('escenario3', '/Recursos/Interfaz/escenario3.png');
         this.load.image('plataforma', '/Recursos/Plataformas/plataforma.png');
         this.load.image('pescado', '/Recursos/Objetos/pescado.png');
         this.load.image('ovillo', '/Recursos/Objetos/ovillo.png');
         this.load.image('rata', '/Recursos/Objetos/rata.png');
-        pU=this.load.image('lata', '/Recursos/Objetos/lata.png');
+        this.load.image('lata', '/Recursos/Objetos/lata.png');
         this.load.audio('juego',['/Recursos/Musica/juego.mp3', '/Recursos/Musica/juego.ogg']);
         this.load.audio('aplastado',['/Recursos/Sonidos/aplastado.mp3', '/Recursos/Sonidos/aplastado.ogg']);
         this.load.audio('objeto',['/Recursos/Sonidos/objeto.mp3', '/Recursos/Sonidos/objeto.ogg']);
         this.load.audio('powerUp',['/Recursos/Sonidos/powerUp.mp3', '/Recursos/Sonidos/powerUp.ogg']);
         this.load.audio('cuentaAtras',['/Recursos/Sonidos/cuentaAtras.mp3', '/Recursos/Sonidos/cuentaAtras.ogg']);
-        this.load.video('nieve','/Recursos/Interfaz/nieve.mp4');
         
         this.load.spritesheet('Muffin', '/Recursos/Personajes/Muffin.png',
         { frameWidth: 64, frameHeight: 54 } 
@@ -104,9 +103,9 @@ class Scene3 extends Phaser.Scene{
         //cuando le damos cambiamos a la escena de pausa, paramos la música y esta escena
         botonPausa.on('pointerdown', () => { this.scene.pause(); musica.pause(); this.scene.launch("Pausa"); sonidoCuentaAtras.pause();}); 
         botonPausa.on('pointerout', () => {
-        	if(escenarioTres)  
+        	if(escenarioTres) //en el escenario 3 la letra del pausa en estado normal es roja
         		this.add.text(40,15,"Pausa",{font:"30px Agency FB bold", fill:"#CC0033"}); 
-        	else 
+        	else //en los escenarios 1 y 2 la letra del pausa en estado normal es amarilla
         		this.add.text(40,15,"Pausa",{font:"30px Agency FB bold", fill:"#FFFF33"}); 
         });
         botonPausa.on('pointerover', () => {this.add.text(40,15,"Pausa",{font:"30px Agency FB bold", fill:"#FF0066"});}); 
@@ -120,9 +119,6 @@ class Scene3 extends Phaser.Scene{
 
         //Creación del personaje
         player = this.physics.add.sprite(734, 560, 'Muffin'); //creación de un sprite con físicas
-        
-        
-        
         this.physics.add.collider(player, plataformas);// añadimos las fisicas al choque
         //player.body.checkCollision.up=false; practica 2
         player2 = this.physics.add.sprite(100, 560, 'Mungojerry'); //creación de un sprite con físicas
@@ -217,7 +213,7 @@ class Scene3 extends Phaser.Scene{
             key: 'VOplayer', //nombre de la animación
             frames: this.anims.generateFrameNumbers('Muffin', { start: 32, end: 55 }),
             frameRate: 20,
-            repeat: 1 //volver a empezar cuando termine
+            repeat: 1 
         });
 
         //PLAYER 2 animaciones-------------------------------------------------------------------------------------
@@ -301,7 +297,7 @@ class Scene3 extends Phaser.Scene{
             key: 'VOplayer2', //nombre de la animación
             frames: this.anims.generateFrameNumbers('Mungojerry', { start: 88, end: 111 }),
             frameRate: 20,
-            repeat: 1 //volver a empezar cuando termine
+            repeat: 1 
         });
         //NIEVE
         this.anims.create({
@@ -313,9 +309,11 @@ class Scene3 extends Phaser.Scene{
         //FIN ANIMACIONES--------------------------------------------------------------------
 
         objeto= this.physics.add.staticGroup(); //objeto por el que lucharán
-        objetoPowerUp= this.physics.add.staticGroup(); //power up
-
+        objetoPowerUp1= this.physics.add.staticGroup(); //power up
+        objetoPowerUp2= this.physics.add.staticGroup();
+        
         //Generamos el objeto en el centro de la pantalla
+        //dependiendo del escenario elegido el objeto principal tiene una posición asignada 
         if(escenarioUno)
         	objeto.create(340, 175, objetoAleatorio);
         else if(escenarioDos)
@@ -334,14 +332,14 @@ class Scene3 extends Phaser.Scene{
         player2.right=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
         player2.left=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
         player2.up=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
+        
         //llamamos a la funcion hitplayer cada vez que player2 salte sobre player uno y a la inversa
         this.physics.add.overlap(player, player2, this.hitPlayer, null, this);
         this.physics.add.overlap(player2, player, this.hitPlayer, null, this);
         
-        if(escenarioDos){
+        if(escenarioDos){//si el  escenario seleccionado ha sido el dos, se activa la animación de la nieve
         	nieve.anims.play("nieve",true);
         }
-        
         
         timer = this.time.addEvent({ delay: 45000, callback: this.gameOver, callbackScope: this });
 
@@ -371,7 +369,7 @@ class Scene3 extends Phaser.Scene{
         generarPowerUp2 = Phaser.Math.Between(20, 5);
         colisionPowerUp=false;
         colisionPowerUp2=false;
-        pU.x+=50;
+        
         escenarioUno=false;
         escenarioDos=false;
         escenarioTres=false;
@@ -428,7 +426,7 @@ class Scene3 extends Phaser.Scene{
             cuentaAtrasParadoP2 = true;
             P1P2 = true;
             cuentaAtrasParadoP1 = false;
-           P2P1 = false;
+            P2P1 = false;
         }
 
 
@@ -463,7 +461,7 @@ class Scene3 extends Phaser.Scene{
     }
     //A continuación comienza la función update que se ejecuta en bucle
     update (time, delta) {
-    	
+    		
     		PUTservidor(jugador);
             //tiempoEspera++;//la variable que controla hace cuánto ha sido transferido el objeto aumenta 
             time*=delta;//para que el tiempo no dependa de la máquina que compila este código
@@ -476,32 +474,34 @@ class Scene3 extends Phaser.Scene{
             //Cuando el tiempo que queda es igual al random en el que aparece el power up 2
             if (tiempo===generarPowerUp1) {
                 generarPowerUp1=130;
+                //dependiendo del escenario elegido el primer power up tiene una posición asignada
                 if(escenarioUno)
-                	pU=objetoPowerUp.create(640,170, "lata");
+                	objetoPowerUp1.create(640,170, "lata");
                 else if(escenarioDos)
-                	pU=objetoPowerUp.create(155,405, "lata");
+                	objetoPowerUp1.create(155,405, "lata");
                 else if(escenarioTres)
-                	pU=objetoPowerUp.create(609,225, "lata");
+                	objetoPowerUp1.create(609,225, "lata");
                 
-                this.physics.add.overlap(player, objetoPowerUp, this.colectPowerUp1, null, this);
-                this.physics.add.overlap(player2, objetoPowerUp, this.colectPowerUp2, null, this);
+                this.physics.add.overlap(player, objetoPowerUp1, this.colectPowerUp1, null, this);
+                this.physics.add.overlap(player2, objetoPowerUp1, this.colectPowerUp2, null, this);
             }
             //si tiempo es igual al momento que hemos elegido para destruir el primer power up, lo movemos fuera de la pantalla
             if(tiempo<destruir){
-                objetoPowerUp.destroy();
+                objetoPowerUp1.clear(true);
             }
             //Cuando el tiempo que queda es igual al random en el que aparece el power up 2
             if (tiempo === generarPowerUp2) {
                 generarPowerUp2 = 130;
+              //dependiendo del escenario elegido el segundo power up tiene una posición asignada
                 if(escenarioUno)
-                	objetoPowerUp.create(339, 350, "lata");
+                	objetoPowerUp2.create(339, 350, "lata");
                 else if(escenarioDos)
-                	objetoPowerUp.create(650, 295, "lata");
+                	objetoPowerUp2.create(650, 295, "lata");
                 else if(escenarioTres)
-                	objetoPowerUp.create(280, 330, "lata");
+                	objetoPowerUp2.create(280, 330, "lata");
                 
-                this.physics.add.overlap(player, objetoPowerUp, this.colectPowerUp1, null, this);
-                this.physics.add.overlap(player2, objetoPowerUp, this.colectPowerUp2, null, this);
+                this.physics.add.overlap(player, objetoPowerUp2, this.colectPowerUp1, null, this);
+                this.physics.add.overlap(player2, objetoPowerUp2, this.colectPowerUp2, null, this);
             }
 
             //para mostrar el temporizador

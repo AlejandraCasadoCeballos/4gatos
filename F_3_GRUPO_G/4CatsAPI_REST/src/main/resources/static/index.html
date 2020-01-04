@@ -122,7 +122,6 @@
 			var sonidoAplastado;
 			var sonidoPowerUp;
 			
-			var pU; // objeto donde guardamos el power up
 			var destruir=21;//momento en el que se destruye el power up 1 si no lo han cogido
 			var tiempoEspera=0;// para que el jugador no pueda hacer chicle
 			var anim;//para las animaciones
@@ -135,7 +134,8 @@
 			var info;// texto del tiempo
 			var objetoAleatorio;// variable donde se guardará el objeto aleatorio
 			var objeto;//para crear el objeto aleatorio
-			var objetoPowerUp;//para crear el power up
+			var objetoPowerUp2;
+			var objetoPowerUp1;//para crear el power up
 			var total = 0;
 			var aleatorio;//guarda un numero aleatorio entre 1 y 3 para elegir el objeto que aparecerá
 			var generarPowerUp1 = Phaser.Math.Between(40, 30);// tiempo en que el primer power up que aparece en la partida

@@ -1,6 +1,5 @@
 package CatsAPI_REST_groupid.CatsAPI_REST_artifactid;
 
-import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -54,13 +53,13 @@ public class SalaEsperaController {
 		salas.put(id, sala);
 	}
 	
-    return jugador.sala;
+    return sala;
   }
 
   @PutMapping("/{id}")
   public ResponseEntity<salaEspera> actualizaSala(@PathVariable long id, @RequestBody salaEspera salaActualizada, @RequestBody long idPlayer) {
 
-	  Jugador jugadorRestante = JugadorController.jugadores.get(idPlayer);
+	  //Jugador jugadorRestante = JugadorController.jugadores.get(idPlayer);
 	  //salaEspera sala = salas.get(id);
 	  salaEspera sala = salas.get(salaActualizada.getId());
     

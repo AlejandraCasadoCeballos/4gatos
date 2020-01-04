@@ -37,10 +37,12 @@
  
 
 <script>
+
+			//$ .ajaxPrefilter (function (options,originalOptions, jqXHR) {options.async = true;}); //para que no de un error
+			
 			var t=2000;
-			var tiempoInactividad = function (escena) { 
-				
-				
+			//funcion global para detectar inactividad desde el cliente
+			var tiempoInactividad = function (escena) {
 				//falta mirar que este tecleando
 	    		escena.input.on('pointermove', function (pointer) {
 	    			clearTimeout(t); 
@@ -58,7 +60,6 @@
 				
 		   	}; 
 	
-			var nombre = "";
 
 			var jugador = 
 		    {
@@ -66,14 +67,17 @@
 		   	    nombre: "",
 		   	    nombreDelGato: "",
 		   	    momentoDeRegistro:"",
+		   	    untimaInteraccion:"",
+		   	    inactivo:false
+		   	    
 		   	    
 		   	}
 			
 			var sala = {
-					id: null,
-					muffin: null, //contiene el id del jugador que elige muffin (asi luego podemos acceder al jugador mas facilmetne con su id)
-					mungojerry: null,
-					completa:false,
+				id: null,
+				muffin: null, //contiene el id del jugador que elige muffin (asi luego podemos acceder al jugador mas facilmetne con su id)
+				mungojerry: null,
+				completa:false,
 			}
 			
 		    function prepararYEnviarJugador(gato, nombre) 
@@ -85,32 +89,39 @@
 		    }
 		    
 			// Todas las variables usadas para nuestro juego
-			var numeroJugadores = 0;
-			var te;
-			var te2;
-			var cambiarPantalla = false;
-			var muffin;
+			var numeroJugadores = 0; //variable que guarda el numero de jugadores conectados
+			var te; //texto para numero de jugadores conectados
+			var te2; //texto para mostrar el nombre introducido por el usuario
+			var cambiarPantalla = false; //variable que se pone a true si el cliente esta inactivo y se debe volver a la pantalla de menu
+			var muffin; 
 			var mungojerry;
 			var plataformaGorda;
 			
-			var nieve;
+			var textoPausa;//variable que guarda el texto del botón de pausa
+			
+			var nombre = "";//guarda el nombre inntroducido por el usuario
+			
+			var nieve;//para gestionar la animación de la nieve
 			// Música de juego
 			var musica;
 			var musica2;
 			var musica3;
-			
-			var ganadorUno=false;
+			//para gestionar la pantalla del final del juego que aparece
+			var ganadorUno=false; 
 			var ganadorDos=false;
 			var empate=false;
+			//para gestionar el fondo y la distribucion de objetos y plataformas del escenario
 			var escenarioUno=false;
 			var escenarioDos=false;
 			var escenarioTres=false;
-			var im;
+			
+			var im; //??????
 			// Sonidos
 			var sonidoCuentaAtras; 
 			var sonidoObjeto;
 			var sonidoAplastado;
 			var sonidoPowerUp;
+			
 			var pU; // objeto donde guardamos el power up
 			var destruir=21;//momento en el que se destruye el power up 1 si no lo han cogido
 			var tiempoEspera=0;// para que el jugador no pueda hacer chicle
@@ -140,8 +151,8 @@
 			var cuentaAtrasParadoP2 = false;
 			var P1P2 = false;//si gato1 salta sobre gato2 es decir gato 2 se queda parado
 			var P2P1 = false;// si gato2 salta sobre gato1 es decir gato 1 se queda parado
-			var tiempoParadoP1 = 80;// tiempo que tendra que esperar el gato 1 si le chocan
-			var tiempoParadoP2 = 80;// tiempo que tendra que esperar el gato 2 si le chocan
+			var tiempoParadoP1 = 60;// tiempo que tendra que esperar el gato 1 si le chocan
+			var tiempoParadoP2 = 60;// tiempo que tendra que esperar el gato 2 si le chocan
 			var onWallLeft = false;// para saber si el gato 2 se ha chocado por la izquierda
 			var onWallRight = false;// para saber si el gato 2 se ha chocado por la derecha
 			var onWallLeft1 = false;// para saber si el gato 1 se ha chocado por la izquierda

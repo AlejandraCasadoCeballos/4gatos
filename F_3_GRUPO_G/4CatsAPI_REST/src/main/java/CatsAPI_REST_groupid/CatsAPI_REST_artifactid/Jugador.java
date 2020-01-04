@@ -25,7 +25,7 @@ public class Jugador {
 		this.ultimaInteraccion= ultimaInteraccion;
 		this.inactivo = false;
 		this.nombre= nombreJugador;
-		this.jugadoresSinSala.put(this.id, this);
+		Jugador.jugadoresSinSala.put(this.id, this);
 		this.sala = null;
 	}
 	
@@ -78,10 +78,10 @@ public class Jugador {
 		this.ultimaInteraccion = ultimaInteraccion;
 	}
 	
-	public String getNickname() {
+	public String getNombre() {
 		return nombre;
 	}
-	public void setNickname(String nombreJugador) {
+	public void setNombre(String nombreJugador) {
 		this.nombre = nombreJugador;
 	}
 	
@@ -91,12 +91,10 @@ public class Jugador {
 	
 	public static Map<Long, Jugador> getJugadoresSinSala() {return jugadoresSinSala;}
 	  
-	public void setJugadoresSinSala(Map<Long, Jugador> jugadoresSinSala) {this.jugadoresSinSala=jugadoresSinSala;}
+	public void setJugadoresSinSala(Map<Long, Jugador> jugadoresSinSala) {Jugador.jugadoresSinSala=jugadoresSinSala;}
 	
 	public boolean emparejar() {
 		boolean completa=false;
-	     //Coge el primer elemento de jugadores sin sala y lo mete en jugador 1
-	    //jugadoresSinSala.remove(0); //Elimina ese jugador
 	    
 	    if(this.getNombreDelGato() == "muffin") {
 		      for(long id: SalaEsperaController.salas.keySet()) {

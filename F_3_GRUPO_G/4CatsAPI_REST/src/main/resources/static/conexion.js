@@ -3,14 +3,14 @@ function GETservidor() { //GET
     $.ajax({
         url: "/Jugador"
     }).done(function(jugadores){
-        var max = jugadores.length;
-        for(var i=0; i<max; i++){
-           //console.log("GET: \nID: " + jugadores[i].id + "\nNickname: " + jugadores[i].nickname + "\nNombre del gato: " + jugadores[i].nombreDelGato + "\nInactivo: " + jugadores[i].inactivo);
+        numeroJugadores = jugadores.length;
+        for(var i=0; i<numeroJugadores; i++){
+           console.log("GET: \nID: " + jugadores[i].id + "\nNombre: " + jugadores[i].nombre + "\nNombre del gato: " + jugadores[i].nombreDelGato + "\nInactivo: " + jugadores[i].inactivo);
         }
     });
 }
 
-function GETnumJugadores(){
+/*function GETnumJugadores(){
 	var r = "asdfñlkj";
 	
 	$.ajax({
@@ -21,14 +21,14 @@ function GETnumJugadores(){
             r = msg;
         },
         error: function (jqXHR, textStatus, errorThrown) {
-            console.log("ERROR" + textStatus);
+            //console.log("ERROR" + textStatus);
         }
     }).done(function(numJug){
     	//console.log("Hay " + numJug + " jugadores conectados")
     });
 	
 	return r;
-}
+}*/
 
 function POSTservidor(jugador) { //POST
     $.ajax({
@@ -40,7 +40,7 @@ function POSTservidor(jugador) { //POST
         "Content-Type":"application/json"
         }
         }).done(function(jugadorPost) {
-            //console.log("POST: \nID: " + jugadorPost.id + "\nNombre: " + jugadorPost.nombre + "\nNombre del gato: " + jugadorPost.nombreDelGato + "\nInactivo: " + jugadorPost.inactivo);
+            console.log("POST: \nID: " + jugadorPost.id + "\nNombre: " + jugadorPost.nombre + "\nNombre del gato: " + jugadorPost.nombreDelGato + "\nInactivo: " + jugadorPost.inactivo);
             jugador.id= jugadorPost.id;
         })
 }
@@ -61,9 +61,6 @@ function PUTservidor(jugador) { //PUT
     })
 }
 function DELETEservidor(jugador) {
-	//jugador.nombre= "";
-	//jugador.nombreDelGato= "";
-	//jugador.momentoDeRegistro="";
     $.ajax({
         method: 'DELETE',
         url: '/Jugador/' + jugador.id,
@@ -73,7 +70,6 @@ function DELETEservidor(jugador) {
             "Content-Type": "application/json"
         }
     }).done(function (jugador) {
-        console.log("Jugador borrado: " + jugador.id)
-        
+        //console.log("Jugador borrado: " + jugador.id)
     })
 }

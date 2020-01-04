@@ -22,7 +22,6 @@ class Scene12 extends Phaser.Scene{
 		 this.empezarPartida(escena);
 	 
 	 musica2.resume();
-	 //const botonAceptar = this.add.text(400, 355,"Aceptar",{font:"22px Courier", fill:"white"}).setOrigin(0.5,0.5); 
 	 const botonAtras = this.add.text(90, 540,"Atras",{font:"30px Courier", fill:"Red"}).setOrigin(0.5,0.5);
 	 
 	 this.add.image(400, 300,'introducir nombre');
@@ -36,7 +35,7 @@ class Scene12 extends Phaser.Scene{
 		 gameObject.y = dragY;
 	 });
  
-	 var element=  this.add.dom(400,300, 'div', 'phaser').createFromCache('nameform');
+	 var element=  this.add.dom(400,300, 'div',  'font: 30px Agency FB bold','phaser').createFromCache('nameform');
 	 element.addListener("click");
   	 element.on("click", function (event) {
   		if (event.target.name === 'guardar')
@@ -52,17 +51,13 @@ class Scene12 extends Phaser.Scene{
      botonAtras.on('pointerover', () => {this.add.image(400, 300,'introducir nombre atras'); });
      botonAtras.on('pointerout', () => {this.add.image(400, 300,'introducir nombre'); });
      
-  	 /*botonAceptar.setInteractive();
-  	 botonAceptar.on('pointerdown', () => {musica2.stop(); this.scene.start("elegirEscenario"); prepararYEnviarJugador("", nombre.value);console.log(jugador.nombre);PUTnombreJugador(jugador);});
-  	 botonAceptar.on('pointerover', () => {this.add.image(400, 300,'introducir nombre pulsado' );});
-  	 botonAceptar.on('pointerout', () => {this.add.image(400, 300,'introducir nombre'); });*/
 }
     update(){
-    	PUTservidor(jugador);
     	tiempoInactividad(this);
     }
     
     empezarPartida(escena){
+    	PUTservidor(jugador);
     	musica2.stop(); 
     	escena.scene.start("elegirEscenario"); 
 	 	prepararYEnviarJugador("", nombre.value);

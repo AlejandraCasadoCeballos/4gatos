@@ -1,9 +1,8 @@
 
 package CatsAPI_REST_groupid.CatsAPI_REST_artifactid;
 
-import java.util.Map;
+//import java.util.Map;
 //import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentHashMap;
 
 public class salaEspera {
   private long id;
@@ -37,7 +36,7 @@ public class salaEspera {
   //public void setJugadoresConSala(Map<Long, Jugador> jugadoresConSala) {this.jugadoresConSala=jugadoresConSala;}
   
   
-  /*public void completarSala(Jugador player) {
+  public void completarSala(Jugador player) {
     
     if(SalaEsperaController.salas.isEmpty() == false) { //Comprueba que la lista de salas no esta vacia
 
@@ -60,7 +59,7 @@ public class salaEspera {
 		      System.out.println("No estisten listas, crea una nueva");
 		    }
 		    
-		  }*/
+		  }
 	  
 	  
 	  @Override

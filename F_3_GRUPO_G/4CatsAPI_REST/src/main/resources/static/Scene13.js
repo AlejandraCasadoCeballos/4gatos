@@ -27,11 +27,12 @@ class Scene13 extends Phaser.Scene{
      botonAtras.on('pointerout', () => {this.add.image(400, 300,'salaEspera'); });
  	}
     update(){
-    	//POSTsalaNueva(sala);
+    	POSTsalaNueva(sala);
     	GETunaSala(sala);
     	if(sala.completa)
     		this.scene.start("Mensaje");
     	PUTservidor(jugador);
+    	GETservidor();
     	tiempoInactividad(this);
     }
 }

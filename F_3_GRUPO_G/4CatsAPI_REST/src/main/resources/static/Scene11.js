@@ -29,7 +29,7 @@ class Scene11 extends Phaser.Scene
         this.physics.add.collider(mungojerry, plataformaGorda);
         
    	 	botonAtras.setInteractive();
-   	 	botonAtras.on('pointerdown', () => { this.scene.start("elegirEscenario");});
+   	 	botonAtras.on('pointerdown', () => { this.scene.start("elegirEscenario"); escenarioUno=false; escenarioDos=false; escenarioTres=false;});
         botonAtras.on('pointerover', () => {
         	this.add.image(400, 300,'eligeGatoAtras');
         	plataformaGorda.create(400, 700, 'plataforma').setScale(2, 12.5).refreshBody().setAlpha(0);
@@ -86,7 +86,7 @@ class Scene11 extends Phaser.Scene
         	musica2.stop(); 
         	this.scene.start("Mensaje");
         	//this.scene.start("salaEspera"); 
-        	prepararYEnviarJugador("Mungojerry", jugador.nombre);
+        	jugador.nombreDelGato="Mungojerry";
         	sala.mungojerry=jugador;
         });
         botonMungojerry.on('pointerover', () => { mungojerry.anims.play('leftplayer2',true); });
@@ -96,26 +96,24 @@ class Scene11 extends Phaser.Scene
         	musica2.stop(); 
         	//this.scene.start("salaEspera"); 
         	this.scene.start("Mensaje");
-        	prepararYEnviarJugador("Muffin", jugador.nombre); 
+        	jugador.nombreDelGato="Muffin"; 
         	sala.muffin=jugador;
         });
         botonMuffin.on('pointerover', () => { muffin.anims.play('leftplayer',true); });
         botonMuffin.on('pointerout', () => { muffin.anims.stop('leftplayer',true); });
         
-        numeroJugadores = GETnumJugadores();
-        te = this.add.text(420, 10, "Jugadores conectados: " + numeroJugadores, {font:"25px Courier", fill:"white"});
-    	te2 = this.add.text(40, 10, jugador.nombre, {font:"25px Calibri", fill:"white"});
+        GETservidor();
+        te = this.add.text(530, 10, "Jugadores conectados: " + numeroJugadores, {font:"30px Agency FB bold", fill:"#999999"});
+    	te2 = this.add.text(40, 10, jugador.nombre, {font:"30px Agency FB bold", fill:"#999999"});
     }
     
     update() {
-    	
     	PUTservidor(jugador);
     	tiempoInactividad(this);
     	te.destroy();
-    	te2.destroy();
-    	numeroJugadores = GETnumJugadores();
-    	te = this.add.text(420, 10, "Jugadores conectados: " + numeroJugadores, {font:"25px Courier", fill:"white"});
-    	te2 = this.add.text(40, 10, jugador.nombre, {font:"25px Calibri", fill:"white"});
+    	GETservidor();
+    	te = this.add.text(530, 10, "Jugadores conectados: " + numeroJugadores, {font:"30px Agency FB bold", fill:"#999999"});
+    	te2 = jugador.nombre;
     }
     
 }

@@ -6,10 +6,10 @@ function GETsalas() { //GET
     $.ajax({
         url: "/SalaEspera"
     }).done(function(salas){
-        //var max = jugadores.length;
-        //for(var i=0; i<max; i++){
+        var max = jugadores.length;
+        for(var i=0; i<max; i++){
            //console.log("GET: \nID: " + salas[i].id + "\Muffin: " + salas[i].muffin + "\nMungojerry: " + salas[i].mungojerry + "\nCompleta: " + salas[i].completa);
-        //}
+        }
     });
 }
 
@@ -71,7 +71,7 @@ function POSTsalaNueva(sala,jugador) { //POST
 //--------------------------------------------------------------------------------------------------
 //PUT
 //--------------------------------------------------------------------------------------------------
-function PUTservidor(sala) { //PUT
+function PUTsala(sala) { //PUT
     //var old = "Actualización: " + JSON.stringify(jugador);
     //console.log(jugador.id);
     $.ajax({

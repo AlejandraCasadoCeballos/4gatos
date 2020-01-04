@@ -7,7 +7,8 @@ class Scene3 extends Phaser.Scene{
                //las animaciones de los dos gatos
     {
         this.load.image('escenario1', '/Recursos/Interfaz/escenario1.jpg');
-        this.load.image('escenario2', '/Recursos/Interfaz/escenario2.jpg');
+        this.load.image('escenario2', '/Recursos/Interfaz/escenario2.png');
+        this.load.image('escenario3', '/Recursos/Interfaz/escenario2.png');
         this.load.image('plataforma', '/Recursos/Plataformas/plataforma.png');
         this.load.image('pescado', '/Recursos/Objetos/pescado.png');
         this.load.image('ovillo', '/Recursos/Objetos/ovillo.png');
@@ -33,7 +34,6 @@ class Scene3 extends Phaser.Scene{
 
     create ()
     { 
-    	
         musica=this.sound.add('juego');//añadimos la música al juego
         sonidoObjeto=this.sound.add('objeto');//añadimos el sonido que sonará al coger el objeto
         sonidoAplastado=this.sound.add('aplastado');//añadimos el sonido que sonará al aplastar a un gato
@@ -49,43 +49,67 @@ class Scene3 extends Phaser.Scene{
         	this.add.image(400, 300, 'escenario1');//añadimos el fondo del juego
         	
         	//plataformas propias del escenario
-        	plataformas.create(120, 240, 'plataforma').setScale(0.25, 0.3).refreshBody().setAlpha(0);//farola
-            plataformas.create(120, 50, 'plataforma').setScale(0.25, 0.3).refreshBody().setAlpha(0);//ventilador superior
-            plataformas.create(640, 190, 'plataforma').setScale(0.33, 0.3).refreshBody().setAlpha(0);//venta derecha
-            plataformas.create(340, 190, 'plataforma').setScale(0.33, 0.3).refreshBody().setAlpha(0);//ventana izquierda superior
-            plataformas.create(339, 367, 'plataforma').setScale(0.33, 0.3).refreshBody().setAlpha(0);//ventana izquierda inferior
-            plataformas.create(512, 347, 'plataforma').setScale(0.23, 0.3).refreshBody().setAlpha(0);//ventilador inferior
-            plataformas.create(640, 480, 'plataforma').setScale(0.5, 0.3).refreshBody().setAlpha(0);//basura
-            plataformas.create(90, 480, 'plataforma').setScale(0.3, 0.3).refreshBody().setAlpha(0);//coche
-            plataformas.create(180, 520, 'plataforma').setScale(0.2, 0.3).refreshBody().setAlpha(0);//coche
+        	plataformas.create(120, 240, 'plataforma').setScale(0.25, 0.1).refreshBody().setAlpha(0);//farola
+            plataformas.create(120, 50, 'plataforma').setScale(0.25, 0.1).refreshBody().setAlpha(0);//ventilador superior
+            plataformas.create(640, 190, 'plataforma').setScale(0.33, 0.1).refreshBody().setAlpha(0);//venta derecha
+            plataformas.create(340, 190, 'plataforma').setScale(0.33, 0.1).refreshBody().setAlpha(0);//ventana izquierda superior
+            plataformas.create(339, 367, 'plataforma').setScale(0.33, 0.1).refreshBody().setAlpha(0);//ventana izquierda inferior
+            plataformas.create(512, 347, 'plataforma').setScale(0.23, 0.1).refreshBody().setAlpha(0);//ventilador inferior
+            plataformas.create(640, 480, 'plataforma').setScale(0.5, 0.1).refreshBody().setAlpha(0);//basura
+            plataformas.create(90, 480, 'plataforma').setScale(0.3, 0.1).refreshBody().setAlpha(0);//coche
+            plataformas.create(180, 520, 'plataforma').setScale(0.2, 0.1).refreshBody().setAlpha(0);//coche
             
         	
         }
         else if(escenarioDos){
         	this.add.image(400, 300, 'escenario2');
         	//plataformas propias del escenario
-        	plataformas.create(95, 225, 'plataforma').setScale(0.20, 0.3).refreshBody().setAlpha(0);//chimenea
-            plataformas.create(480, 165, 'plataforma').setScale(0.27, 0.3).refreshBody().setAlpha(0);//antena arriba
-            plataformas.create(650, 315, 'plataforma').setScale(0.5, 0.3).refreshBody().setAlpha(0);//bordillo arriba
-            plataformas.create(360, 310, 'plataforma').setScale(0.27, 0.3).refreshBody().setAlpha(0);//antena abajo
-            plataformas.create(155, 430, 'plataforma').setScale(0.55, 0.3).refreshBody().setAlpha(0);//bordillo abajo izq
-            plataformas.create(570, 495, 'plataforma').setScale(0.5, 0.3).refreshBody().setAlpha(0);//bodillo abajo derecha
+        	plataformas.create(95, 225, 'plataforma').setScale(0.20, 0.1).refreshBody().setAlpha(0);//chimenea
+            plataformas.create(480, 165, 'plataforma').setScale(0.27, 0.1).refreshBody().setAlpha(0);//antena arriba
+            plataformas.create(650, 315, 'plataforma').setScale(0.5, 0.1).refreshBody().setAlpha(0);//bordillo arriba
+            plataformas.create(360, 310, 'plataforma').setScale(0.27, 0.1).refreshBody().setAlpha(0);//antena abajo
+            plataformas.create(155, 430, 'plataforma').setScale(0.55, 0.1).refreshBody().setAlpha(0);//bordillo abajo izq
+            plataformas.create(570, 495, 'plataforma').setScale(0.5, 0.1).refreshBody().setAlpha(0);//bodillo abajo derecha
             
             nieve=this.physics.add.sprite(400,300,'nieve');
             nieve.setCollideWorldBounds(true);
             
         }
         else if(escenarioTres){
-        	this.add.image(400, 300, 'escenario1').setAlpha(0.5);
-        	
+        	this.add.image(400, 300, 'escenario3');
+        	//plataformas propias del escenario
+        	plataformas.create(190, 247, 'plataforma').setScale(0.25, 0.1).refreshBody().setAlpha(0);//arriba izquierda
+            plataformas.create(410, 125, 'plataforma').setScale(0.70, 0.1).refreshBody().setAlpha(0);//arriba
+            plataformas.create(609, 247, 'plataforma').setScale(0.25, 0.1).refreshBody().setAlpha(0);//arriba derecha
+            plataformas.create(280, 353, 'plataforma').setScale(0.07, 0.1).refreshBody().setAlpha(0);//columna izquierda
+            plataformas.create(530, 353, 'plataforma').setScale(0.07, 0.1).refreshBody().setAlpha(0);//columna derecha
+            plataformas.create(205, 465, 'plataforma').setScale(0.7, 0.1).refreshBody().setAlpha(0);//abajo izquierda
+            plataformas.create(610, 465, 'plataforma').setScale(0.75, 0.1).refreshBody().setAlpha(0);//abajo derecha
+            plataformas.create(35, 1, 'plataforma').setScale(0.15, 200).refreshBody().setAlpha(0); //pared izquierda
         }
         
-        const botonPausa = this.add.text(40,10,"Pausa",{font:"25px Courier", fill:"White"}); //cremos el botón de pausa
+        if(escenarioUno || escenarioDos){
+        	//imprimimos el tiempo por pantalla en blanco
+            info = this.add.text(640, 15, '', {font:"30px Agency FB bold", fill:"White"});
+            textoPausa = this.add.text(40,15,"Pausa",{font:"30px Agency FB bold", fill:"#FFFF33"}); //cremos el botón de pausa con texto blanco
+        }
+        	
+        else if(escenarioTres){
+        	//imprimimos el tiempo por pantalla en negro
+            info = this.add.text(640, 15, '', {font:"30px Agency FB bold", fill:"Black"});
+            textoPausa = this.add.text(40,15,"Pausa",{font:"30px Agency FB bold", fill:"#CC0033"}); //boton de pausa negro 
+        }
+        const botonPausa=textoPausa;
         botonPausa.setInteractive();
         //cuando le damos cambiamos a la escena de pausa, paramos la música y esta escena
         botonPausa.on('pointerdown', () => { this.scene.pause(); musica.pause(); this.scene.launch("Pausa"); sonidoCuentaAtras.pause();}); 
-        botonPausa.on('pointerout', () => {/*this.add.text(50,10,"Pausa",{font:"30px Courier", fill:"White"});*/}); 
-        botonPausa.on('pointerover', () => { /*this.add.text(50,10,"Pausa",{font:"30px Courier", fill:""});*/}); 
+        botonPausa.on('pointerout', () => {
+        	if(escenarioTres)  
+        		this.add.text(40,15,"Pausa",{font:"30px Agency FB bold", fill:"#CC0033"}); 
+        	else 
+        		this.add.text(40,15,"Pausa",{font:"30px Agency FB bold", fill:"#FFFF33"}); 
+        });
+        botonPausa.on('pointerover', () => {this.add.text(40,15,"Pausa",{font:"30px Agency FB bold", fill:"#FF0066"});}); 
         
         //plataformas generales(suelo y paredes)
         plataformas.create(400, 600, 'plataforma').setScale(2, 0.70).refreshBody().setAlpha(0); //cargarmos la imagen multiplicando por 2 
@@ -98,9 +122,10 @@ class Scene3 extends Phaser.Scene{
         player = this.physics.add.sprite(734, 560, 'Muffin'); //creación de un sprite con físicas
         
         
+        
         this.physics.add.collider(player, plataformas);// añadimos las fisicas al choque
         //player.body.checkCollision.up=false; practica 2
-        player2 = this.physics.add.sprite(60, 560, 'Mungojerry'); //creación de un sprite con físicas
+        player2 = this.physics.add.sprite(100, 560, 'Mungojerry'); //creación de un sprite con físicas
         this.physics.add.collider(player2, plataformas);//añadimos las fisicas al choque
         //player2.body.checkCollision.up=false; practica2
         this.physics.add.collider(player2, player, this.touchPlayer);//añadimos las fisicas cuando se chocan los personajes
@@ -192,7 +217,7 @@ class Scene3 extends Phaser.Scene{
             key: 'VOplayer', //nombre de la animación
             frames: this.anims.generateFrameNumbers('Muffin', { start: 32, end: 55 }),
             frameRate: 20,
-            repeat: -1 //volver a empezar cuando termine
+            repeat: 1 //volver a empezar cuando termine
         });
 
         //PLAYER 2 animaciones-------------------------------------------------------------------------------------
@@ -276,13 +301,13 @@ class Scene3 extends Phaser.Scene{
             key: 'VOplayer2', //nombre de la animación
             frames: this.anims.generateFrameNumbers('Mungojerry', { start: 88, end: 111 }),
             frameRate: 20,
-            repeat: -1 //volver a empezar cuando termine
+            repeat: 1 //volver a empezar cuando termine
         });
         //NIEVE
         this.anims.create({
             key: 'nieve', //nombre de la animación
             frames: this.anims.generateFrameNumbers('nieve', { start: 0, end: 47}),// frames que utilziamos para la animacion
-            frameRate: 20,//velocidad de la animación
+            frameRate: 10,//velocidad de la animación
             repeat: -1 //volver a empezar cuando termine
         });
         //FIN ANIMACIONES--------------------------------------------------------------------
@@ -295,6 +320,8 @@ class Scene3 extends Phaser.Scene{
         	objeto.create(340, 175, objetoAleatorio);
         else if(escenarioDos)
         	objeto.create(480, 150, objetoAleatorio);
+        else if(escenarioTres)
+        	objeto.create(400, 105, objetoAleatorio);
 
         //colision con los objetos
         this.physics.add.overlap(player, objeto, this.collectObject, null, this);
@@ -314,8 +341,8 @@ class Scene3 extends Phaser.Scene{
         if(escenarioDos){
         	nieve.anims.play("nieve",true);
         }
-        //imprimimos el tiempo por pantalla en blanco
-        info = this.add.text(600, 10, '', {font:"25px Courier", fill:"White"});
+        
+        
         timer = this.time.addEvent({ delay: 45000, callback: this.gameOver, callbackScope: this });
 
        //var textoPantalla =this.add.text(570, 10, GETservidor(), {font:"20px Courier", fill:"white"});
@@ -385,7 +412,8 @@ class Scene3 extends Phaser.Scene{
     //que hace que el jugador que ha sido aplastado no se pueda mover durante unos segundos.También se activa otra variable(P2P1 o P1P2)
     //que sirve para saber qué jugador ha sido aplastado
     hitPlayer(player, player2) {
-        if (player.body.touching.up) { 
+    	
+        if (player.body.touching.up && player2.body.velocity.y>0) { 
             sonidoAplastado.play();
             cuentaAtrasParadoP1 = true;
             P2P1 = true;
@@ -393,7 +421,9 @@ class Scene3 extends Phaser.Scene{
             
             P1P2 = false;
 
-        } else if(player2.body.touching.up){
+        }
+        console.log(player.body.velocity.y);
+        if(player2.body.touching.up && player.body.velocity.y>0){
             sonidoAplastado.play();
             cuentaAtrasParadoP2 = true;
             P1P2 = true;
@@ -433,16 +463,13 @@ class Scene3 extends Phaser.Scene{
     }
     //A continuación comienza la función update que se ejecuta en bucle
     update (time, delta) {
-    		//tiempoInactividad(this);
+    	
     		PUTservidor(jugador);
-    		//GETservidor();
-    		
             //tiempoEspera++;//la variable que controla hace cuánto ha sido transferido el objeto aumenta 
             time*=delta;//para que el tiempo no dependa de la máquina que compila este código
             //actualizamos el tiempo, dividmmos entre mil para que salga en segundos
             tiempo = Math.round(Math.floor(45000 - timer.getElapsed()) / 1000);
             
-
             if(tiempo===10)//si quedan 10 segundos de partida, se activa el sonido de la cuenta atrás
                 sonidoCuentaAtras.play();
             
@@ -453,13 +480,15 @@ class Scene3 extends Phaser.Scene{
                 	pU=objetoPowerUp.create(640,170, "lata");
                 else if(escenarioDos)
                 	pU=objetoPowerUp.create(155,405, "lata");
+                else if(escenarioTres)
+                	pU=objetoPowerUp.create(609,225, "lata");
                 
                 this.physics.add.overlap(player, objetoPowerUp, this.colectPowerUp1, null, this);
                 this.physics.add.overlap(player2, objetoPowerUp, this.colectPowerUp2, null, this);
             }
             //si tiempo es igual al momento que hemos elegido para destruir el primer power up, lo movemos fuera de la pantalla
             if(tiempo<destruir){
-                pU.x=-50;
+                objetoPowerUp.destroy();
             }
             //Cuando el tiempo que queda es igual al random en el que aparece el power up 2
             if (tiempo === generarPowerUp2) {
@@ -468,6 +497,9 @@ class Scene3 extends Phaser.Scene{
                 	objetoPowerUp.create(339, 350, "lata");
                 else if(escenarioDos)
                 	objetoPowerUp.create(650, 295, "lata");
+                else if(escenarioTres)
+                	objetoPowerUp.create(280, 330, "lata");
+                
                 this.physics.add.overlap(player, objetoPowerUp, this.colectPowerUp1, null, this);
                 this.physics.add.overlap(player2, objetoPowerUp, this.colectPowerUp2, null, this);
             }

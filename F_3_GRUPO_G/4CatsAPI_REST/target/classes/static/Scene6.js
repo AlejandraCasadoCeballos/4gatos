@@ -10,7 +10,8 @@ class Scene6 extends Phaser.Scene{
     {
     	this.load.image('elegirEscenario','/Recursos/Interfaz/elegirEscenario.jpg');
     	this.load.image('escenario1','/Recursos/Interfaz/escenario1.jpg');
-    	this.load.image('escenario2','/Recursos/Interfaz/escenario2.jpg');
+    	this.load.image('escenario2','/Recursos/Interfaz/escenario2.png');
+    	this.load.image('escenario3','/Recursos/Interfaz/escenario3.png');
     	this.load.image('filtro','/Recursos/Interfaz/filtro.jpg');
     	this.load.image('elegirEscenarioAtras','/Recursos/Interfaz/elegirEscenarioAtrasPulsado.jpg');
     }
@@ -26,9 +27,9 @@ class Scene6 extends Phaser.Scene{
     	
     	const botonEscenario1=im.create(150, 400, 'escenario1').setScale(0.25, 0.25).refreshBody();
     	const botonEscenario2=im.create(400, 400, 'escenario2').setScale(0.25, 0.25).refreshBody();
-    	const botonEscenario3=im.create(650, 400, 'elegirEscenario').setScale(0.25, 0.25).refreshBody();
+    	const botonEscenario3=im.create(650, 400, 'escenario3').setScale(0.25, 0.25).refreshBody();
     	
-    	te2 = this.add.text(40, 10, jugador.nombre, {font:"25px Courier", fill:"white"});
+    	te2 = this.add.text(40, 10, jugador.nombre, {font:"30px Agency FB bold", fill:"#999999"});
     	
     	botonEscenario1.setInteractive();
     	botonEscenario2.setInteractive();
@@ -40,13 +41,13 @@ class Scene6 extends Phaser.Scene{
         	this.add.image(400, 300,'elegirEscenarioAtras'); 
         	im.create(150, 400, 'escenario1').setScale(0.25, 0.25).refreshBody();
         	im.create(400, 400, 'escenario2').setScale(0.25, 0.25).refreshBody();
-        	im.create(650, 400, 'elegirEscenario').setScale(0.25, 0.25).refreshBody();
+        	im.create(650, 400, 'escenario3').setScale(0.25, 0.25).refreshBody();
         });
         botonAtras.on('pointerout', () => {
         	this.add.image(400, 300,'elegirEscenario'); 
         	im.create(150, 400, 'escenario1').setScale(0.25, 0.25).refreshBody();
         	im.create(400, 400, 'escenario2').setScale(0.25, 0.25).refreshBody();
-        	im.create(650, 400, 'elegirEscenario').setScale(0.25, 0.25).refreshBody();
+        	im.create(650, 400, 'escenario3').setScale(0.25, 0.25).refreshBody();
         });
         
     	botonEscenario1.on('pointerdown', () => { this.scene.start("EligeGato"); escenarioUno=true;});
@@ -59,12 +60,12 @@ class Scene6 extends Phaser.Scene{
     	
     	botonEscenario3.on('pointerdown', () => { this.scene.start("EligeGato"); escenarioTres=true;});
     	botonEscenario3.on('pointerover', () => {im.create(650, 400, 'filtro').setScale(0.25, 0.25).refreshBody().setAlpha(0.4);});
-    	botonEscenario3.on('pointerout', () => {im.create(650, 400, 'elegirEscenario').setScale(0.25, 0.25).refreshBody(); });
+    	botonEscenario3.on('pointerout', () => {im.create(650, 400, 'escenario3').setScale(0.25, 0.25).refreshBody(); });
     }
     update(){
     	PUTservidor(jugador);
     	tiempoInactividad(this);
     	te2.destroy();
-    	te2 = this.add.text(40, 10, jugador.nombre, {font:"25px Calibri", fill:"white"});
+    	te2 = this.add.text(40, 10, jugador.nombre, {font:"30px Agency FB bold", fill:"#999999"});
     }
 }

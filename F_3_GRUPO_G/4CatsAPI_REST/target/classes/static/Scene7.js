@@ -41,6 +41,9 @@ class Scene7 extends Phaser.Scene{
     {   
         musica.stop();
         
+        escenarioUno=false;
+        escenarioDos=false;
+        escenarioTres=false;
         objetoCogido=false;
         objetoCogido2=false;
         generarPowerUp1 = Phaser.Math.Between(40, 30);

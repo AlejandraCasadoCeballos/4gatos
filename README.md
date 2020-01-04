@@ -222,6 +222,16 @@ Diagrama de navagación resultante:
 ## Diagrama de clases
 ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Interfaz/DiagramaDeClases.PNG)
 
+# Fase 4
+# Fase 5
+## Cambios
+• Cambio de posesión del objeto
+• 3 escenarios
+• Fuentes de los textos puestos desde phaser
+• Vomito repeticion
+• Vomito bug
+
+
 # Webgrafía
 Fuentes de los grafitis:
 

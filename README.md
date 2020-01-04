@@ -230,6 +230,7 @@ Diagrama de navagación resultante:
 • Fuentes de los textos puestos desde phaser
 • Vomito repeticion
 • Vomito bug
+• Destruir bien power ups
 
 
 # Webgrafía

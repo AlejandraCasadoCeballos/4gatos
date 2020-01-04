@@ -1,20 +1,22 @@
 //--------------------------------------------------------------------------------------------------
 //GET
 //--------------------------------------------------------------------------------------------------
-/*
+
 function GETsalaEspera() { //GET 
     $.ajax({
-        url: "/salaEspera"
+        url: "/SalaEspera"
     }).done(function(sala){
         numeroJugadoresSala = sala.length;
+        console.log("hola");
         for(var i=0; i<numeroJugadores; i++){
+        	
            //console.log("GET: \nID: " + sala.jugadoresEnSala[i].id + "\nNombre: " + jugadores[i].nombre + "\nNombre del gato: " + jugadores[i].nombreDelGato + "\nInactivo: " + jugadores[i].inactivo);
         }
     });
 }
 
 
-
+/*
 function GETsalas() { //GET 
     $.ajax({
         url: "/SalaEspera"

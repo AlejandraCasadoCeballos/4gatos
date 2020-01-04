@@ -84,8 +84,8 @@ class Scene11 extends Phaser.Scene
         // BOTÓN JUGAR
         botonMungojerry.on('pointerdown', () => { 
         	musica2.stop(); 
-        	this.scene.start("Mensaje");
-        	//this.scene.start("salaEspera"); 
+        	//this.scene.start("Mensaje");
+        	this.scene.start("salaEspera"); 
         	jugador.nombreDelGato="Mungojerry";
         	sala.mungojerry=jugador;
         });
@@ -94,8 +94,8 @@ class Scene11 extends Phaser.Scene
         // BOTÓN CRÉDITOS
         botonMuffin.on('pointerdown', () => { 
         	musica2.stop(); 
-        	//this.scene.start("salaEspera"); 
-        	this.scene.start("Mensaje");
+        	this.scene.start("salaEspera"); 
+        	//this.scene.start("Mensaje");
         	jugador.nombreDelGato="Muffin"; 
         	sala.muffin=jugador;
         });

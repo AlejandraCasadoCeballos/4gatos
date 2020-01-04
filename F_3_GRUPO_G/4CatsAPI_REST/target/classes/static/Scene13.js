@@ -28,11 +28,11 @@ class Scene13 extends Phaser.Scene{
  	}
     update(){
     	//POSTsalaNueva(sala);
-    	//GETsalaEspera();
+    	GETsalaEspera();
     	if(sala.completa)
     		this.scene.start("Mensaje");
     	PUTservidor(jugador);
-    	GETservidor();
+    	//GETservidor();
     	tiempoInactividad(this);
     }
 }

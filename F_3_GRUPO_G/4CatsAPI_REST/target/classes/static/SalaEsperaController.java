@@ -1,20 +1,21 @@
 package CatsAPI_REST_groupid.CatsAPI_REST_artifactid;
-
 import java.util.Collection;
+
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+/*
 import java.util.concurrent.atomic.AtomicLong;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;*/
+import org.springframework.web.bind.annotation.GetMapping;/*
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;*/
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -22,31 +23,24 @@ import org.springframework.web.bind.annotation.RestController;
 public class SalaEsperaController {
 
   
-  public static Map<Long, salaEspera> salas = new ConcurrentHashMap<>();
-  public static AtomicLong ultimoId = new AtomicLong();
+  //public static Map<Long, salaEspera> salas = new ConcurrentHashMap<>();
+  public static salaEspera jugadores=new salaEspera();
 
   @GetMapping
-  public Collection<salaEspera> salas() {
-	  return salas.values();
+  public Collection<jugadores> salas() {
+	  return jugadores.values();
   }
   
   @GetMapping("/numeroDeSalas")
   public int numeroDeSalas() {
 	  return salas.size();
   }
-
+/*
   @PostMapping
   @ResponseStatus(HttpStatus.CREATED)
-  public salaEspera nuevaSala(@RequestBody salaEspera sala, @RequestBody Jugador jugador) {
+  public salaEspera nuevaSala(@RequestBody salaEspera sala) {
 	
-	
-	if(jugador.getNombreDelGato()=="muffin")
-		sala.setMuffin(jugador);
-	else if(jugador.getNombreDelGato()=="mungojerry")
-		sala.setMungojerry(jugador);
-	
-	jugador.setSala(sala);
-	
+	Jugador jugador= new Jugador();
 	if(!jugador.emparejar()) {
 		long id = ultimoId.incrementAndGet();
 	    sala.setId(id);
@@ -96,6 +90,6 @@ public class SalaEsperaController {
     } else {
       return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
-  }
+  }*/
   
 }

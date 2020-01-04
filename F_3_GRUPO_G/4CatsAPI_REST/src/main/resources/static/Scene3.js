@@ -26,7 +26,7 @@ class Scene3 extends Phaser.Scene{
         this.load.spritesheet('Mungojerry', '/Recursos/Personajes/Mungojerry.png',
         { frameWidth: 64, frameHeight: 54 } 
         );
-        this.load.spritesheet('nieve', '/Recursos/Interfaz/nieve.png',
+        this.load.spritesheet('nieve', '/Recursos/Interfaz/nevando.png',
         { frameWidth: 800, frameHeight: 600 } 
         );
     }
@@ -57,8 +57,6 @@ class Scene3 extends Phaser.Scene{
             plataformas.create(640, 480, 'plataforma').setScale(0.5, 0.1).refreshBody().setAlpha(0);//basura
             plataformas.create(90, 480, 'plataforma').setScale(0.3, 0.1).refreshBody().setAlpha(0);//coche
             plataformas.create(180, 520, 'plataforma').setScale(0.2, 0.1).refreshBody().setAlpha(0);//coche
-            
-        	
         }
         else if(escenarioDos){
         	this.add.image(400, 300, 'escenario2');
@@ -72,7 +70,6 @@ class Scene3 extends Phaser.Scene{
             
             nieve=this.physics.add.sprite(400,300,'nieve');
             nieve.setCollideWorldBounds(true);
-            
         }
         else if(escenarioTres){
         	this.add.image(400, 300, 'escenario3');
@@ -130,7 +127,6 @@ class Scene3 extends Phaser.Scene{
         // hacemos lo mismo para el gato2
         player2.setCollideWorldBounds(true);
         player2.body.setGravityY(700);
-        this.physics.add.collider(player2, player, this.touchPlayer);
 
         //PLAYER 1 animaciones -----------------------------------------------------------------------------------------
         //animaciones sin objeto

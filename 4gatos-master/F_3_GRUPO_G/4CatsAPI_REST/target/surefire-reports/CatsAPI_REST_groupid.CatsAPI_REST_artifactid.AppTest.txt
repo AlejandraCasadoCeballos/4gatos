@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: CatsAPI_REST_groupid.CatsAPI_REST_artifactid.AppTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.033 s - in CatsAPI_REST_groupid.CatsAPI_REST_artifactid.AppTest

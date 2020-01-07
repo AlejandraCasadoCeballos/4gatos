@@ -223,7 +223,7 @@ Diagrama de navagación resultante:
 ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Interfaz/DiagramaDeClases.PNG)
 
 # Fase 4
-
+## Cambios en API rest
 En cuanto a API rest hemos realizado algunas mejoras para esta cuarta fase. En un principio solo teníamos un leve manejo de los métodos put get y post de los jugadores. Hicimos que estos métodos funcionarán y que se viese en la consola. El post se usaba cuando el jugador elegía a un gato ya que esta era la primera pantalla y el put se realizaba de manera continua en el resto de escenas para detectar la inactividad desde el servidor cuando el cliente dejase de hacer puts. 
 
 Para esta nueva fase, hemos conservado eso y hemos realizado los siguientes cambios:
@@ -236,6 +236,11 @@ Para esta nueva fase, hemos conservado eso y hemos realizado los siguientes camb
 • Por otro lado, hemos añadido otro texto que es el de jugadores conectados, este dato aparece en la pantalla de elección del gato.
 
 • Para terminar, hemos realizado una sala de espera en la que se une a dos jugadores que hayan elegido el mismo escenario y distinto gato.
+
+## Web sockets
+
+## Vídeo 
+
 
 ## Diagrama de navegación
 ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Interfaz/diagramaNavegacion3.jpg)
@@ -262,6 +267,7 @@ En cuanto a las mejoras del juego, tras hacer beta testing nos dimos cuenta de q
 
 • Animación de nieve en un escenario: al crear los dos nuevos escenarios, queríamos que fuesen muy distintos al primero para que hubiese variedad, por ello hicimos que uno tuviese una estética totalmente diferente (escenario japonés) y otro que tuviese una estética parecida en la que te encontrabas en los tejados de los edificios del escenario 1. En este escenario para marcar la diferencia añadimos nieve en el dibujo y una animación de que nieva, lo cual pensamos que lo hace especial.
 
+## Página de juegos online en la que está nuestro juego
 
 # Webgrafía
 Fuentes de los grafitis:

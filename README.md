@@ -231,7 +231,8 @@ Para esta nueva fase, hemos conservado eso y hemos realizado los siguientes camb
 • Además de detectar la inactividad desde el servidor (importante para casos en los que el jugador cierre la pantalla del juego), detectamos la inactividad desde el cliente (lo cual nos sirve para casos en los que el cliente sigue con la pestaña abierta pero se ha ido a otra o no está usando el ordenador). En estos casos se hace un delete del jugador y se le envía al menú del juego, que ahora es la primera pantalla.
 
 • También existe un delete cuando el jugador decide ir al menú desde la pausa.
--Hemos hecho que el jugador deba introducir el nombre y elegir un escenario además de el gato, y el nombre introducido sale arriba a la izquierda. 
+
+• Hemos hecho que el jugador deba introducir el nombre y elegir un escenario además de el gato, y el nombre introducido sale arriba a la izquierda. 
 
 • Por otro lado, hemos añadido otro texto que es el de jugadores conectados, este dato aparece en la pantalla de elección del gato.
 

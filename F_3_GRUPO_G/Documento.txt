@@ -1,0 +1,5 @@
+El documento se encuentra en nuestro repositorio:
+
+https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/README.md
+
+En este enlace se podrá ver la información de nuestro Readme, el cual hemos ido actualizando y añadiendo nuevos apartados fase a fase.

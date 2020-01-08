@@ -223,6 +223,7 @@ Diagrama de navagación resultante:
 ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Interfaz/DiagramaDeClases.PNG)
 
 # Fase 4
+<<<<<<< HEAD
 # Fase 5
 ## Cambios
 
@@ -239,7 +240,54 @@ Diagrama de navagación resultante:
 • Destruir bien power ups
 
 • Botón para activar y desactivar sonido
+=======
+## Cambios en API rest
+En cuanto a API rest hemos realizado algunas mejoras para esta cuarta fase. En un principio solo teníamos un leve manejo de los métodos put get y post de los jugadores. Hicimos que estos métodos funcionarán y que se viese en la consola. El post se usaba cuando el jugador elegía a un gato ya que esta era la primera pantalla y el put se realizaba de manera continua en el resto de escenas para detectar la inactividad desde el servidor cuando el cliente dejase de hacer puts. 
 
+Para esta nueva fase, hemos conservado eso y hemos realizado los siguientes cambios:
+
+• Además de detectar la inactividad desde el servidor (importante para casos en los que el jugador cierre la pantalla del juego), detectamos la inactividad desde el cliente (lo cual nos sirve para casos en los que el cliente sigue con la pestaña abierta pero se ha ido a otra o no está usando el ordenador). En estos casos se hace un delete del jugador y se le envía al menú del juego, que ahora es la primera pantalla.
+
+• También existe un delete cuando el jugador decide ir al menú desde la pausa.
+
+• Hemos hecho que el jugador deba introducir el nombre y elegir un escenario además de el gato, y el nombre introducido sale arriba a la izquierda. 
+
+• Por otro lado, hemos añadido otro texto que es el de jugadores conectados, este dato aparece en la pantalla de elección del gato.
+
+• Para terminar, hemos realizado una sala de espera en la que se une a dos jugadores que hayan elegido el mismo escenario y distinto gato.
+
+## Web sockets
+
+## Vídeo 
+
+
+## Diagrama de navegación
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Interfaz/diagramaNavegacion3.jpg)
+# Fase 5
+## Cambios
+
+En cuanto a las mejoras del juego, tras hacer beta testing nos dimos cuenta de que había algunos bugs que arreglar y aspectos estéticos que mejorar, en concreto los siguientes:
+
+• Cambio de posesión del objeto: concretamente esto funcionaba tal y como queríamos, sin embargo el profesor sugirió que tal vez era una buena idea que en lugar de pasarse el objeto de uno a otro tal solo al tocarse, podrían hacerlo únicamente cuando el jugador estuviese pulsando la tecla en dirección al otro jugador y tocándole a la vez, y lo cambiamos.
+
+• 3 escenarios: en las versiones anteriores teníamos un único escenario y 3 objetos que aparecían en él de manera aleatoria y se elegía antes del inicio de la partida. Hemos optado por crear 2 escenarios más y que cada escenario tenga asignado un objeto. De esta manera hemos adjudicado a cada escenario el objeto que destacaba más en él, intentando evitar posibles confusiones.
+
+• Fuentes de texto unificados: en las anteriores versiones teníamos una fuente para la interfaz en sí que estaba hecha a través de una imagen en Photoshop y otra para los botones como el pausa y texto como el tiempo de juego. Para esta entrega tenemos nuevos textos como la introducción del nombre, el nombre en sí y los jugadores conectados, y todo ello sumado a la pausa y el tiempo, lo hemos unificado con el resto del texto poniendo la misma fuente y colores.
+
+• Repeticion del vómito: un bug que teníamos era que cuando el gato vomitaba la animación se repetía, cuando nos dimos cuenta lo cambiamos y ahora no es una animación que se repita en bucle como el resto si no que se ejecuta una vez por cada llamada.
+
+• Bug del vómito: existía un bug del que éramos conscientes pero que no conseguíamos arreglar y era el hecho de que en ocasiones el gato de arriba vomitaba cuando aplastaba al de abajo, es decir, vomitaban los dos. Este bug lo hemos podido arreglar por fin para esta última fase, nos dimos cuenta de que lo que sucedía era que se comprobaba la colisión entre ambos gatos en su parte de arriba del body, pero sin embargo no se tenía en cuenta su velocidad en Y. Teniendo esto en cuenta, el jugador de abajo ya no puede hacer vomitar al de arriba al saltar hacia arriba, tan solo al caer hacia abajo sobre él.
+
+• Destrucción del power up: nos dimos cuenta haciendo beta testing de que al irse el primer power Up en caso de que no lo hubiese cogido nadie, si pasabas por donde estaba este, el efecto que producía de aumentar la velocidad del jugador y la música seguía sucediendo. Esto sucedía porque lo que hacíamos era, en lugar de destruir el power Up, movíamos su Sprite de lugar. Lo pudimos arreglar también ya que encontramos la manera de destruirlo.
+
+• Botón para activar y desactivar sonido: tras probar muchas veces el juego, hemos pensado que la música y el sonido es importante en él, sí, pero que puede llegar a cansar. Por ello hemos añadido una opción en el menú del juego y en la pausa que permite al jugador desactivar la música y los sonidos de todo el juego y activarlos cuando desee.
+
+• Pantalla de empate: existe la posibilidad de que termine la cuenta atrás y ninguno de los jugadores haya cogido el objeto para ganar, en este caso anteriormente llevábamos a los jugadores de vuelta al menú sin ningún mensaje. Ahora, cuando ocurre esto, aparece un mensaje de "empate".
+
+• Animación de nieve en un escenario: al crear los dos nuevos escenarios, queríamos que fuesen muy distintos al primero para que hubiese variedad, por ello hicimos que uno tuviese una estética totalmente diferente (escenario japonés) y otro que tuviese una estética parecida en la que te encontrabas en los tejados de los edificios del escenario 1. En este escenario para marcar la diferencia añadimos nieve en el dibujo y una animación de que nieva, lo cual pensamos que lo hace especial.
+>>>>>>> 07e20ceeb007575c4d87a92f21efbc438f621687
+
+## Página de juegos online en la que está nuestro juego
 
 # Webgrafía
 Fuentes de los grafitis:

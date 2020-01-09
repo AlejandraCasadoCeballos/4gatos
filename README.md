@@ -261,7 +261,11 @@ https://www.youtube.com/watch?v=51lIW9texOk&feature=youtu.be
 # Fase 5
 ## Cambios
 
-En cuanto a las mejoras del juego, tras hacer beta testing nos dimos cuenta de que había algunos bugs que arreglar y aspectos estéticos que mejorar, en concreto los siguientes:
+En cuanto a las mejoras del juego, tras hacer beta testing nos dimos cuenta de que había algunos bugs que arreglar y aspectos estéticos que mejorar. Conseguimos solucionar todos los bugs que encontramos menos uno:
+
+• Existen ocasiones en las que un jugador salta sobre otro y la colisión con el suelo falla. En ese momento el jugador queda atrapado en el interior de la plataforma y no puede volver a salir. La colisión entre los jugadores y la plataforma está declarada, sin embargo en algunos momentos deja de funcionar y no hemos conseguido saber por qué ni cómo arreglarlo.
+
+El resto que encontramos y solucionamos son los siguientes:
 
 • Cambio de posesión del objeto: concretamente esto funcionaba tal y como queríamos, sin embargo el profesor sugirió que tal vez era una buena idea que en lugar de pasarse el objeto de uno a otro tal solo al tocarse, podrían hacerlo únicamente cuando el jugador estuviese pulsando la tecla en dirección al otro jugador y tocándole a la vez, y lo cambiamos.
 

@@ -223,24 +223,6 @@ Diagrama de navagación resultante:
 ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Interfaz/DiagramaDeClases.PNG)
 
 # Fase 4
-<<<<<<< HEAD
-# Fase 5
-## Cambios
-
-• Cambio de posesión del objeto
-
-• 3 escenarios
-
-• Fuentes de los textos unificadas
-
-• Vomito repetición
-
-• Vomito bug
-
-• Destruir bien power ups
-
-• Botón para activar y desactivar sonido
-=======
 ## Cambios en API rest
 En cuanto a API rest hemos realizado algunas mejoras para esta cuarta fase. En un principio solo teníamos un leve manejo de los métodos put get y post de los jugadores. Hicimos que estos métodos funcionarán y que se viese en la consola. El post se usaba cuando el jugador elegía a un gato ya que esta era la primera pantalla y el put se realizaba de manera continua en el resto de escenas para detectar la inactividad desde el servidor cuando el cliente dejase de hacer puts. 
 
@@ -285,7 +267,7 @@ En cuanto a las mejoras del juego, tras hacer beta testing nos dimos cuenta de q
 • Pantalla de empate: existe la posibilidad de que termine la cuenta atrás y ninguno de los jugadores haya cogido el objeto para ganar, en este caso anteriormente llevábamos a los jugadores de vuelta al menú sin ningún mensaje. Ahora, cuando ocurre esto, aparece un mensaje de "empate".
 
 • Animación de nieve en un escenario: al crear los dos nuevos escenarios, queríamos que fuesen muy distintos al primero para que hubiese variedad, por ello hicimos que uno tuviese una estética totalmente diferente (escenario japonés) y otro que tuviese una estética parecida en la que te encontrabas en los tejados de los edificios del escenario 1. En este escenario para marcar la diferencia añadimos nieve en el dibujo y una animación de que nieva, lo cual pensamos que lo hace especial.
->>>>>>> 07e20ceeb007575c4d87a92f21efbc438f621687
+
 
 ## Página de juegos online en la que está nuestro juego
 

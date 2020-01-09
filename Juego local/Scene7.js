@@ -30,7 +30,6 @@ class Scene7 extends Phaser.Scene{
         botonMenu.setInteractive();
         botonMusica2.setInteractive();
         //cuando le damos cambiamos a la escena de pausa, paramos la música y esta escena
-        //jugador2=GETservidor(jugador.idEmparejado)
         //Distintas interaciones (pulsarlo,estar sobre él y dejar de estar sobre él)
         //Al poner el ratón sobre el botón la imagen cambia a otra que tiene las letras de dicho botón de otro color
         //Al quitar el ratón, la imagen vuelve a ser la original. Al pulsar el botón volvemos a la escena de juego y se reinicia la música
@@ -39,7 +38,7 @@ class Scene7 extends Phaser.Scene{
         botonVolver.on('pointerover', () => {this.add.image(400, 300,'botonPausaEncima');im.create(740, 50, imMusica).setScale(0.1, 0.1).refreshBody(); });
         botonVolver.on('pointerout', () => {this.add.image(400, 300,'pausa');im.create(740, 50, imMusica).setScale(0.1, 0.1).refreshBody(); });
 
-        botonMenu.on('pointerdown', () => {;musica2.stop(); jugador.fueraSala=true;PUTservidor(jugador); PUTactualizarJugador2(jugador);GETservidor();this.scene.stop("Juego"); musica.stop(); this.scene.switch("Menu");});
+        botonMenu.on('pointerdown', () => {musica2.stop();this.scene.stop("Juego"); musica.stop(); this.scene.switch("Menu");});
         botonMenu.on('pointerover', () => {this.add.image(400, 300,'botonMenuEncima');im.create(740, 50, imMusica).setScale(0.1, 0.1).refreshBody(); });
         botonMenu.on('pointerout', () => {this.add.image(400, 300,'pausa');im.create(740, 50, imMusica).setScale(0.1, 0.1).refreshBody(); });
         
@@ -64,8 +63,5 @@ class Scene7 extends Phaser.Scene{
         	});
     }
     update(){
-    	tiempoInactividad(this);
-    	PUTservidor(jugador);
-    	//GETservidor();
     }
 }

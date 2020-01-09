@@ -32,7 +32,7 @@ class Scene3 extends Phaser.Scene{
     }
 
     create ()
-    { jugador.enSala=false;
+    { 
         musica=this.sound.add('juego');//añadimos la música al juego
         sonidoObjeto=this.sound.add('objeto');//añadimos el sonido que sonará al coger el objeto
         sonidoAplastado=this.sound.add('aplastado');//añadimos el sonido que sonará al aplastar a un gato
@@ -98,7 +98,7 @@ class Scene3 extends Phaser.Scene{
         const botonPausa=textoPausa;
         botonPausa.setInteractive();
         //cuando le damos cambiamos a la escena de pausa, paramos la música y esta escena
-        botonPausa.on('pointerdown', () => { musica.pause(); this.scene.launch("Pausa"); sonidoCuentaAtras.pause();}); 
+        botonPausa.on('pointerdown', () => { musica.pause(); this.scene.pause("Juego");this.scene.launch("Pausa"); sonidoCuentaAtras.pause();}); 
         botonPausa.on('pointerout', () => {
         	if(escenarioTres) //en el escenario 3 la letra del pausa en estado normal es roja
         		this.add.text(40,15,"Pausa",{font:"30px Agency FB bold", fill:"#CC0033"}); 
@@ -348,7 +348,6 @@ class Scene3 extends Phaser.Scene{
     //la próxima partida
     gameOver ()
     {   
-    	DELETEservidor(jugador);
         musica.stop();
         if(objetoCogido)
         	ganadorUno=true;
@@ -405,7 +404,6 @@ class Scene3 extends Phaser.Scene{
             P1P2 = false;
 
         }
-        console.log(player.body.velocity.y);
         if(player2.body.touching.up && player.body.velocity.y>0){
             sonidoAplastado.play();
             cuentaAtrasParadoP2 = true;
@@ -424,9 +422,7 @@ class Scene3 extends Phaser.Scene{
         if(objetoCogido)
         {
         	if(player2.left.isDown || player2.right.isDown){
-            //if(tiempoEspera>70){
                 sonidoObjeto.play();//suena el sonido de cuando coges el objeto
-                //tiempoEspera=0;
                 objetoCogido=false;
                 objetoCogido2=true;
             }
@@ -436,9 +432,7 @@ class Scene3 extends Phaser.Scene{
         {
         	
         	if(cursors.left.isDown || cursors.right.isDown){
-            //if(tiempoEspera>70){
                 sonidoObjeto.play();//suena el sonido de cuando coges el objeto
-                //tiempoEspera=0;
                 objetoCogido=true;
                 objetoCogido2=false;
             }
@@ -447,15 +441,6 @@ class Scene3 extends Phaser.Scene{
     //A continuación comienza la función update que se ejecuta en bucle
     update (time, delta) {
     		
-    	//PUTservidor(jugador);
-    		if(jugador.fueraSala==true){
-    			
-    			this.gameOver();
-    			DELETEservidor(jugador);
-    			 
-    		}
-    		GETservidor();
-    		PUTservidor(jugador);
 
             time*=delta;//para que el tiempo no dependa de la máquina que compila este código
             //actualizamos el tiempo, dividmmos entre mil para que salga en segundos

@@ -17,11 +17,7 @@
 		<script src="Scene8.js"></script>
 		<script src="Scene9.js"></script>
 		<script src="Scene10.js"></script>
-		<script src="Scene11.js"></script>
-		<script src="Scene12.js"></script>
-		<script src="Scene13.js"></script>
 		<script src="game.js"></script>
-		<script src="conexion.js"></script>
 		
 		<style>
 			body 
@@ -29,11 +25,6 @@
 			    background-image: url("/Recursos/Interfaz/fondoHTML2.png");
 			       
 			}
-			@font-face{
-      
-		        font-family:"Agency FB";
-		        src:url("/Recursos/Fuentes/AGENCYR.TTF");
-		      }
 			
 		</style>
 	</head>
@@ -44,82 +35,12 @@
 
 <script>
 
-			//$ .ajaxPrefilter (function (options,originalOptions, jqXHR) {options.async = true;}); //para que no de un error
-			
-			var t=2000;
-			//funcion global para detectar inactividad desde el cliente
-			var tiempoInactividad = function (escena) {
-				//falta mirar que este tecleando
-	    		escena.input.on('pointermove', function (pointer) {
-	    			clearTimeout(t); 
-		   	 		t = 2000;
-	    			//console.log("hola");
-	    		}, this);
-				
-				t--;
-			
-				if(t<=0){
-					escena.scene.start("Menu");
-					musica2.stop();
-					t=2000;
-				}
-				
-		   	}; 
-	
-
-			var jugador = 
-		    {
-		   	    id: 0,
-		   	    nombre: "",
-		   	    nombreDelGato: "",
-		   	    escenario:"",
-		   	    momentoDeRegistro:"",
-		   	    ultimaInteraccion:"",
-		   	    inactivo:false,
-		   	 	parejaEncontrada:false,
-				enSala:false,
-				fueraSala:false,
-				idEmparejado: 0
-		   	    
-		   	}
-			var jugador2 = 
-		    {
-		   	    id: 0,
-		   	    nombre: "",
-		   	    nombreDelGato: "",
-		   	    escenario:"",
-		   	    momentoDeRegistro:"",
-		   	    ultimaInteraccion:"",
-		   	    inactivo:false,
-		   	 	parejaEncontrada:false,
-				enSala:false,
-				fueraSala:false,
-				idEmparejado: 0
-		   	    
-		   	}
-			
-		    function prepararYEnviarJugador(gato, nombre) 
-		    {
-				jugador.nombre = nombre;
-		    	jugador.nombreDelGato = gato;
-		    	jugador.momentoDeRegistro = new Date();
-		    	//PUTservidor(jugador);
-		    }
-		    
 			// Todas las variables usadas para nuestro juego
-			var numeroJugadores = 0; //variable que guarda el numero de jugadores conectados
-			var numeroJugadoresSala=0;
-			var te; //texto para numero de jugadores conectados
-			var te2; //texto para mostrar el nombre introducido por el usuario
-			var cambiarPantalla = false; //variable que se pone a true si el cliente esta inactivo y se debe volver a la pantalla de menu
-			var muffin; 
-			var mungojerry;
-			var plataformaGorda;
+			
 			var sonidoOn=true;
 			var textoPausa;//variable que guarda el texto del botón de pausa
 			
 			var imMusica="musicaOn";
-			var nombre = "";//guarda el nombre inntroducido por el usuario
 			
 			var nieve;//para gestionar la animación de la nieve
 			// Música de juego

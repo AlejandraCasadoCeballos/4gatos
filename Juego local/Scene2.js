@@ -18,15 +18,7 @@ class Scene2 extends Phaser.Scene{
     }
 
     create(){
-    	 //si existe el jugador, setea las variables del escenario escogido y el emparejamiento de la partida anterior
-    	jugador.escenario="";
-    	jugador.nombreDelGato="";
-    	jugador.parejaEncontrada=false;
-    	jugador.enSala=false;
-    	jugador.fueraSala=false;
-    	jugador.idEmparejado= 0;
-        	GETservidor();
-    	PUTservidor(jugador);
+
     	//seteamos las variables a sus valores iniciales para que los objetos y jugadores no salgan con datos de anteriores partidas
     	escenarioUno=false;
         escenarioDos=false;
@@ -59,7 +51,7 @@ class Scene2 extends Phaser.Scene{
         //En cada uno, al poner el ratón sobre el botón la imagen cambia a otra que tiene las letras de dicho botón de otro color
         //Al quitar el ratón, la imagen vuelve a ser la original. Al pulsar cada botón cambiamos a la escena correspondiente y paramos la música
         //BOTON JUGAR
-        botonJugar.on('pointerdown', () => {POSTservidor(jugador); this.scene.start("introducirNombre"); musica2.pause();});
+        botonJugar.on('pointerdown', () => {this.scene.start("elegirEscenario"); musica2.pause();});
         botonJugar.on('pointerover', () => {this.add.image(400, 300,'pulsadoJugar');im.create(740, 50, imMusica).setScale(0.1, 0.1).refreshBody();});
         botonJugar.on('pointerout', () => {this.add.image(400, 300,'menuFondo');im.create(740, 50, imMusica).setScale(0.1, 0.1).refreshBody(); });
         //BOTON CRÉDITOS

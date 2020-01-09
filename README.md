@@ -269,7 +269,8 @@ En cuanto a las mejoras del juego, tras hacer beta testing nos dimos cuenta de q
 • Animación de nieve en un escenario: al crear los dos nuevos escenarios, queríamos que fuesen muy distintos al primero para que hubiese variedad, por ello hicimos que uno tuviese una estética totalmente diferente (escenario japonés) y otro que tuviese una estética parecida en la que te encontrabas en los tejados de los edificios del escenario 1. En este escenario para marcar la diferencia añadimos nieve en el dibujo y una animación de que nieva, lo cual pensamos que lo hace especial.
 
 
-## Página de juegos online en la que está nuestro juego
+## Páginas de juegos online en las que está nuestro juego
+https://alejandracc.itch.io/just-4-cats
 
 # Webgrafía
 Fuentes de los grafitis:

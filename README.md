@@ -241,7 +241,7 @@ Para esta nueva fase, hemos conservado eso y hemos realizado los siguientes camb
 ## Web sockets
 
 ## Vídeo 
-
+https://www.youtube.com/watch?v=51lIW9texOk&feature=youtu.be
 
 ## Diagrama de navegación
 ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Interfaz/diagramaNavegacion3.jpg)
@@ -271,6 +271,8 @@ En cuanto a las mejoras del juego, tras hacer beta testing nos dimos cuenta de q
 
 ## Páginas de juegos online en las que está nuestro juego
 https://alejandracc.itch.io/just-4-cats
+
+https://www.newgrounds.com/portal/view/745802?updated=1578587072
 
 # Webgrafía
 Fuentes de los grafitis:

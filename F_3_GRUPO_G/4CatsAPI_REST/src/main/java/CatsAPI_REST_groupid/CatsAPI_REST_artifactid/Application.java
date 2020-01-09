@@ -58,13 +58,14 @@ public class Application implements WebSocketConfigurer
 				for(Long id: JugadorController.jugadores.keySet()) 
 				{
 					Jugador j= JugadorController.jugadores.get(id);
+					long i=j.getIdEmparejado();
 					
 					if(j.getInactivo()) 
 					{
 						//System.out.printf("El siguiente jugador ha sido eliminado:"+ id);
-						if(j.getParejaEncontrada()) {
+						if(j.getParejaEncontrada() && JugadorController.jugadores.get(i)!=null) {
 							j.setFueraSala(true);
-							JugadorController.jugadores.get(j.getIdEmparejado()).setFueraSala(true);
+							JugadorController.jugadores.get(i).setFueraSala(true);
 						}
 						
 						JugadorController.jugadores.remove(j.getId());

@@ -39,9 +39,11 @@ class Scene4 extends Phaser.Scene{
         botonSiguiente.on('pointerdown', () => {this.scene.start("ComoJugar2"); });
         botonSiguiente.on('pointerover', () => {this.add.image(400, 300,'siguienteComoJugar'); });
         botonSiguiente.on('pointerout', () => {this.add.image(400, 300,'comoJugar'); });
-            
-       
         
+    }
+    update(){
+    	//PUTservidor(jugador);
+    	//GETservidor();
     }
 
 

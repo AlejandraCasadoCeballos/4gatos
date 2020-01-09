@@ -16,15 +16,15 @@ class Scene8 extends Phaser.Scene{
     }
 
     create(){
-
+    	
         timer = this.time.addEvent({ delay: 3000, callback: this.empezar, callbackScope: this });
         objeto= this.physics.add.staticGroup(); 
-        aleatorio=Phaser.Math.Between(1, 3);
-        if(aleatorio==1)
+        //aleatorio=Phaser.Math.Between(1, 3);
+        if(escenarioTres)
             objetoAleatorio="pescado";
-        else if(aleatorio==2)
+        else if(escenarioDos)
             objetoAleatorio="ovillo";
-        else if(aleatorio==3)
+        else if(escenarioUno)
             objetoAleatorio="rata";
 
         //Generamos el objeto en el centro de la pantalla
@@ -33,6 +33,8 @@ class Scene8 extends Phaser.Scene{
         
     }
     update(time, delta) {
+    	PUTservidor(jugador);
+    	//GETservidor();
         tiempo = Math.round(Math.floor(45000 - timer.getElapsed()) / 1000);
     }
     empezar(){

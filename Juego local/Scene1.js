@@ -30,5 +30,8 @@ class Scene1 extends Phaser.Scene{
         botonAtras.on('pointerover', () => {this.add.image(400, 300,'atras'); });
         botonAtras.on('pointerout', () => {this.add.image(400, 300,'creditos'); });
     }
-
+    update(){
+    	//PUTservidor(jugador);
+    	//GETservidor();
+    }
 }

@@ -52,8 +52,8 @@ class Scene8 extends Phaser.Scene{
     }
     empezar(){
     	if(desdeJuego){
-    		this.scene.start("salaEspera");
-    		//this.scene.start("Menu");
+    		//this.scene.start("salaEspera");
+    		this.scene.start("Menu");
     		desdeJuego=false;
     	}
     	else 

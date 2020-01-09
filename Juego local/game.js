@@ -1,6 +1,9 @@
+
+
 var config = {
     type: Phaser.AUTO, //Intenta inicializar WebGl y si no puede inicializa canvas
     width: 800,
+    parent: 'phaser-example',
     height: 600,    
     pixelArt: true,
     audio: {
@@ -12,6 +15,9 @@ var config = {
         loop: true,
         delay: 0
     },
+    dom: {
+        createContainer: true
+    },
     physics:{
         default: 'arcade',
         arcade:{
@@ -19,7 +25,7 @@ var config = {
             debug:false
         }
     },
-    scene: [Scene11,Scene2,Scene1,Scene3,Scene4,Scene5,Scene6,Scene7,Scene8,Scene9,Scene10],
+    scene: [Scene2,Scene12,Scene11,Scene1,Scene3,Scene4,Scene5,Scene6,Scene7,Scene8,Scene9,Scene10,Scene13],
     scale: {
         mode: Phaser.Scale.FIT,// para qeu al rescalar la pantalla se siga manteninedo igual
         autoCenter: Phaser.Scale.LEFT,// centrar

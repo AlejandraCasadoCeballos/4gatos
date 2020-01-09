@@ -222,7 +222,7 @@ Diagrama de navagación resultante:
 ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Interfaz/Diagrama2.PNG)
 
 ## Diagrama de clases
-![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Interfaz/DiagramaDeClases.PNG)
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Interfaz/DiagramaDeClases.jpg)
 
 # Fase 4
 ## Cambios en API rest
@@ -258,6 +258,10 @@ https://www.youtube.com/watch?v=51lIW9texOk&feature=youtu.be
 
 ## Diagrama de navegación
 ![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Interfaz/diagramaNavegacion3.jpg)
+
+## Diagrama de clases
+![alt text](https://github.com/AlejandraCasadoCeballos/4gatos/blob/master/Recursos/Interfaz/diagrama3.jpg)
+
 # Fase 5
 ## Cambios
 

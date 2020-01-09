@@ -7,7 +7,7 @@ class Scene2 extends Phaser.Scene{
     }
     preload () //precargar recursos: sonidos e imágenes
     {
-        this.load.audio('menu',['/Recursos/Musica/menu.mp3', '/Recursos/Musica/menu.ogg']); //hemos puesto dos tipos de formatos de música 
+        this.load.audio('menu','/Recursos/Musica/menu.mp3'); //hemos puesto dos tipos de formatos de música 
                                                                                             //por si el ordenador no puede usar alguno de ellos
         this.load.image('menuFondo','/Recursos/Interfaz/menu.jpg');//imagen menú normal
         this.load.image('pulsadoComoJugar','/Recursos/Interfaz/comoJugarPulsado.jpg');//imagen menú cuando estás sobre el botón de cómo jugar 
@@ -51,15 +51,18 @@ class Scene2 extends Phaser.Scene{
         //En cada uno, al poner el ratón sobre el botón la imagen cambia a otra que tiene las letras de dicho botón de otro color
         //Al quitar el ratón, la imagen vuelve a ser la original. Al pulsar cada botón cambiamos a la escena correspondiente y paramos la música
         //BOTON JUGAR
-        botonJugar.on('pointerdown', () => {this.scene.start("elegirEscenario"); musica2.pause();});
+        botonJugar.on('pointerdown', () => {this.scene.start("elegirEscenario"); //musica2.pause();
+    });
         botonJugar.on('pointerover', () => {this.add.image(400, 300,'pulsadoJugar');im.create(740, 50, imMusica).setScale(0.1, 0.1).refreshBody();});
         botonJugar.on('pointerout', () => {this.add.image(400, 300,'menuFondo');im.create(740, 50, imMusica).setScale(0.1, 0.1).refreshBody(); });
         //BOTON CRÉDITOS
-        botonCreditos.on('pointerdown', () => { this.scene.start("Creditos"); musica2.pause();});
+        botonCreditos.on('pointerdown', () => { this.scene.start("Creditos"); //musica2.pause();
+    });
         botonCreditos.on('pointerover', () => {this.add.image(400, 300,'pulsadoCreditos');im.create(740, 50, imMusica).setScale(0.1, 0.1).refreshBody();});
         botonCreditos.on('pointerout', () => {this.add.image(400, 300,'menuFondo');im.create(740, 50, imMusica).setScale(0.1, 0.1).refreshBody(); });
         //BOTON CÓMO JUGAR
-        botonComoJugar.on('pointerdown', () => { this.scene.start("ComoJugar"); musica2.pause();});
+        botonComoJugar.on('pointerdown', () => { this.scene.start("ComoJugar"); //musica2.pause();
+    });
         botonComoJugar.on('pointerover', () => {this.add.image(400, 300,'pulsadoComoJugar');im.create(740, 50, imMusica).setScale(0.1, 0.1).refreshBody();});
         botonComoJugar.on('pointerout', () => {this.add.image(400, 300,'menuFondo');im.create(740, 50, imMusica).setScale(0.1, 0.1).refreshBody();});
         //BOTON MUSICA

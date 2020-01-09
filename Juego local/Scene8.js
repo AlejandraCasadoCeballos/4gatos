@@ -33,6 +33,7 @@ class Scene8 extends Phaser.Scene{
         
     }
     update(time, delta) {
+        
         tiempo = Math.round(Math.floor(45000 - timer.getElapsed()) / 1000);
     }
     empezar(){

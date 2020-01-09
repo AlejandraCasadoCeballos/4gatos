@@ -8,13 +8,13 @@ class Scene5 extends Phaser.Scene{
     }
     preload () //precargar recursos
     {
-        this.load.image('ganador1','/Recursos/Interfaz/ganadorMuffin.jpg');//imagen de cuando gana Muffin normal
-        this.load.audio('celebracion','/Recursos/Musica/celebracion.mp3');//música de celebración
-        this.load.image('atrasG1','/Recursos/Interfaz/atrasGanadorMuffin.jpg');//imagen cuando el ratón esá sobre el botón
-        this.load.image('ganador2','/Recursos/Interfaz/ganadorMungojerry.jpg');//imagen de cuando gana Mungojerry normal
-        this.load.image('atrasG2','/Recursos/Interfaz/atrasGanadorMungojerry.jpg');//imagen cuando el ratón esá sobre el botón
-        this.load.image('empate','/Recursos/Interfaz/empate.jpg');//imagen de cuando empatan
-        this.load.image('atrasEmpate','/Recursos/Interfaz/atrasEmpate.jpg');//imagen cuando el ratón esá sobre el botón
+        this.load.image('ganador1','Recursos/Interfaz/ganadorMuffin.jpg');//imagen de cuando gana Muffin normal
+        this.load.audio('celebracion','Recursos/Musica/celebracion.mp3');//música de celebración
+        this.load.image('atrasG1','Recursos/Interfaz/atrasGanadorMuffin.jpg');//imagen cuando el ratón esá sobre el botón
+        this.load.image('ganador2','Recursos/Interfaz/ganadorMungojerry.jpg');//imagen de cuando gana Mungojerry normal
+        this.load.image('atrasG2','Recursos/Interfaz/atrasGanadorMungojerry.jpg');//imagen cuando el ratón esá sobre el botón
+        this.load.image('empate','Recursos/Interfaz/empate.jpg');//imagen de cuando empatan
+        this.load.image('atrasEmpate','Recursos/Interfaz/atrasEmpate.jpg');//imagen cuando el ratón esá sobre el botón
     
     }
 

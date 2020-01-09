@@ -7,9 +7,9 @@ class Scene10 extends Phaser.Scene{
     
     preload () //precargar recursos
     {
-        this.load.image('comoJugar3','/Recursos/Interfaz/comoJugar3.jpg');//imagen normal
-        this.load.image('atrasComoJugar3','/Recursos/Interfaz/atrasComoJugar3.jpg');//imagen cuando el ratón está sobre el botón
-        this.load.image('menuComoJugar3','/Recursos/Interfaz/menuComoJugar3.jpg');
+        this.load.image('comoJugar3','Recursos/Interfaz/comoJugar3.jpg');//imagen normal
+        this.load.image('atrasComoJugar3','Recursos/Interfaz/atrasComoJugar3.jpg');//imagen cuando el ratón está sobre el botón
+        this.load.image('menuComoJugar3','Recursos/Interfaz/menuComoJugar3.jpg');
     }
     
     create(){

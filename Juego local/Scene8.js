@@ -8,15 +8,15 @@ class Scene8 extends Phaser.Scene{
     }
     preload () //precargar recursos
     {
-        this.load.image('pescado', '/Recursos/Objetos/pescado.png');
-        this.load.image('ovillo', '/Recursos/Objetos/ovillo.png');
-        this.load.image('rata', '/Recursos/Objetos/rata.png');
-        this.load.image('mensaje', '/Recursos/Interfaz/mensajeObjetoGanador.jpg')
+        this.load.image('pescado', 'Recursos/Objetos/pescado.png');
+        this.load.image('ovillo', 'Recursos/Objetos/ovillo.png');
+        this.load.image('rata', 'Recursos/Objetos/rata.png');
+        this.load.image('mensaje', 'Recursos/Interfaz/mensajeObjetoGanador.jpg')
 
     }
 
     create(){
-    	
+    	musica2.stop();
         timer = this.time.addEvent({ delay: 3000, callback: this.empezar, callbackScope: this });
         objeto= this.physics.add.staticGroup(); 
         //aleatorio=Phaser.Math.Between(1, 3);

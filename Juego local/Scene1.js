@@ -9,8 +9,8 @@ class Scene1 extends Phaser.Scene{
     preload () //precargar recursos
     {
         
-        this.load.image('creditos','/Recursos/Interfaz/creditos.jpg');// cargamos la imagen de los creditos
-        this.load.image('atras','/Recursos/Interfaz/atrasCreditos.jpg');// cargamos la imagen de los creditos con boton atras pulsado
+        this.load.image('creditos','Recursos/Interfaz/creditos.jpg');// cargamos la imagen de los creditos
+        this.load.image('atras','Recursos/Interfaz/atrasCreditos.jpg');// cargamos la imagen de los creditos con boton atras pulsado
     }
 
     create(){

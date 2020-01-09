@@ -6,27 +6,27 @@ class Scene3 extends Phaser.Scene{
     preload () //precargamos recursos, en este caso, el fondo, la plataforma, los objetos, la musica, los sonidos y los sprites de 
                //las animaciones de los dos gatos
     {
-        this.load.image('escenario1', '/Recursos/Interfaz/escenario1.jpg');
-        this.load.image('escenario2', '/Recursos/Interfaz/escenario2.png');
-        this.load.image('escenario3', '/Recursos/Interfaz/escenario3.png');
-        this.load.image('plataforma', '/Recursos/Plataformas/plataforma.png');
-        this.load.image('pescado', '/Recursos/Objetos/pescado.png');
-        this.load.image('ovillo', '/Recursos/Objetos/ovillo.png');
-        this.load.image('rata', '/Recursos/Objetos/rata.png');
-        this.load.image('lata', '/Recursos/Objetos/lata.png');
-        this.load.audio('juego',['/Recursos/Musica/juego.mp3', '/Recursos/Musica/juego.ogg']);
-        this.load.audio('aplastado',['/Recursos/Sonidos/aplastado.mp3', '/Recursos/Sonidos/aplastado.ogg']);
-        this.load.audio('objeto',['/Recursos/Sonidos/objeto.mp3', '/Recursos/Sonidos/objeto.ogg']);
-        this.load.audio('powerUp',['/Recursos/Sonidos/powerUp.mp3', '/Recursos/Sonidos/powerUp.ogg']);
-        this.load.audio('cuentaAtras',['/Recursos/Sonidos/cuentaAtras.mp3', '/Recursos/Sonidos/cuentaAtras.ogg']);
+        this.load.image('escenario1', 'Recursos/Interfaz/escenario1.jpg');
+        this.load.image('escenario2', 'Recursos/Interfaz/escenario2.png');
+        this.load.image('escenario3', 'Recursos/Interfaz/escenario3.png');
+        this.load.image('plataforma', 'Recursos/Plataformas/plataforma.png');
+        this.load.image('pescado', 'Recursos/Objetos/pescado.png');
+        this.load.image('ovillo', 'Recursos/Objetos/ovillo.png');
+        this.load.image('rata', 'Recursos/Objetos/rata.png');
+        this.load.image('lata', 'Recursos/Objetos/lata.png');
+        this.load.audio('juego',['Recursos/Musica/juego.mp3', 'Recursos/Musica/juego.ogg']);
+        this.load.audio('aplastado',['Recursos/Sonidos/aplastado.mp3', 'Recursos/Sonidos/aplastado.ogg']);
+        this.load.audio('objeto',['Recursos/Sonidos/objeto.mp3', 'Recursos/Sonidos/objeto.ogg']);
+        this.load.audio('powerUp',['Recursos/Sonidos/powerUp.mp3', 'Recursos/Sonidos/powerUp.ogg']);
+        this.load.audio('cuentaAtras',['Recursos/Sonidos/cuentaAtras.mp3', 'Recursos/Sonidos/cuentaAtras.ogg']);
         
-        this.load.spritesheet('Muffin', '/Recursos/Personajes/Muffin.png',
+        this.load.spritesheet('Muffin', 'Recursos/Personajes/Muffin.png',
         { frameWidth: 64, frameHeight: 54 } 
         );
-        this.load.spritesheet('Mungojerry', '/Recursos/Personajes/Mungojerry.png',
+        this.load.spritesheet('Mungojerry', 'Recursos/Personajes/Mungojerry.png',
         { frameWidth: 64, frameHeight: 54 } 
         );
-        this.load.spritesheet('nieve', '/Recursos/Interfaz/nevando.png',
+        this.load.spritesheet('nieve', 'Recursos/Interfaz/nevando.png',
         { frameWidth: 800, frameHeight: 600 } 
         );
     }

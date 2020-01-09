@@ -8,12 +8,12 @@ class Scene6 extends Phaser.Scene{
     }
     preload () //precargar recursos
     {
-    	this.load.image('elegirEscenario','/Recursos/Interfaz/elegirEscenario.jpg');
-    	this.load.image('escenario1','/Recursos/Interfaz/escenario1.jpg');
-    	this.load.image('escenario2','/Recursos/Interfaz/escenario2.png');
-    	this.load.image('escenario3','/Recursos/Interfaz/escenario3.png');
-    	this.load.image('filtro','/Recursos/Interfaz/filtro.jpg');
-    	this.load.image('elegirEscenarioAtras','/Recursos/Interfaz/elegirEscenarioAtrasPulsado.jpg');
+    	this.load.image('elegirEscenario','Recursos/Interfaz/elegirEscenario.jpg');
+    	this.load.image('escenario1','Recursos/Interfaz/escenario1.jpg');
+    	this.load.image('escenario2','Recursos/Interfaz/escenario2.png');
+    	this.load.image('escenario3','Recursos/Interfaz/escenario3.png');
+    	this.load.image('filtro','Recursos/Interfaz/filtro.jpg');
+    	this.load.image('elegirEscenarioAtras','Recursos/Interfaz/elegirEscenarioAtrasPulsado.jpg');
     }
 
     create(){

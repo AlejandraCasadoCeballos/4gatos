@@ -8,11 +8,11 @@ class Scene7 extends Phaser.Scene{
     }
     preload () //precargar recursos
     {
-        this.load.image('pausa','/Recursos/Interfaz/pausa.jpg');//imagen de cuando estamos en la escena de pausa
-        this.load.image('botonPausaEncima','/Recursos/Interfaz/botonPausaEncima.jpg');//imagen cuando el ratón esá sobre el botón
-        this.load.image('botonMenuEncima','/Recursos/Interfaz/botonMenuEncima.jpg');//imagen cuando el ratón esá sobre el botón
-        this.load.image('musicaOn','/Recursos/Interfaz/musicaOn.png');
-        this.load.image('musicaOff','/Recursos/Interfaz/musicaOff.png');
+        this.load.image('pausa','Recursos/Interfaz/pausa.jpg');//imagen de cuando estamos en la escena de pausa
+        this.load.image('botonPausaEncima','Recursos/Interfaz/botonPausaEncima.jpg');//imagen cuando el ratón esá sobre el botón
+        this.load.image('botonMenuEncima','Recursos/Interfaz/botonMenuEncima.jpg');//imagen cuando el ratón esá sobre el botón
+        this.load.image('musicaOn','Recursos/Interfaz/musicaOn.png');
+        this.load.image('musicaOff','Recursos/Interfaz/musicaOff.png');
 
     }
 

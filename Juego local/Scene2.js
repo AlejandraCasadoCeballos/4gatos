@@ -7,14 +7,14 @@ class Scene2 extends Phaser.Scene{
     }
     preload () //precargar recursos: sonidos e imágenes
     {
-        this.load.audio('menu','/Recursos/Musica/menu.mp3'); //hemos puesto dos tipos de formatos de música 
+        this.load.audio('menu','Recursos/Musica/menu.mp3'); //hemos puesto dos tipos de formatos de música 
                                                                                             //por si el ordenador no puede usar alguno de ellos
-        this.load.image('menuFondo','/Recursos/Interfaz/menu.jpg');//imagen menú normal
-        this.load.image('pulsadoComoJugar','/Recursos/Interfaz/comoJugarPulsado.jpg');//imagen menú cuando estás sobre el botón de cómo jugar 
-        this.load.image('pulsadoJugar','/Recursos/Interfaz/jugarPulsado.jpg');//imagen menú cuando estás sobre el botón de jugar
-        this.load.image('pulsadoCreditos','/Recursos/Interfaz/creditosPulsado.jpg');//imagen menú cuando estás sobre el botón de créditos
-        this.load.image('musicaOn','/Recursos/Interfaz/musicaOn.png');
-        this.load.image('musicaOff','/Recursos/Interfaz/musicaOff.png');
+        this.load.image('menuFondo','Recursos/Interfaz/menu.jpg');//imagen menú normal
+        this.load.image('pulsadoComoJugar','Recursos/Interfaz/comoJugarPulsado.jpg');//imagen menú cuando estás sobre el botón de cómo jugar 
+        this.load.image('pulsadoJugar','Recursos/Interfaz/jugarPulsado.jpg');//imagen menú cuando estás sobre el botón de jugar
+        this.load.image('pulsadoCreditos','Recursos/Interfaz/creditosPulsado.jpg');//imagen menú cuando estás sobre el botón de créditos
+        this.load.image('musicaOn','Recursos/Interfaz/musicaOn.png');
+        this.load.image('musicaOff','Recursos/Interfaz/musicaOff.png');
     }
 
     create(){

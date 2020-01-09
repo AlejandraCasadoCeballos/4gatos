@@ -287,7 +287,7 @@ https://alejandracc.itch.io/just-4-cats
 
 https://www.newgrounds.com/portal/view/745802?updated=1578587072
 
-https://gamejolt.com/dashboard/games/461628/packages/469637
+https://gamejolt.com/games/grupoG/461628
 
 # Webgrafía
 Fuentes de los grafitis:

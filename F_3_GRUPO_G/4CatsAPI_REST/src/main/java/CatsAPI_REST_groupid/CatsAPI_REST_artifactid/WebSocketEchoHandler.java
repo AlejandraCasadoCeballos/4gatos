@@ -1,14 +1,10 @@
 package CatsAPI_REST_groupid.CatsAPI_REST_artifactid;
 
-import java.io.IOException;
-import java.net.InetSocketAddress;
-import java.util.ArrayList;
-import java.util.List;
+
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicLong;
 
-
-import org.springframework.http.HttpHeaders;
-import org.springframework.web.socket.CloseStatus;
 import org.springframework.web.socket.TextMessage;
 import org.springframework.web.socket.WebSocketSession;
 import org.springframework.web.socket.handler.TextWebSocketHandler;
@@ -18,11 +14,15 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class WebSocketEchoHandler extends TextWebSocketHandler{
 
-	public List<WebSocketSession> sessions = new ArrayList<>();
-	
+	public static Map<Long,WebSocketSession> sessions = new ConcurrentHashMap<>();
+	public static AtomicLong ultimoIdS = new AtomicLong();
 	@Override
 	public void afterConnectionEstablished(WebSocketSession session) throws Exception{
-		sessions.add(session);
+		
+		long id = ultimoIdS.incrementAndGet();
+		sessions.put(id, session);
+		
+		//sessions.add(session);
 		System.out.println("Session added. Currently "+sessions.size()+" sessions");
 		
 	}

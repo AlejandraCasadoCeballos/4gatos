@@ -5,9 +5,10 @@ function GETservidor() { //GET
     }).done(function(jugadores){
         numeroJugadores = jugadores.length;
         for(var i=0; i<numeroJugadores; i++){
-           console.log("GET: \nID: " + jugadores[i].id + "\nNombre: " + jugadores[i].nombre + "\nNombre del gato: " + 
+           /*console.log("GET: \nID: " + jugadores[i].id + "\nNombre: " + jugadores[i].nombre + "\nNombre del gato: " + 
         		   	   jugadores[i].nombreDelGato + "\nInactivo: " + jugadores[i].inactivo+"\nSalaEspera:"+jugadores[i].enSala+
         		   	   "\nPareja:"+jugadores[i].parejaEncontrada+"\nEscenario:"+jugadores[i].escenario+"\nFueraSala:"+jugadores[i].fueraSala+ "\nidEmparejado:"+jugadores[i].idEmparejado);
+        */
         }
     });
 }

@@ -1,7 +1,6 @@
 package CatsAPI_REST_groupid.CatsAPI_REST_artifactid;
 
 import java.time.*;
-import java.util.concurrent.atomic.AtomicLong;
 
 public class Jugador {
 
@@ -20,7 +19,7 @@ public class Jugador {
 		
 	public Jugador(){}
 	
-	public Jugador(long id,String nombre, LocalDateTime momentoDeRegistro, LocalDateTime ultimaInteraccion, String nombreJugador, boolean parejaEncontrada, boolean enSala, String escenario, boolean fueraSala) {//, long idEmparejado) {	
+	public Jugador(long id,String nombre, LocalDateTime momentoDeRegistro, LocalDateTime ultimaInteraccion, String nombreJugador, boolean parejaEncontrada, boolean enSala, String escenario, boolean fueraSala, long idEmparejado) {//, long idEmparejado) {	
 		super();
 		this.nombreDelGato = nombre;
 		this.momentoDeRegistro = momentoDeRegistro;

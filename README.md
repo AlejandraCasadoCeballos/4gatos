@@ -226,34 +226,32 @@ Diagrama de navagación resultante:
 
 # Fase 4
 ## Cambios en API rest
-En cuanto a API rest hemos realizado algunas mejoras para esta cuarta fase. En un principio solo teníamos un leve manejo de los métodos put get y post de los jugadores. Hicimos que estos métodos funcionarán y que se viese en la consola. El post se usaba cuando el jugador elegía a un gato ya que esta era la primera pantalla y el put se realizaba de manera continua en el resto de escenas para detectar la inactividad desde el servidor cuando el cliente dejase de hacer puts. 
+En cuanto a API rest hemos realizado algunas mejoras para esta cuarta fase. En un principio solo teníamos un leve manejo de los métodos put get y post de los jugadores. Hicimos que estos métodos funcionarán y que se viese en la consola. El post se usaba cuando el jugador elegía a un gato ya que esta era la primera pantalla y el put se realizaba de manera continua en el resto de las escenas para detectar la inactividad desde el servidor cuando el cliente dejase de hacer puts.
 
 Para esta nueva fase, hemos conservado eso y hemos realizado los siguientes cambios:
 
-• Además de detectar la inactividad desde el servidor (importante para casos en los que el jugador cierre la pantalla del juego), detectamos la inactividad desde el cliente (lo cual nos sirve para casos en los que el cliente sigue con la pestaña abierta pero se ha ido a otra o no está usando el ordenador). En estos casos se hace un delete del jugador y se le envía al menú del juego, que ahora es la primera pantalla.
+• Además de detectar la inactividad desde el servidor (importante para casos en los que el jugador cierre la pantalla del juego), detectamos la inactividad desde el cliente (lo cual nos sirve para casos en los que el cliente sigue con la pestaña abierta, pero se ha ido a otra o no está usando el ordenador). En estos casos se hace un delete del jugador y se le envía al menú del juego, que ahora es la primera pantalla.
 
 • También existe un delete cuando el jugador decide ir al menú desde la pausa.
 
-• Hemos hecho que el jugador deba introducir el nombre y elegir un escenario además de el gato, y el nombre introducido sale arriba a la izquierda. 
+• Hemos hecho que el jugador deba introducir el nombre y elegir un escenario además del gato, y el nombre introducido sale arriba a la izquierda.
 
 • Por otro lado, hemos añadido otro texto que es el de jugadores conectados, este dato aparece en la pantalla de elección del gato.
 
 • Para terminar, hemos realizado una sala de espera en la que se une a dos jugadores que hayan elegido el mismo escenario y distinto gato.
 
 ## Web sockets
-Otra de las novedades en esta fase ha sido incluir comunicación a través de websockets. Gracias a los websockets hemos podido enviar y recibir informacion de los jugadores para detectar la posicion del gato rival y así poder ver como se mueven ambos gatos en pantalla.
-Primero tuvimos que configurar el servidor para que aceptara websockets y crear un manejador para los websockets que supiera qué hacer cada vez que llegara un mensaje. 
+Otra de las novedades en esta fase ha sido incluir comunicación a través de websockets. Gracias a los websockets hemos podido enviar y recibir información de los jugadores para detectar la posición del gato rival y así poder ver como se mueven ambos gatos en pantalla. Primero tuvimos que configurar el servidor para que aceptara websockets y crear un manejador para los websockets que supiera qué hacer cada vez que llegara un mensaje.
 
-Este manejador se encarga de enviar el mensaje recibido al jugador correspondiente. Para ello crea un mapa donde guarda como clave el id del jugador correspondiente y como valor la sesion del websocket que le corresponde. Así conseguimos mandar el mensaje sólo a un jugador y no saturamos la red.
+Este manejador se encarga de enviar el mensaje recibido al jugador correspondiente. Para ello crea un mapa donde guarda como clave el id del jugador correspondiente y como valor la sesión del websocket que le corresponde. Así conseguimos mandar el mensaje sólo a un jugador y no saturamos la red.
 
-Mientras tanto, en la parte del cliente,hay que crear el objeto WebSocket y hacer el handshaking. Aqui llego uno de nuestros problemas, que fue indicar la ruta del servidor. Sin embargo existen maneras de incluir en el codigo la propia uri de la pagina actual, por lo que se puede acceder a la direccion del servidor y sustituir 'http' por 'ws' y completar la url.
-Además, en el cliente hay que configurar los eventos de websocket para que el cliente sepa qué hacer en cada situacion. En nuestro caso hemos configurado los metodos onopen, onclose, onerror y onmessage. Este ultimo es el que mas hemos utilizado, ya que se le llama cada vez que se recibe un mensaje. 
+Mientras tanto, en la parte del cliente, hay que crear el objeto WebSocket y hacer el handshaking. Aquí llegó uno de nuestros problemas, que fue indicar la ruta del servidor. Sin embargo, existen maneras de incluir en el código la propia uri de la página actual, por lo que se puede acceder a la dirección del servidor y sustituir 'http' por 'ws' y completar la url. Además, en el cliente hay que configurar los eventos de websocket para que el cliente sepa qué hacer en cada situación. En nuestro caso hemos configurado los métodos onopen, onclose, onerror y onmessage. Este último es el que más hemos utilizado, ya que se le llama cada vez que se recibe un mensaje.
 
-Dentro del metodo onmessage hemos hecho un JSON.parse para convertir el string en un objeto JSON y poder operar con el y acceder a sus parametros. De esta forma hemos accedido a los parámetros que necesitábamos, que eran las posiciones X e Y del jugador, la animacion actual y si estaba en una sala de espera o no.
+Dentro del método onmessage hemos hecho un JSON.parse para convertir el string en un objeto JSON y poder operar con él y acceder a sus parámetros. De esta forma hemos accedido a los parámetros que necesitábamos, que eran las posiciones X e Y del jugador, la animación actual y si estaba en una sala de espera o no.
 
-Por último, para enviar un objeto, hemos utilizado el método send al cual le pasabamos como parámetro el objeto jugador pero en formato string, ya que los objetos JSON no pueden enviarse por websockets.
+Por último, para enviar un objeto, hemos utilizado el método send al cual le pasábamos como parámetro el objeto jugador, pero en formato string, ya que los objetos JSON no pueden enviarse por websockets.
 
-Además, a través de websockets hemos logrado que cuando uno de los jugadores cierre la pestalla, redirija al otro jugador al menú de nuevo. También hace esto con ambos jugadores en caso de que el servidor se pare.
+Además, a través de websockets hemos logrado que cuando uno de los jugadores cierre la pestaña, redirija al otro jugador al menú de nuevo. También hace esto con ambos jugadores en caso de que el servidor se pare.
 
 ## Vídeo 
 https://www.youtube.com/watch?v=51lIW9texOk&feature=youtu.be

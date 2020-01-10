@@ -32,13 +32,16 @@ class Scene13 extends Phaser.Scene{
  	}
     update(){
 
+    	PUTservidor(jugador);
     	te.destroy();
+
+    	GETservidor();
     	te = this.add.text(530, 10, "Jugadores conectados: " + numeroJugadores, {font:"30px Agency FB bold", fill:"#999999"});
     	te2 = jugador.nombre;
     	if(jugador.parejaEncontrada==true){
     		this.scene.start("Mensaje");
     		
     	}
-    	PUTservidor(jugador);
+    	
     }
 }

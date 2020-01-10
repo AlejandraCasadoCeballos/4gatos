@@ -253,6 +253,8 @@ Dentro del metodo onmessage hemos hecho un JSON.parse para convertir el string e
 
 Por último, para enviar un objeto, hemos utilizado el método send al cual le pasabamos como parámetro el objeto jugador pero en formato string, ya que los objetos JSON no pueden enviarse por websockets.
 
+Además, a través de websockets hemos logrado que cuando uno de los jugadores cierre la pestalla, redirija al otro jugador al menú de nuevo. También hace esto con ambos jugadores en caso de que el servidor se pare.
+
 ## Vídeo 
 https://www.youtube.com/watch?v=51lIW9texOk&feature=youtu.be
 

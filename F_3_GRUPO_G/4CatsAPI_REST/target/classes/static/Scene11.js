@@ -99,16 +99,13 @@ class Scene11 extends Phaser.Scene
         botonMuffin.on('pointerout', () => { muffin.anims.stop('leftplayer',true); });
         
         GETservidor();
-        te = this.add.text(530, 10, "Jugadores conectados: " + numeroJugadores, {font:"30px Agency FB bold", fill:"#999999"});
     	te2 = this.add.text(40, 10, jugador.nombre, {font:"30px Agency FB bold", fill:"#999999"});
     }
     
     update() {
     	PUTservidor(jugador);
     	tiempoInactividad(this);
-    	te.destroy();
     	GETservidor();
-    	te = this.add.text(530, 10, "Jugadores conectados: " + numeroJugadores, {font:"30px Agency FB bold", fill:"#999999"});
     	te2 = jugador.nombre;
     }
     

@@ -26,10 +26,15 @@ class Scene13 extends Phaser.Scene{
 	 botonAtras.on('pointerdown', () => { this.scene.start("EligeGato");jugador.nombreDelGato=""; PUTservidor(jugador);});
      botonAtras.on('pointerover', () => {this.add.image(400, 300,'salaEsperaAtrasPulsado'); });
      botonAtras.on('pointerout', () => {this.add.image(400, 300,'salaEspera'); });
-     
+
+     te = this.add.text(530, 10, "Jugadores conectados: " + numeroJugadores, {font:"30px Agency FB bold", fill:"#999999"});
+ 	te2 = this.add.text(40, 10, jugador.nombre, {font:"30px Agency FB bold", fill:"#999999"});
  	}
     update(){
-   
+
+    	te.destroy();
+    	te = this.add.text(530, 10, "Jugadores conectados: " + numeroJugadores, {font:"30px Agency FB bold", fill:"#999999"});
+    	te2 = jugador.nombre;
     	if(jugador.parejaEncontrada==true){
     		this.scene.start("Mensaje");
     		

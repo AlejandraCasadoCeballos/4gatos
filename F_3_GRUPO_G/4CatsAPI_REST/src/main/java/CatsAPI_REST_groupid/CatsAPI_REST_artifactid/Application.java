@@ -67,8 +67,9 @@ public class Application implements WebSocketConfigurer
 							j.setFueraSala(true);
 							JugadorController.jugadores.get(i).setFueraSala(true);
 						}
+							JugadorController.jugadores.remove(j.getId());
 						
-						JugadorController.jugadores.remove(j.getId());
+						
 						}
 					//else System.out.printf("El jugador"+ id+ "está activo");
 				}

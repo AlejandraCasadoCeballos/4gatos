@@ -448,6 +448,7 @@ class Scene3 extends Phaser.Scene{
     }
     //A continuación comienza la función update que se ejecuta en bucle
     update (time, delta) {
+    	console.log(jugador.idEmparejado);
     	////console.log("Objeto jugador 1"+objetoCogido);
     	////console.log("Objeto jugador 2"+objetoCogido2);
     		connection.onopen = function () {
@@ -455,19 +456,26 @@ class Scene3 extends Phaser.Scene{
     	    }
 
     	    connection.onerror = function(e) {
-    	      //console.log("WS error: " + e);
+
+	        	desdeJuego=true;
+	        	musica.stop();
+	        	
+	        	escenaActual.scene.start("Mensaje");
     	    }
     	      
     	    connection.onclose = function(e) {
-    	        
-    	        //////console.log("WS closing: " + e);
-    	        //connection.reConnection();
+    	    	
+    	    	
+	        	desdeJuego=true;
+	        	musica.stop();
+	        	escenaActual.scene.start("Mensaje");
     	    }
     	    connection.onmessage = function(msg) {
     	        //////console.log("WS message: " + msg.data);
     	    	
     	        var aux = JSON.parse(msg.data);
     	        if(aux.fueraSala){
+    	        
     	        	desdeJuego=true;
     	        	musica.stop();
     	        	escenaActual.scene.start("Mensaje");

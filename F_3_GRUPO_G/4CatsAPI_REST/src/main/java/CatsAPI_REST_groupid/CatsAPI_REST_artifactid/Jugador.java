@@ -10,7 +10,7 @@ public class Jugador {
 	public LocalDateTime momentoDeRegistro;
 	public boolean inactivo;
 	private LocalDateTime ultimaInteraccion;
-	public static double tiempoMaximoInactividad = 3;
+	public static double tiempoMaximoInactividad = 4;
 	private boolean parejaEncontrada;
 	private boolean enSala;
 	private String escenario;
